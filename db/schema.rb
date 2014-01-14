@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114012954) do
+ActiveRecord::Schema.define(version: 20140114024933) do
 
   create_table "academic_degrees", force: true do |t|
     t.string "name"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20140114012954) do
     t.string "name"
   end
 
+  create_table "authors", force: true do |t|
+    t.string  "name"
+    t.integer "publication_id"
+    t.integer "teacher_id"
+  end
+
+  add_index "authors", ["publication_id"], name: "index_authors_on_publication_id"
+  add_index "authors", ["teacher_id"], name: "index_authors_on_teacher_id"
+
   create_table "cosupervisors", force: true do |t|
     t.integer "teacher_id"
     t.integer "thesis_supervision_id"
@@ -64,6 +73,22 @@ ActiveRecord::Schema.define(version: 20140114012954) do
   end
 
   add_index "courses", ["institution_id"], name: "index_courses_on_institution_id"
+
+  create_table "deliverables", force: true do |t|
+    t.string  "url"
+    t.integer "publication_id"
+  end
+
+  add_index "deliverables", ["publication_id"], name: "index_deliverables_on_publication_id"
+
+  create_table "editors", force: true do |t|
+    t.string  "name"
+    t.integer "publication_id"
+    t.integer "teacher_id"
+  end
+
+  add_index "editors", ["publication_id"], name: "index_editors_on_publication_id"
+  add_index "editors", ["teacher_id"], name: "index_editors_on_teacher_id"
 
   create_table "entities", force: true do |t|
     t.string "name"
@@ -122,6 +147,44 @@ ActiveRecord::Schema.define(version: 20140114012954) do
   add_index "managements", ["role_id"], name: "index_managements_on_role_id"
   add_index "managements", ["teacher_id"], name: "index_managements_on_teacher_id"
 
+  create_table "publication_types", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "publications", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "date"
+    t.text     "description"
+    t.text     "address"
+    t.string   "pages"
+    t.string   "publisher"
+    t.string   "journal"
+    t.string   "volume"
+    t.string   "book_title"
+    t.string   "isbn"
+    t.string   "issn"
+    t.text     "how_published"
+    t.integer  "publication_type_id"
+    t.integer  "teacher_id"
+    t.integer  "research_project_id"
+  end
+
+  add_index "publications", ["publication_type_id"], name: "index_publications_on_publication_type_id"
+  add_index "publications", ["research_project_id"], name: "index_publications_on_research_project_id"
+  add_index "publications", ["teacher_id"], name: "index_publications_on_teacher_id"
+
+  create_table "research_projects", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "b_date"
+    t.datetime "e_date"
+    t.text     "description"
+    t.integer  "teacher_id"
+  end
+
+  add_index "research_projects", ["teacher_id"], name: "index_research_projects_on_teacher_id"
+
   create_table "roles", force: true do |t|
     t.string "name"
   end
@@ -166,6 +229,16 @@ ActiveRecord::Schema.define(version: 20140114012954) do
 
   add_index "theses", ["academic_degree_id"], name: "index_theses_on_academic_degree_id"
   add_index "theses", ["institution_id"], name: "index_theses_on_institution_id"
+
+  create_table "thesis_examinations", force: true do |t|
+    t.datetime "date"
+    t.text     "description"
+    t.integer  "thesis_id"
+    t.integer  "teacher_id"
+  end
+
+  add_index "thesis_examinations", ["teacher_id"], name: "index_thesis_examinations_on_teacher_id"
+  add_index "thesis_examinations", ["thesis_id"], name: "index_thesis_examinations_on_thesis_id"
 
   create_table "thesis_supervisions", force: true do |t|
     t.datetime "b_date"
