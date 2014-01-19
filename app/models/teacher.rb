@@ -1,4 +1,8 @@
 class Teacher < ActiveRecord::Base
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
   belongs_to :institution
   has_many :hobbies
   has_many :academic_informations
@@ -14,4 +18,6 @@ class Teacher < ActiveRecord::Base
   has_many :publications_authored, through: :authors, source: :publication
   has_many :editors
   has_many :publications_editor, through: :editors, source: :publication
+
+  has_attached_file :photo
 end

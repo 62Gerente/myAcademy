@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114024933) do
+ActiveRecord::Schema.define(version: 20140119114119) do
 
   create_table "academic_degrees", force: true do |t|
     t.string "name"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140114024933) do
   add_index "authors", ["teacher_id"], name: "index_authors_on_teacher_id"
 
   create_table "cosupervisors", force: true do |t|
+    t.string  "name"
     t.integer "teacher_id"
     t.integer "thesis_supervision_id"
   end
@@ -209,15 +210,30 @@ ActiveRecord::Schema.define(version: 20140114024933) do
     t.string   "name"
     t.string   "status"
     t.string   "phone"
-    t.string   "email"
     t.datetime "birthday"
     t.string   "url"
     t.text     "bio"
     t.boolean  "registed"
     t.integer  "institution_id"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
+  add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true
   add_index "teachers", ["institution_id"], name: "index_teachers_on_institution_id"
+  add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
 
   create_table "theses", force: true do |t|
     t.string  "title"
