@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theexams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/Applications/MAMP/htdocs/myapps/the-exam/the-exams.xsd">
+    <theexam type="phd">
+        <student>
+            <name>Luís Miguel Gomes dos Santos Reis Leitão</name>
+        </student>
+        <document>
+            <title>Duplicate Detection in XML Databases</title>
+        </document>
+        <inst>Instituto Superior Técnico da Universidade Técnica de Lisboa (IST/UTL)</inst>
+        <date ansi="2013-07-01">Jul. 2013</date>
+    </theexam>
+    
+    <theexam type="phd">
+        <student>
+            <name>Ricardo Alexandre Peixoto de Queirós</name>
+        </student>
+        <document>
+            <title>A framework for practice-based learning applied to computer programmming</title>
+        </document>
+        <inst>Faculdade de Ciências da Universidade do Porto</inst>
+        <date ansi="2012-09-14">Set. 2012</date>
+    </theexam>
+</theexams>
