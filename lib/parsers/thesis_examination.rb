@@ -4,24 +4,28 @@ module Parser
   class ThesisExamination
     def initialize
       @document = Nokogiri::XML File.open(Rails.root.join('lib', 'parsers', 'data-sets', 'the-exams.xml').to_s)
+      @root = @document.root.xpath('theexam')
+      @examinations = []
     end
 
     def xml
       @document.to_xml
     end
 
-    def get_examinations
-      doc = @document.root.xpath('theexam')
-      theses = []
-      doc.each do |node|
-        thesis = get_thesis(node)
-        thesis_examination = get_thesis_examination(thesis,node)
-        theses << thesis_examination
-      end
-      theses
+    def examinations
+      parse_examinations if @examinations.empty?
+      @examinations
     end
 
     @private
+
+    def parse_examinations
+      @root.each do |node|
+        thesis = get_thesis(node)
+        examination = get_examination(thesis,node)
+        @examinations << examination
+      end
+    end
 
     def get_thesis(node)
       thesis = {}
@@ -42,13 +46,13 @@ module Parser
       AcademicDegree.where(name: degree).first
     end
 
-    def get_thesis_examination(thesis,node)
-      thesis_examination = {}
-      thesis_examination["thesis_id"]=Thesis.where(thesis).first_or_create!.id
+    def get_examination(thesis,node)
+      examination = {}
+      examination["thesis_id"] = Thesis.where(thesis).first_or_create!.id
       date = node.at_xpath("date/@ansi | date").text
-      thesis_examination["date"]=Date.parse(date)
-      thesis_examination["teacher_id"]=1
-      thesis_examination
+      examination["date"] = Date.parse(date)
+      examination["teacher_id"] = 1
+      examination
     end
   end
 end
