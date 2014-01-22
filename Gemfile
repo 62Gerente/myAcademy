@@ -11,6 +11,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'paperclip'
 gem 'nokogiri'
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

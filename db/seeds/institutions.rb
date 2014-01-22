@@ -1,4 +1,4 @@
-puts 'seeding portuguese universities...'  
+puts 'seeding portuguese universities...'
 
 pt_universities = [
   { name: 'Universidade do Porto' },
