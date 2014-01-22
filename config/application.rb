@@ -17,11 +17,10 @@ module MyAcademy
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
 
-    config.i18n.default_locale = :en
-    config.i18n.locale = :pt
-    config.i18n.available_locales = [:en, :pt]
-    #I18n.enforce_available_locales = false
+    config.i18n.default_locale = :pt
+    config.i18n.locale = :en
+    I18n.enforce_available_locales = false
   end
 end

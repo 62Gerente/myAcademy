@@ -11,7 +11,7 @@ module Parser
     end
 
     def get_examinations
-      doc = all.root.xpath('theexam')
+      doc = @document.root.xpath('theexam')
       theses = []
       doc.each do |node|
         thesis = get_thesis(node)
@@ -19,10 +19,6 @@ module Parser
         theses << thesis_examination
       end
       theses
-    end
-
-    def all
-      @document
     end
 
     @private
@@ -36,7 +32,6 @@ module Parser
       academic_degree = node.at_xpath('@type').text
       thesis["academic_degree_id"]= get_academic_degree(academic_degree).id
       thesis
-
     end
 
     def get_institution(name)
@@ -56,6 +51,4 @@ module Parser
       thesis_examination
     end
   end
-
-
 end
