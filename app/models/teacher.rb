@@ -12,7 +12,6 @@ class Teacher < ActiveRecord::Base
   has_many :thesis_supervisions
   has_many :thesis_examinations
   has_many :research_projects
-  has_many :cosupervisors
   has_many :thesis_supervisions, through: :cosupervisors
   has_many :authors
   has_many :publications_authored, through: :authors, source: :publication
