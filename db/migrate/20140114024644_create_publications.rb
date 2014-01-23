@@ -13,6 +13,10 @@ class CreatePublications < ActiveRecord::Migration
       t.string :booktitle
       t.string :address
       t.string :uri
+      t.string :journal
+      t.string :number
+      t.string :howpublished
+      t.string :school
       t.references :publication_type, index: true
       t.references :teacher, index: true
       t.references :research_project, index: true
