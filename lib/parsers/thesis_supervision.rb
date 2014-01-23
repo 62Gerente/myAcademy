@@ -4,7 +4,7 @@ module Parser
   class ThesisSupervision
     def initialize
       @document = Nokogiri::XML File.open(Rails.root.join('lib', 'parsers', 'data-sets', 'thesup.xml').to_s)
-      @root = @document.root.xpath('the')
+      @thesups = @document.root.xpath('the')
       @cosupervisors = []
       @supervisions = []
     end
@@ -26,26 +26,27 @@ module Parser
     @private
 
     def parse_supervisions
-      @root.each do |node|
+      @thesups.each do |node|
         supervision = get_supervision(node)
         supervisions = get_supervisions(supervision,node)
         @supervisions << supervisions
-        parse_cosupervisor(node)
+        parse_cosupervisor(node, supervision)
       end
     end
 
-    def parse_cosupervisor(node)
+    def parse_cosupervisor(node, supervision)
       if node.at_xpath('cosup')
-        cosupervisor = get_cosupervisor(node)
+        cosupervisor = get_cosupervisor(node, supervision)
         @cosupervisors << cosupervisor
       end
     end
 
-    def get_cosupervisor(node)
-      supervisor = {}
-      supervisor["name"] = node.at_xpath('cosup/name').text
-      supervisor["institution"] = node.at_xpath('cosup/inst').text
-      supervisor
+    def get_cosupervisor(node, supervision)
+      cosupervisor = {}
+      cosupervisor["name"] = node.at_xpath('cosup/name').text
+      cosupervisor["institution"] = node.at_xpath('cosup/inst').text
+      cosupervisor["thesis_supervision_id"] = get_supervision_bd(supervision).id
+      cosupervisor
     end
 
     def get_supervision(node)
@@ -61,6 +62,10 @@ module Parser
       thesis
     end
 
+    def get_supervision_bd(supervision)
+      ThesisSupervision.where(supervision).first_or_create!
+    end
+
     def get_institution(name)
       Institution.where(name: name).first_or_create!
     end
@@ -69,9 +74,13 @@ module Parser
       AcademicDegree.where(name: degree).first
     end
 
+    def get_thesis(thesis)
+      Thesis.where(thesis).first_or_create!
+    end
+
     def get_supervisions(thesis,node)
       supervisions = {}
-      supervisions["thesis_id"] = Thesis.where(thesis).first_or_create!.id
+      supervisions["thesis_id"] = get_thesis(thesis).id
       begin_date = node.at_xpath("begin_date")
       supervisions["begin_date"] = Date.parse(begin_date.text) if begin_date 
       end_date = node.at_xpath("begin_date")
