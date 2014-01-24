@@ -1,9 +1,9 @@
 require 'nokogiri'
 
-module Parser
-  class ThesisSupervision
+module Seeder
+  class ThesisSupervisions
     def initialize
-      @document = Nokogiri::XML File.open(Rails.root.join('lib', 'parsers', 'data-sets', 'thesup.xml').to_s)
+      @document = Nokogiri::XML File.open(Rails.root.join('lib', 'seeder', 'data-sets', 'thesup.xml').to_s)
       @thesups = @document.root.xpath('the')
       @cosupervisors = []
       @supervisions = []
@@ -19,8 +19,26 @@ module Parser
     end
 
     def cosupervisors
-      parse_supervisions if @cosupervisors.empty?
+      parse_supervisions if @supervisions.empty?
       @cosupervisors
+    end
+
+    def seed
+      parse_supervisions if @supervisions.empty?
+      seed_supervisions
+      seed_cosupervisors
+    end
+
+    def seed_supervisions
+      @supervisions.each do |supervision|
+        create_and_get_supervision(supervision)
+      end
+    end
+
+    def seed_cosupervisors
+      @cosupervisors.each do |cosupervisor|
+        Cosupervisor.where(cosupervisor).first_or_create!
+      end
     end
 
     @private
@@ -30,7 +48,7 @@ module Parser
         supervision = get_supervision(node)
         supervisions = get_supervisions(supervision,node)
         @supervisions << supervisions
-        parse_cosupervisor(node, supervision)
+        parse_cosupervisor(node, supervisions)
       end
     end
 
@@ -45,7 +63,7 @@ module Parser
       cosupervisor = {}
       cosupervisor["name"] = node.at_xpath('cosup/name').text
       cosupervisor["institution"] = node.at_xpath('cosup/inst').text
-      cosupervisor["thesis_supervision_id"] = get_supervision_bd(supervision).id
+      cosupervisor["thesis_supervision_id"] = create_and_get_supervision(supervision).id
       cosupervisor
     end
 
@@ -62,8 +80,13 @@ module Parser
       thesis
     end
 
-    def get_supervision_bd(supervision)
-      ThesisSupervision.where(supervision).first_or_create!
+    def create_and_get_supervision(supervision)
+      begin_date = supervision.delete("begin_date")
+      end_date = supervision.delete("end_date")
+      tsupervision = ThesisSupervision.where(supervision).first_or_create!
+      ThesisSupervision.update(tsupervision.id, begin_date: begin_date) if begin_date
+      ThesisSupervision.update(tsupervision.id, end_date: end_date) if end_date
+      tsupervision
     end
 
     def get_institution(name)

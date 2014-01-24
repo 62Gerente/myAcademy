@@ -1,9 +1,9 @@
 require 'nokogiri'
 
-module Parser
-  class ThesisExamination
+module Seeder
+  class ThesisExaminations
     def initialize
-      @document = Nokogiri::XML File.open(Rails.root.join('lib', 'parsers', 'data-sets', 'the-exams.xml').to_s)
+      @document = Nokogiri::XML File.open(Rails.root.join('lib', 'seeder', 'data-sets', 'the-exams.xml').to_s)
       @theexams = @document.root.xpath('theexam')
       @examinations = []
     end
@@ -15,6 +15,15 @@ module Parser
     def examinations
       parse_examinations if @examinations.empty?
       @examinations
+    end
+
+    def seed
+      parse_examinations if @examinations.empty?
+      @examinations.each do |examination|
+        date = examination.delete("date")
+        texamination = ThesisExamination.where(examination).first_or_create!
+        ThesisExamination.update(texamination.id, date: date)
+      end
     end
 
     @private
@@ -46,13 +55,13 @@ module Parser
       AcademicDegree.where(name: degree).first
     end
 
-    def get_thesis(thesis)
+    def get_thesis_db(thesis)
       Thesis.where(thesis).first_or_create!
     end
 
     def get_examination(thesis,node)
       examination = {}
-      examination["thesis_id"] = get_thesis(thesis).id
+      examination["thesis_id"] = get_thesis_db(thesis).id
       date = node.at_xpath("date/@ansi | date").text
       examination["date"] = Date.parse(date)
       examination["teacher_id"] = 1

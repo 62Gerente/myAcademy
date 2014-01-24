@@ -1,9 +1,9 @@
 require 'nokogiri'
 
-module Parser
+module Seeder
   class Publications
     def initialize
-      @document = Nokogiri::XML File.open(Rails.root.join('lib', 'parsers', 'data-sets', 'jcrpubs.xml').to_s)
+      @document = Nokogiri::XML File.open(Rails.root.join('lib', 'seeder', 'data-sets', 'jcrpubs.xml').to_s)
       @inbooks = @document.root.xpath('inbook')
       @inproceedings = @document.root.xpath('inproceedings')
       @articles = @document.root.xpath('article')
@@ -21,23 +21,38 @@ module Parser
       @document.to_xml
     end
 
-    def publications
-      parse_publications if @publications.empty?
-      @publications
+    [:publications, :authors, :editors].each do |method_name|
+      define_method method_name do
+        parse_publications if @publications.empty?
+        instance_variable_get(method_name)
+      end
     end
 
-    def authors
+    def seed
       parse_publications if @publications.empty?
-      @authors
+      seed_publications
+      seed_authors
+      seed_editors
     end
 
-    def editors
-      parse_publications if @publications.empty?
-      @editors
+    def seed_publications
+      @publications.each do |publication|
+        create_and_get_publication(publication)
+      end
     end
 
-    def t
-      @document
+
+
+    def seed_editors
+      @editors.each do |editor|
+        Editor.where(editor).first_or_create!
+      end
+    end
+
+    def seed_authors
+      @authors.each do |author|
+        Author.where(author).first_or_create!
+      end
     end
 
     @private
@@ -56,7 +71,7 @@ module Parser
     def parse_inbooks
       @inbooks.each do |node|
         inbook = get_inbook node
-        @inbooks << inbook
+        @publications << inbook
         parse_authors(node, inbook)
         parse_editors(node, inbook)
       end
@@ -65,7 +80,7 @@ module Parser
     def parse_inproceedings
       @inproceedings.each do |node|
         inproceeding = get_inproceeding node
-        @inproceedings << inproceeding
+        @publications << inproceeding
         parse_authors(node, inproceeding)
         parse_editors(node, inproceeding)
       end
@@ -74,7 +89,7 @@ module Parser
     def parse_articles
       @articles.each do |node|
         article = get_article node
-        @articles << article
+        @publications << article
         parse_authors(node, article)
         parse_editors(node, article)
       end
@@ -83,7 +98,7 @@ module Parser
     def parse_miscs
       @miscs.each do |node|
         misc = get_misc node
-        @miscs << misc
+        @publications << misc
         parse_authors(node, misc)
         parse_editors(node, misc)
       end
@@ -92,7 +107,7 @@ module Parser
     def parse_proceedings
       @proceedings.each do |node|
         proceeding = get_proceeding node
-        @proceedings << proceeding
+        @publications << proceeding
         parse_authors(node, proceeding)
         parse_editors(node, proceeding)
       end
@@ -101,7 +116,7 @@ module Parser
     def parse_books
       @books.each do |node|
         book = get_book node
-        @books << book
+        @publications << book
         parse_authors(node, book)
         parse_editors(node, book)
       end
@@ -110,7 +125,7 @@ module Parser
     def parse_phdtheses
       @phdtheses.each do |node|
         phdthesis = get_phdthesis node
-        @phdtheses << phdthesis
+        @publications << phdthesis
         parse_authors(node, phdthesis)
         parse_editors(node, phdthesis)
       end
@@ -119,7 +134,7 @@ module Parser
     def parse_mastertheses
       @mastertheses.each do |node|
         masterthesis = get_masterthesis node
-        @mastertheses << masterthesis
+        @publications << masterthesis
         parse_authors(node, masterthesis)
         parse_editors(node, masterthesis)
       end
@@ -145,7 +160,7 @@ module Parser
       end
     end
 
-    def parse_authors_references
+    def parse_authors_references(node, publication)
       authors = node.xpath('author-ref')
       authors.each do |node|
         author = get_author_ref(node, publication)
@@ -153,7 +168,7 @@ module Parser
       end
     end
 
-    def parse_editors_references
+    def parse_editors_references(node, publication)
       editors = node.xpath('editor-ref')
       editors.each do |node|
         editor = get_editor_ref(node, publication)
@@ -164,25 +179,29 @@ module Parser
     def get_element(node, publication)
       element = {}
       element["name"] = node.text
-      element["publication_id"] = get_publication_bd(publication).id
+      element["publication_id"] = create_and_get_publication(publication).id
       element["teacher_id"] = 1
       element
     end
 
     def get_author_ref(node, publication)
       id = node.attributes['authorid'].text
-      author_node = @document.at_xpath("//author[@id='#{id}']")
+      author_node = @document.at_xpath("//editor[@id='#{id}']")
+      author_node = @document.at_xpath("//author[@id='#{id}']") if !author_node
       get_element(author_node, publication)
     end
 
     def get_editor_ref(node, publication)
-      id = node.attributes['editorid'].text
+      id = node.attributes['authorid'].text
       editor_node = @document.at_xpath("//editor[@id='#{id}']")
+      editor_node = @document.at_xpath("//author[@id='#{id}']") if !editor_node
       get_element(editor_node, publication)
     end
 
-    def get_publication_bd(publication)
-      Publication.where(publication).first_or_create!
+    def create_and_get_publication(publication)
+      date = publication.delete("date")
+      publication = Publication.where(publication).first_or_create!
+      Publication.update(publication.id, date: date)
     end
 
     def get_publication(node)
@@ -234,12 +253,12 @@ module Parser
       publication['school'] = school.text if school
 
       year = node.at_xpath('year')
-      year ? year.text : "0000"
-      month = node.at_xpath('month').text
-      month ? month.text : "01"
+      year = year ? year.text : "0000"
+      month = node.at_xpath('month')
+      month = month ? month.text : "01"
       day = node.at_xpath('day')
-      day ? day.text : "01"
-      inbook["date"] = Date.parse("#{day}/#{month}/#{year}")
+      day = day ? day.text : "01"
+      publication["date"] = DateTime.parse("#{year}/#{month}/#{day}")
 
       publication['teacher_id'] = 1
       publication
@@ -292,6 +311,5 @@ module Parser
       masterthesis["publication_type_id"] = 8
       masterthesis  
     end
-
   end
 end

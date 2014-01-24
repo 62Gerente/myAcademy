@@ -24,7 +24,7 @@
 		<booktitle>IS&amp;T Archiving 2013</booktitle>
 		<address>Washington DC, Estados Unidos</address>
 		<year>2013</year>
-		<month>04.02-05</month>
+		<month>04</month>
 		<doi>http://hdl.handle.net/1822/23978</doi>
 	</inproceedings>
 	
@@ -34,7 +34,7 @@
 		<booktitle></booktitle>
 		<address>Palácio Vila Flor, Guimarães</address>
 		<year>2012</year>
-		<month>03.23</month>
+		<month>03</month>
 		<doi>http://hdl.handle.net/1822/21660</doi>
 	</inproceedings>
 	
@@ -46,7 +46,7 @@
 		<booktitle>11º Congresso Nacional de Bibliotecários, Arquivistas e Documentalistas</booktitle>
 		<address>Fundação Calouste Gulbenkian, Lisboa</address>
 		<year>2012</year>
-		<month>10.20</month>
+		<month>10</month>
 		<doi>http://hdl.handle.net/1822/21611</doi>
 	</inproceedings>
 	
@@ -61,7 +61,7 @@
 		<booktitle>14th International Conference on Asia-Pacific Digital Libraries, ICADL 2012</booktitle>
 		<address>Taipei, Taiwan</address>
 		<year>2012</year>
-		<month>11.12</month>
+		<month>11</month>
 		<doi>http://hdl.handle.net/1822/21447</doi>
 	</inproceedings>
 	
@@ -76,7 +76,7 @@
 		<booktitle>iPRES 2012 - 9th International Conference on Preservation of Digital Objects</booktitle>
 		<address>Toronto, Canada</address>
 		<year>2012</year>
-		<month>11.01</month>
+		<month>11</month>
 		<doi>http://hdl.handle.net/1822/20666</doi>
 	</inproceedings>
 	
@@ -86,7 +86,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>iPRES 2011 - 8th International Conference on Preservation of Digital Objects</booktitle>
 		<address>Singapore</address>
-		<month>11.04</month>
+		<month>11</month>
 		<year>2011</year>
 		<doi>http://hdl.handle.net/1822/15859</doi>
 	</inproceedings>
@@ -97,7 +97,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>VLDL2011 - Fourth Workshop on Very Large Digital Libraries (In conjunction with the International Conference on Theory and Practice of Digital Libraries (TPDL2011))</booktitle>
 		<address>Berlin, Germany</address>
-		<month>09.29</month>
+		<month>09</month>
 		<year>2011</year>
 		<doi>http://hdl.handle.net/1822/16019</doi>
 	</inproceedings>
@@ -108,7 +108,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>EPIA2011 - 15th Portuguese Conference on Artificial Intelligence</booktitle>
 		<address>Lisboa, Portugal</address>
-		<month>10.10</month>
+		<month>10</month>
 		<year>2011</year>
 		<doi>http://hdl.handle.net/1822/16113</doi>
 	</inproceedings>
@@ -119,7 +119,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>MSKE2011- International Conference on Managing Services in the Knowledge Economy</booktitle>
 		<address>Universidade Lusíada, Vila Nova de Famalicão, Portugal</address>
-		<month>07.13</month>
+		<month>07</month>
 		<year>2011</year>
 		<doi>http://hdl.handle.net/1822/13704</doi>
 	</inproceedings>
@@ -130,7 +130,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>9th Conference on XML: Aplicações e Tecnologias Associadas, XATA 2011</booktitle>
 		<address>ESEIG -IPP, Vila do Conde - Portugal</address>
-		<month>06.01</month>
+		<month>06</month>
 		<year>2011</year>
 		<doi>http://hdl.handle.net/1822/13703</doi>
 	</inproceedings>
@@ -141,7 +141,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>Research and Advanced Technology for Digital Libraries, 14th European Conference, ECDL2010</booktitle>
 		<address>Glasgow, UK</address>
-		<month>09.06</month>
+		<month>09</month>
 		<year>2010</year>
 		<isbn>978-3-642-15463-8</isbn>
 		<doi>http://hdl.handle.net/1822/13702</doi>		
@@ -154,7 +154,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>10º Congresso Nacional de Bibliotecários, Arquivistas e Documentalistas</booktitle>
 		<address>Guimarães, Portugal</address>
-		<month>04.08</month>
+		<month>04</month>
 		<year>2010</year>
 		<isbn>978-972-9067-39-6</isbn>
 		<doi>http://hdl.handle.net/1822/11081</doi>
@@ -167,7 +167,7 @@
 		<author-ref authorid="jcr"/>
 		<booktitle>10º CONGRESSO NACIONAL DE BIBLIOTECÁRIOS, ARQUIVISTAS E DOCUMENTALISTAS</booktitle>
 		<address>Guimarães, Portugal</address>
-		<month>04.08</month>
+		<month>04</month>
 		<year>2010</year>
 		<doi>http://hdl.handle.net/1822/10532</doi>
 	</inproceedings>
@@ -179,7 +179,7 @@
 		<booktitle>INFORUM : SIMPÓSIO DE INFORMÁTICA, Lisboa, 2009</booktitle>
 		<year>2009</year>
 		<address>Lisboa - Portugal</address>
-		<month>11.09</month>
+		<month>11</month>
 		<isbn>978-972-9348-18-1</isbn>
 		<doi>http://hdl.handle.net/1822/9740</doi>
 	</inproceedings>
@@ -206,9 +206,9 @@
 		<author-ref authorid="jg"/>
 		<author-ref authorid="rct"/>
 		<title>A Framework to specify, extract and manage Topic Maps driven by ontologies</title>
-		<booktitle>SIGDOC'08 -- 26th ACM International Conference on Design of Communication</booktitle>
+		<booktitle>SIGDOC08 -- 26th ACM International Conference on Design of Communication</booktitle>
 		<year>2008</year>
-		<month>09-23</month>
+		<month>09</month>
 		<address>Lisboa, Portugal</address>
 		<doi>http://hdl.handle.net/1822/8236</doi>
 	</inproceedings>
@@ -250,7 +250,7 @@
 		<editor-ref authorid="jcl"/>
 		<editor id="sa">Salvador Abreu</editor>
 		<address>Departamento de Informática da Universidade de Évora, Évora - Portugal</address>
-		<month>02.14</month>
+		<month>02</month>
 		<doi>http://hdl.handle.net/1822/7708</doi>
 		<isbn>978-972-99166-5-6</isbn>
 	</proceedings>
@@ -266,7 +266,7 @@
 		<booktitle>XATA 2008 -  XML: Aplicações e Tecnologias Associadas (6ª Conferência Nacional)</booktitle>
 		<year>2008</year>
 		<address>Évora - Portugal</address>
-		<month>02.14</month>
+		<month>02</month>
 	</inproceedings>
 	
 	<inproceedings id="FRF-XATA">
@@ -277,7 +277,7 @@
 		<booktitle>XATA 2008 -  XML: Aplicações e Tecnologias Associadas (6ª Conferência Nacional)</booktitle>
 		<year>2008</year>
 		<address>Évora - Portugal</address>
-		<month>02.14</month>
+		<month>02</month>
 		<doi>http://hdl.handle.net/1822/7821</doi>
 	</inproceedings>
 	
@@ -388,7 +388,7 @@
 		<booktitle>XATA 2007 -  XML: Aplicações e Tecnologias Associadas (5ª Conferência Nacional)</booktitle>
 		<year>2007</year>
 		<address>Lisboa - Portugal</address>
-		<month>02.14</month>
+		<month>02</month>
 		<doi>http://hdl.handle.net/1822/6482</doi>
 </inproceedings>
 	
@@ -401,7 +401,7 @@
 		<booktitle>Topic Maps 2007 -  The First International Topic Maps User Conference</booktitle>
 		<year>2007</year>
 		<address>Oslo - Norway</address>
-		<month>03.21</month>
+		<month>03</month>
 	<doi>http://hdl.handle.net/1822/6474</doi>
 </inproceedings>
 	
@@ -444,7 +444,7 @@
 		<author-ref authorid="lf"/>
 		<booktitle>9º CONGRESSO NACIONAL DE BIBLIOTECÁRIOS, ARQUIVISTAS E DOCUMENTALISTAS</booktitle>
 		<address>Ponta Delgada, Açores, Portugal</address>
-		<month>03.29</month>
+		<month>03</month>
 		<year>2007</year>
 		<doi>http://hdl.handle.net/1822/6330</doi>
 	</inproceedings>
@@ -456,7 +456,7 @@
 		<author-ref authorid="mjpl"/>
 		<booktitle>9º CONGRESSO NACIONAL DE BIBLIOTECÁRIOS, ARQUIVISTAS E DOCUMENTALISTAS</booktitle>
 		<address>Ponta Delgada, Açores, Portugal</address>
-		<month>03.29</month>
+		<month>03</month>
 		<year>2007</year>
 		<doi>http://hdl.handle.net/1822/6432</doi>
 		<deliverables>
@@ -473,7 +473,7 @@
 		<author id="lcor">Luis Corujo</author>
 		<booktitle>XATA2007 : XML : aplicações e tecnologias associadas : actas da Conferência Nacional</booktitle>
 		<address>Lisboa, Portugal</address>
-		<month>02.15</month>
+		<month>02</month>
 		<year>2007</year>
 		<doi>http://hdl.handle.net/1822/6224</doi>
 	</inproceedings>
@@ -484,7 +484,7 @@
 		<editor-ref authorid="jcl"/>
 		<editor id="lc">Luis Carriço</editor>
 		<address>Faculdade de Ciências - Universidade de Lisboa, Lisboa - Portugal</address>
-		<month>02.14-15</month>
+		<month>02</month>
 		<doi>http://hdl.handle.net/1822/6234</doi>
 		<isbn>978-972-99166-4-9</isbn>
 	</proceedings>
@@ -506,7 +506,7 @@
 		<editor-ref authorid="jcl"/>
 		<editor-ref authorid="albie"/>
 		<address>Instituto Politécnico de Portalegre, Portalegre - Portugal</address>
-		<month>02.09-10</month>
+		<month>02</month>
 		<doi>http://hdl.handle.net/1822/4744</doi>
 		<isbn>972-99166-2-4</isbn>
 	</proceedings>
@@ -519,7 +519,7 @@
 		<author id="as">António Sousa</author>
 		<booktitle>2ª Conferência Internacional de Arquivos Empresariais</booktitle>
 		<address>Seixal, Portugal</address>
-		<month>11.27</month>
+		<month>11</month>
 		<year>2006</year>
 		<doi>http://hdl.handle.net/1822/6038</doi>
 	</inproceedings>
@@ -532,7 +532,7 @@
 		<number>48</number>
 		<issn>1361-3200</issn>
 		<doi>http://hdl.handle.net/1822/5571</doi>
-		<month>July</month>
+		<month>07</month>
 		<year>2006</year>
 	</article>
 	<book id="RH2002">
@@ -576,7 +576,7 @@
 		<booktitle>Electronic Publishing 2003: From information to knowledge</booktitle>
 		<year>2003</year>
 		<address>Universidade do Minho - Guimarães - Portugal</address>
-		<month>06.25</month>
+		<month>06</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/epublishing-adb.pdf"/>
 		</deliverables>
@@ -589,7 +589,7 @@
 		<booktitle>Electronic Publishing 2003: From information to knowledge</booktitle>
 		<year>2003</year>
 		<address>Universidade do Minho - Guimarães - Portugal</address>
-		<month>06.25</month>
+		<month>06</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/epublishing-tm.pdf"/>
 		</deliverables>
@@ -620,7 +620,7 @@
 	<inproceedings id="Ram01">
 		<author-ref authorid="jcr"/>
 		<title>Constraining Content: specification and processing</title>
-		<booktitle>XML Europe'01</booktitle>
+		<booktitle>XML Europe01</booktitle>
 		<year>2001</year>
 		<address>Berlin - Germany</address>
 		<month>05</month>
@@ -640,7 +640,7 @@
 		<author-ref authorid="jcr"/>
 		<author-ref authorid="jj"/>
 		<title>XML::DT - a Perl Down Translation Module</title>
-		<booktitle>XML Europe'99</booktitle>
+		<booktitle>XML Europe99</booktitle>
 		<year>1999</year>
 		<address>Granada - Espanha</address>
 		<deliverables>
@@ -653,7 +653,7 @@
 		<author-ref authorid="prh"/>
 		<author id="arl">A. R. Lopes</author>
 		<title>Generating SGML specific editors: from DTDs to Attribute Grammars</title>
-		<booktitle>Markup Technologies'98</booktitle>
+		<booktitle>Markup Technologies98</booktitle>
 		<year>1998</year>
 		<address>Chicago - USA</address>
 		<month>12</month>
@@ -686,7 +686,7 @@
 		<booktitle>Museums and the Web: An International Conference</booktitle>
 		<year>1998</year>
 		<address>Toronto, Canada</address>
-		<month>04.22</month>
+		<month>04</month>
 		<deliverables>
 			<pdf url="RRAHFH98.pdf"/>
 		</deliverables>
@@ -696,7 +696,7 @@
 		<author-ref authorid="jcr"/>
 		<author-ref authorid="prh"/>
 		<title>INES, an Environment for Structured Editions of SGML Documents</title>
-		<booktitle>II Brasilian Symposium on Programming Languages (SBLP'97)</booktitle>
+		<booktitle>II Brasilian Symposium on Programming Languages (SBLP97)</booktitle>
 		<year>1997</year>
 		<address>Campinas-SP -- Brasil</address>
 		<month>09</month>
@@ -725,7 +725,7 @@
 		<author-ref authorid="jcr"/>
 		<author-ref authorid="prh"/>
 		<title>XCSL: XML Constraint Specification Language</title>
-		<booktitle>CLEI'02</booktitle>
+		<booktitle>CLEI02</booktitle>
 		<year>2002</year>
 		<address>Montevideo, Uruguai,</address>
 		<month>11</month>
@@ -742,7 +742,7 @@
 		<booktitle>7th International Conference on CSCW in  Design</booktitle>
 		<year>2002</year>
 		<address>Rio de Janeiro - Brasil</address>
-		<month>09.25</month>
+		<month>09</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2002/JLRHb02.pdf"/>
 		</deliverables>
@@ -755,7 +755,7 @@
 		<booktitle>Logic, Language and Information: Proceedings of the First Workshop on Logic and Language</booktitle>
 		<year>2000</year>
 		<address>Instituto de Lógica, Lenguaje e Información, Universidad de Sevilla, Espanha</address>
-		<month>11.29</month>
+		<month>11</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2000/JHR00.pdf"/>
 		</deliverables>
@@ -766,10 +766,10 @@
 		<author-ref authorid="jcr"/>
 		<author-ref authorid="prh"/>
 		<title>Constraint Specification Languages: comparing XCSL, Schematron and XML-Schema</title>
-		<booktitle>XML Europe'02</booktitle>
+		<booktitle>XML Europe02</booktitle>
 		<year>2002</year>
 		<address>Barcelona - Espanha</address>
-		<month>05.20</month>
+		<month>05</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2002/JLRH02-XMLEurope.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2002/JLRH02-XMLEurope-slides.pdf"/>
@@ -812,10 +812,10 @@
 		<author-ref authorid="jj"/>
 		<author-ref authorid="prh"/>
 		<title>SGML Documents: Where Does Quality Go?</title>
-		<booktitle>SGML/XML'97</booktitle>
+		<booktitle>SGML/XML97</booktitle>
 		<year>1997</year>
 		<address>Washinton - USA</address>
-		<month>12.08</month>
+		<month>12</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/1997/RRAH97-SGML.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/1997/RRAH97-SGML-slides.pdf"/>
@@ -829,7 +829,7 @@
 		<journal>III International Conference on Web Engineering (ICWE)</journal>
 		<year>2003</year>
 		<volume>Oviedo - Espanha</volume>
-		<month>07.15</month>
+		<month>07</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/icwe.pdf"/>
 		</deliverables>
@@ -852,7 +852,7 @@
 		<booktitle>XATA 2003 - XML, Aplicações e Tecnologias Associadas</booktitle>
 		<year>2003</year>
 		<address>Braga - Portugal</address>
-		<month>02.13</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/LRH03-XATA.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/LRH03-XATA-slides.pdf"/>
@@ -864,7 +864,7 @@
 		<booktitle>XATA 2003 - XML, Aplicações e Tecnologias Associadas</booktitle>
 		<year>2003</year>
 		<address>Braga - Portugal</address>
-		<month>02.13</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/xata-curricula.pdf"/>
 		</deliverables>
@@ -884,10 +884,10 @@
 		<author-ref authorid="jcr"/>
 		<author-ref authorid="prh"/>
 		<title>TM-Builder: Um Construtor de Ontologias baseado em Topic Maps</title>
-		<booktitle>CLEI'03</booktitle>
+		<booktitle>CLEI03</booktitle>
 		<year>2003</year>
 		<address>La Paz, Bolívia</address>
-		<month>09.29</month>
+		<month>09</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/clei.pdf"/>
 		</deliverables>
@@ -900,7 +900,7 @@
 		<booktitle>COOPMedia 2003</booktitle>
 		<year>2003</year>
 		<address>ISEP, Porto, Portugal</address>
-		<month>10.08</month>
+		<month>10</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/coop-media.pdf"/>
 		</deliverables>
@@ -913,7 +913,7 @@
 		<booktitle>XATA2003 - XML: Aplicações e Tecnologias Associadas</booktitle>
 		<year>2003</year>
 		<address>Vila Verde - Portugal</address>
-		<month>02.13-14</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/xata-xexam.pdf"/>
 		</deliverables>
@@ -927,7 +927,7 @@
 		<booktitle>XATA2003 - XML: Aplicações e Tecnologias Associadas</booktitle>
 		<year>2003</year>
 		<address>Vila Verde - Portugal</address>
-		<month>02.13-14</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/JRH03-XATA.pdf"/>
 		</deliverables>
@@ -940,14 +940,14 @@
 		<editor-ref authorid="grl"/>
 		<editor id="gva">Gustavo V. Arnold</editor>
 		<address>Vila Verde - Portugal</address>
-		<month>02.13-14</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="livros/xata2003/Xata2003.pdf"/>
 		</deliverables>
 	</proceedings>
 	<inbook id="Ram99b">
 		<author-ref authorid="jcr"/>
-		<title>EINE'99 - II Escola de Informática da Sociedade Brasileira de Computação</title>
+		<title>EINE99 - II Escola de Informática da Sociedade Brasileira de Computação</title>
 		<chapter>Extensible Markup Language (XML)- A promessa e a esperança?...</chapter>
 		<pages>49-76</pages>
 		<publisher>Sociedade Brasileira de Computação (SBC)</publisher>
@@ -1014,7 +1014,7 @@
 		<booktitle>Second International Conference on Multimedia and ICTs in Education</booktitle>
 		<year>2003</year>
 		<address>Badajoz - Espanha</address>
-		<month>12.04</month>
+		<month>12</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2003/m-ICTE.htm"/>
 		</deliverables>
@@ -1026,7 +1026,7 @@
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2004)</booktitle>
 		<year>2004</year>
 		<address>Faculdade de Engenharia da Universidade do Porto - Porto</address>
-		<month>02.12</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/LR04.pdf"/>
 		</deliverables>
@@ -1039,7 +1039,7 @@
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2004)</booktitle>
 		<year>2004</year>
 		<address>Faculdade de Engenharia da Universidade do Porto - Porto</address>
-		<month>02.12</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/FR04.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/FR04-XATA-slides.pdf"/>
@@ -1054,7 +1054,7 @@
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2004)</booktitle>
 		<year>2004</year>
 		<address>Faculdade de Engenharia da Universidade do Porto - Porto</address>
-		<month>02.12</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/LRH04-XATA.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/LRH04-Xata-slides.pdf"/>
@@ -1070,7 +1070,7 @@
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2004)</booktitle>
 		<year>2004</year>
 		<address>Faculdade de Engenharia da Universidade do Porto - Porto</address>
-		<month>02.12</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/RTFR04.pdf"/>
 		</deliverables>
@@ -1084,7 +1084,7 @@
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2004)</booktitle>
 		<year>2004</year>
 		<address>Faculdade de Engenharia da Universidade do Porto - Porto</address>
-		<month>02.12</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/MRH04.pdf"/>
 		</deliverables>
@@ -1096,7 +1096,7 @@
 		<editor-ref authorid="jcr"/>
 		<editor id="albie">Alberto Simões</editor>
 		<address>Faculdade de Engenharia do Porto - Portugal</address>
-		<month>02.12-13</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="livros/xata2004/Xata2004.pdf"/>
 		</deliverables>
@@ -1109,7 +1109,7 @@
 		<booktitle>Electronic Publishing 2004 - Building Digital Bridges: linking cultures, commerce and science</booktitle>
 		<address>Department of Information and Documentation Science at the University of Brasilia, in Brazil</address>
 		<year>2004</year>
-		<month>06.23-26</month>
+		<month>06</month>
 		<deliverables>
 			<doc url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/FR04b.doc"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/FR04-elpub-slides.pdf" description="Slides"/>
@@ -1124,7 +1124,7 @@
 		<booktitle>Electronic Publishing 2004 - Building Digital Bridges: linking cultures, commerce and science</booktitle>
 		<address>Department of Information and Documentation Science at the University of Brasilia, in Brazil</address>
 		<year>2004</year>
-		<month>06.23-26</month>
+		<month>06</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/RLH04.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/LRH04-ElPub-slides.pdf"/>
@@ -1140,7 +1140,7 @@
 		<booktitle>International Conference on Knowledge Engineering and Decision Support</booktitle>
 		<address>Porto - Portugal</address>
 		<year>2004</year>
-		<month>07.21-23</month>
+		<month>07</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/LSRH04.pdf"/>
 		</deliverables>
@@ -1169,7 +1169,7 @@
 Informática (CLEI2004)</booktitle>
 		<year>2004</year>
 		<address>Sociedad Peruana de Computación, Peru</address>
-		<month>Sept.</month>
+		<month>09</month>
 		<editor id="clei04">Mauricio Solar and David Fernández-Baca and Ernesto Cuadros-Vargas</editor>
 		<uri>http://clei2004.spc.org.pe/es/html/pdfs/140.pdf</uri>
 		<isbn>9972-9876-2-0</isbn>
@@ -1183,10 +1183,10 @@ Informática (CLEI2004)</booktitle>
 		<author-ref authorid="prh"/>
 		<author-ref authorid="grl"/>
 		<title>ADRIAN: Sistema de Suporte à Produção de Conteúdos</title>
-		<booktitle>Conferência eLes'04 - E-Learning no Ensino Superior</booktitle>
+		<booktitle>Conferência eLes04 - E-Learning no Ensino Superior</booktitle>
 		<year>2004</year>
 		<address>Universidade de Aveiro, Portugal</address>
-		<month>Outubro</month>
+		<month>10</month>
 		<deliverables>
 			<doc url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/RHL04-eLes.doc"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/RHL04-eLes-slides.pdf"/>
@@ -1200,7 +1200,7 @@ Informática (CLEI2004)</booktitle>
 		<booktitle>5ª Conferência da APSI - Associação Portuguesa dos Sistemas de Informação</booktitle>
 		<year>2004</year>
 		<address>Instituto Superior Técnico, Lisboa, Portugal</address>
-		<month>11.03</month>
+		<month>11</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/FR04-capsi.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/FR04-capsi-slides.pdf"/>
@@ -1226,7 +1226,7 @@ Informática (CLEI2004)</booktitle>
 		<editor-ref authorid="albie"/>
 		<editor id="jcl">João Correia Lopes</editor>
 		<address>Casa da Torre, Vila Verde - Portugal</address>
-		<month>02.10-11</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="livros/xata2005/Xata2005.pdf"/>
 		</deliverables>
@@ -1238,7 +1238,7 @@ Informática (CLEI2004)</booktitle>
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2005)</booktitle>
 		<year>2005</year>
 		<address>Braga</address>
-		<month>02.10</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/Ram05-XATA.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/Ram05-XATA-slides.pdf"/>
@@ -1253,7 +1253,7 @@ Informática (CLEI2004)</booktitle>
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2005)</booktitle>
 		<year>2005</year>
 		<address>Braga</address>
-		<month>02.10</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/LRH05-XATA.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/LRH05-XATA-slides.pdf"/>
@@ -1268,7 +1268,7 @@ Informática (CLEI2004)</booktitle>
 		<booktitle>XML: Aplicações e Tecnologias Associadas (XATA 2005)</booktitle>
 		<year>2005</year>
 		<address>Braga</address>
-		<month>02.10</month>
+		<month>02</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/LRH05b-XATA.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/LRH05b-XATA-slides.pdf"/>
@@ -1296,7 +1296,7 @@ Informática (CLEI2004)</booktitle>
 		<booktitle>I  Workshop de Web Semântica (WWS2004)</booktitle>
 		<year>2004</year>
 		<address>Brasília, Brasil</address>
-		<month>10.22</month>
+		<month>10</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2004/LRH04-WWS.pdf"/>
 		</deliverables>
@@ -1309,7 +1309,7 @@ Informática (CLEI2004)</booktitle>
 		<booktitle>Extreme Markup Languages 2005, Montréal - Canada, 1-5 August 2005.</booktitle>
 		<year>2005</year>
 		<address>Montréal - Canada</address>
-		<month>08.04</month>
+		<month>08</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/RLH05-EML.pdf"/>
 			<ppt url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/RLH05-EML-slides.pdf"/>
@@ -1338,10 +1338,10 @@ Informática (CLEI2004)</booktitle>
 		<author-ref authorid="grl"/>
 		<author-ref authorid="prh"/>
 		<title>Metamorphosis - a Topic Maps based Environment to Handle Heterogeneous Information Resources</title>
-		<booktitle>TMRA'05 - International Workshop on  Topic Map Research and Applications </booktitle>
+		<booktitle>TMRA05 - International Workshop on  Topic Map Research and Applications </booktitle>
 		<year>2005</year>
 		<address>Leipzig - Germany</address>
-		<month>10.06</month>
+		<month>10</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/RLH05-TMRA.pdf"/>
 		</deliverables>
@@ -1355,7 +1355,7 @@ Conversores</title>
 		<booktitle>6ª Conferência da Associação Portuguesa de Sistemas de Informação</booktitle>
 		<year>2005</year>
 		<address>Bragança - Portugal</address>
-		<month>10.26</month>
+		<month>10</month>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/FBR05-CAPSI.pdf"/>
 		</deliverables>
@@ -1383,7 +1383,7 @@ Metamorphosis</title>
 		<booktitle>XXXI Conferência Latinoamericana de Informática</booktitle>
 		<year>2005</year>
 		<address>Santiago de Cali - Colombia</address>
-		<month>10.10</month>
+		<month>10</month>
 		<isbn>958-670-422-X</isbn>
 		<deliverables>
 			<pdf url="http://www.di.uminho.pt/~jcr/XML/publicacoes/artigos/2005/LRH05-CLEI.pdf"/>
@@ -1398,7 +1398,7 @@ Metamorphosis</title>
 		<booktitle>XATA - XML: Aplicações e Tecnologias Associadas</booktitle>
 		<year>2006</year>
 		<address>Portalegre - Portugal</address>
-		<month>02.09</month>
+		<month>02</month>
 		<isbn>972-99166-2-4</isbn>
 		<doi>http://hdl.handle.net/1822/4457</doi>
 	</inproceedings>
@@ -1410,7 +1410,7 @@ Metamorphosis</title>
 		<booktitle>XATA - XML: Aplicações e Tecnologias Associadas</booktitle>
 		<year>2006</year>
 		<address>Portalegre - Portugal</address>
-		<month>02.09</month>
+		<month>02</month>
 		<isbn>972-99166-2-4</isbn>
 		<doi>http://hdl.handle.net/1822/4576</doi>
 	</inproceedings>
@@ -1423,7 +1423,7 @@ Metamorphosis</title>
 		<booktitle>XATA - XML: Aplicações e Tecnologias Associadas</booktitle>
 		<year>2006</year>
 		<address>Portalegre - Portugal</address>
-		<month>02.09</month>
+		<month>02</month>
 		<isbn>972-99166-2-4</isbn>
 		<doi>http://hdl.handle.net/1822/4910</doi>
 	</inproceedings>
