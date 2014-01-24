@@ -41,8 +41,6 @@ module Seeder
       end
     end
 
-
-
     def seed_editors
       @editors.each do |editor|
         Editor.where(editor).first_or_create!
