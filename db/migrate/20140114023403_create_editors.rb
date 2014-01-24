@@ -3,7 +3,6 @@ class CreateEditors < ActiveRecord::Migration
     create_table :editors do |t|
       t.string :name
       t.references :publication, index: true
-      t.references :teacher, index: true
     end
   end
 end

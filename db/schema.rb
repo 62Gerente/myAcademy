@@ -53,18 +53,18 @@ ActiveRecord::Schema.define(version: 20140119114119) do
   create_table "authors", force: true do |t|
     t.string  "name"
     t.integer "publication_id"
-    t.integer "teacher_id"
   end
 
   add_index "authors", ["publication_id"], name: "index_authors_on_publication_id"
-  add_index "authors", ["teacher_id"], name: "index_authors_on_teacher_id"
 
   create_table "cosupervisors", force: true do |t|
     t.string  "name"
     t.string  "institution"
+    t.integer "teacher_id"
     t.integer "thesis_supervision_id"
   end
 
+  add_index "cosupervisors", ["teacher_id"], name: "index_cosupervisors_on_teacher_id"
   add_index "cosupervisors", ["thesis_supervision_id"], name: "index_cosupervisors_on_thesis_supervision_id"
 
   create_table "courses", force: true do |t|
@@ -84,11 +84,9 @@ ActiveRecord::Schema.define(version: 20140119114119) do
   create_table "editors", force: true do |t|
     t.string  "name"
     t.integer "publication_id"
-    t.integer "teacher_id"
   end
 
   add_index "editors", ["publication_id"], name: "index_editors_on_publication_id"
-  add_index "editors", ["teacher_id"], name: "index_editors_on_teacher_id"
 
   create_table "entities", force: true do |t|
     t.string "name"

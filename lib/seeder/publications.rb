@@ -178,7 +178,6 @@ module Seeder
       element = {}
       element["name"] = node.text
       element["publication_id"] = create_and_get_publication(publication).id
-      element["teacher_id"] = 1
       element
     end
 
@@ -198,8 +197,9 @@ module Seeder
 
     def create_and_get_publication(publication)
       date = publication.delete("date")
-      publication = Publication.where(publication).first_or_create!
-      Publication.update(publication.id, date: date)
+      pub = Publication.where(publication).first_or_create!
+      Publication.update(pub.id, date: date) if !pub.date
+      pub
     end
 
     def get_publication(node)
