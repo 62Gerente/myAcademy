@@ -17,6 +17,7 @@ class Teacher < ActiveRecord::Base
   has_many :publications_authored, through: :authors, source: :publication
   has_many :editors
   has_many :publications_editor, through: :editors, source: :publication
+  has_many :cosupervisors
 
   has_attached_file :photo
 end

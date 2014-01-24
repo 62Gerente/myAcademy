@@ -62,9 +62,11 @@ ActiveRecord::Schema.define(version: 20140119114119) do
   create_table "cosupervisors", force: true do |t|
     t.string  "name"
     t.string  "institution"
+    t.integer "teacher_id"
     t.integer "thesis_supervision_id"
   end
 
+  add_index "cosupervisors", ["teacher_id"], name: "index_cosupervisors_on_teacher_id"
   add_index "cosupervisors", ["thesis_supervision_id"], name: "index_cosupervisors_on_thesis_supervision_id"
 
   create_table "courses", force: true do |t|
