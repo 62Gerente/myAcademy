@@ -1,9 +1,5 @@
-require 'parsers/thesis_examination'
+require 'seeder/thesis_examinations'
+
 puts "seeding thesis examinations..."
-
-parser = Parser::ThesisExamination.new
-examinations = parser.examinations
-
-examinations.each do |examination|
-  ThesisExamination.where(examination).first_or_create!
-end
+seeder = Seeder::ThesisExaminations.new
+seeder.seed

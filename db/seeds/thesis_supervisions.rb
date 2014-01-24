@@ -1,14 +1,5 @@
-require 'parsers/thesis_supervision'
+require 'seeder/thesis_supervisions'
+
 puts "seeding thesis supervisions..."
-
-parser = Parser::ThesisSupervision.new
-supervisions = parser.supervisions
-cosupervisors = parser.cosupervisors
-
-supervisions.each do |supervision|
-  ThesisSupervision.where(supervision).first_or_create!
-end
-
-cosupervisors.each do |cosupervisor|
-  Cosupervisor.where(cosupervisor).first_or_create!
-end
+seeder = Seeder::ThesisSupervisions.new
+seeder.seed
