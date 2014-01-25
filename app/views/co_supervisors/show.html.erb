@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @co_supervisor.name %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @co_supervisor.institution %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @co_supervisor.teacher %>
+</p>
+
+<p>
+  <strong>Thesis supervision:</strong>
+  <%= @co_supervisor.thesis_supervision %>
+</p>
+
+<%= link_to 'Edit', edit_co_supervisor_path(@co_supervisor) %> |
+<%= link_to 'Back', co_supervisors_path %>
