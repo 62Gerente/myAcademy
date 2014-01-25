@@ -1,0 +1,37 @@
+<h1>Listing managements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>B date</th>
+      <th>E date</th>
+      <th>Description</th>
+      <th>Teacher</th>
+      <th>Role</th>
+      <th>Entity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @managements.each do |management| %>
+      <tr>
+        <td><%= management.b_date %></td>
+        <td><%= management.e_date %></td>
+        <td><%= management.description %></td>
+        <td><%= management.teacher %></td>
+        <td><%= management.role %></td>
+        <td><%= management.entity %></td>
+        <td><%= link_to 'Show', management %></td>
+        <td><%= link_to 'Edit', edit_management_path(management) %></td>
+        <td><%= link_to 'Destroy', management, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Management', new_management_path %>

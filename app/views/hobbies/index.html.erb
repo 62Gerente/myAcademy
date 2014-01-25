@@ -1,0 +1,35 @@
+<h1>Listing hobbies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Activity</th>
+      <th>B date</th>
+      <th>E date</th>
+      <th>Description</th>
+      <th>Teacher</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hobbies.each do |hobby| %>
+      <tr>
+        <td><%= hobby.activity %></td>
+        <td><%= hobby.b_date %></td>
+        <td><%= hobby.e_date %></td>
+        <td><%= hobby.description %></td>
+        <td><%= hobby.teacher %></td>
+        <td><%= link_to 'Show', hobby %></td>
+        <td><%= link_to 'Edit', edit_hobby_path(hobby) %></td>
+        <td><%= link_to 'Destroy', hobby, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hobby', new_hobby_path %>

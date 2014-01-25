@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @deliverable.url %>
+</p>
+
+<p>
+  <strong>Publication:</strong>
+  <%= @deliverable.publication %>
+</p>
+
+<%= link_to 'Edit', edit_deliverable_path(@deliverable) %> |
+<%= link_to 'Back', deliverables_path %>

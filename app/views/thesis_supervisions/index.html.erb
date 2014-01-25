@@ -1,0 +1,35 @@
+<h1>Listing thesis_supervisions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>B</th>
+      <th>E date</th>
+      <th>Description</th>
+      <th>Teacher</th>
+      <th>Thesis</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thesis_supervisions.each do |thesis_supervision| %>
+      <tr>
+        <td><%= thesis_supervision.b %></td>
+        <td><%= thesis_supervision.e_date %></td>
+        <td><%= thesis_supervision.description %></td>
+        <td><%= thesis_supervision.teacher %></td>
+        <td><%= thesis_supervision.thesis %></td>
+        <td><%= link_to 'Show', thesis_supervision %></td>
+        <td><%= link_to 'Edit', edit_thesis_supervision_path(thesis_supervision) %></td>
+        <td><%= link_to 'Destroy', thesis_supervision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thesis supervision', new_thesis_supervision_path %>
