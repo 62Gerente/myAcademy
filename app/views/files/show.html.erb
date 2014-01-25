@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @file.name %>
+</p>
+
+<p>
+  <strong>Folder:</strong>
+  <%= @file.folder %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @file.subject %>
+</p>
+
+<%= link_to 'Edit', edit_file_path(@file) %> |
+<%= link_to 'Back', files_path %>

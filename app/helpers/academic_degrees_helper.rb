@@ -1,0 +1,2 @@
+module AcademicDegreesHelper
+end

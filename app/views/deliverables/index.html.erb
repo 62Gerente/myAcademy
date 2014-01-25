@@ -1,0 +1,29 @@
+<h1>Listing deliverables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Publication</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deliverables.each do |deliverable| %>
+      <tr>
+        <td><%= deliverable.url %></td>
+        <td><%= deliverable.publication %></td>
+        <td><%= link_to 'Show', deliverable %></td>
+        <td><%= link_to 'Edit', edit_deliverable_path(deliverable) %></td>
+        <td><%= link_to 'Destroy', deliverable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deliverable', new_deliverable_path %>
