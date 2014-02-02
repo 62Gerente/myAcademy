@@ -33,8 +33,8 @@ module Export
 		private
 		def addSkillsPassport(xml)
 			xml.SkillsPassport('xmlns'=> @xmlns,'xmlns:xsi'=>@xmlns_xsi,'xsi:schemaLocation'=>@xsi_schemaLocation, 'locale' => @locale ){
-				addDocumentInfo(xml)
-				addLearnerInfo(xml)
+				addDocumentInfo xml
+				addLearnerInfo xml
 			}
 		end
 
@@ -48,22 +48,19 @@ module Export
 			}
 		end
 
-		def addPrintingPreferences
-		end
-
 		def addLearnerInfo(xml)
 			xml.LearnerInfo{
-				addIdentification(xml)
-				addWorkExperienceList(xml)
+				addIdentification xml
+				addAchievementList xml
 			}
 		end
 
 		def addIdentification(xml)
 			xml.Identification{
-				addPersonName(xml)
-				addContactInfo(xml)
-				addDemographics(xml)
-				addPhoto(xml) if @teacher.photo?
+				addPersonName xml
+				addContactInfo xml
+				addDemographics xml
+				addPhoto xml if @teacher.photo?
 			}
 		end
 
@@ -75,9 +72,9 @@ module Export
 
 		def addContactInfo(xml)
 			xml.ContactInfo{
-				addEmail(xml)
-				addTelephoneList(xml)
-				addWebsiteList(xml)
+				addEmail xml
+				addTelephoneList xml
+				addWebsiteList xml
 			}
 		end
 
@@ -105,7 +102,7 @@ module Export
 
 		def addDemographics(xml)
 			xml.Demographics{
-				addBirthdate(xml)
+				addBirthdate xml
 			}
 		end
 
@@ -121,17 +118,32 @@ module Export
 				xml.MimeType @teacher.photo_content_type
 				xml.Data Base64.encode64(File.read(@teacher.photo.path))
 			}
-
 		end
 
-		def addWorkExperienceList(xml)
-			xml.WorlExperienceList{}
+		def addAchievementList(xml)
+			xml.AchievementList{
+				@teacher.publications_authored.each do |publication|
+					addPublication xml, publication
+				end
+			}
 		end
 
-		def addEducationList(xml)
-			xml.addEducationList{}
+		def addPublication(xml,publication)
+			xml.Achievement{
+				addAchievementTitle xml, "publications"
+				addDescription xml, "'#{publication.title}'#{publication.publisher}"
+			}
 		end
 
+		def addAchievementTitle(xml,type)
+			xml.Title{
+				xml.Code type
+				xml.Label type.capitalize
+			}
+		end
+		def addDescription(xml, description)
+			xml.Description description
+		end
 
 
 	end
