@@ -178,7 +178,6 @@ module Seeder
       element = {}
       element["name"] = node.text
       element["publication_id"] = create_and_get_publication(publication).id
-      element["teacher_id"] = 1
       element
     end
 
