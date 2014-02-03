@@ -13,16 +13,16 @@ body.bg-gray-light
                 h3.m-b-0= @teacher.name
             div
               .text-gray-alt.i-block
-                span.m-t-10.d-block= @teacher.email
+                span.m-t-10.d-block = @teacher.email
       .col-sm-9
         .bg-white.p-30.brad.b-bot-2px-gray-light.b-right-1px-gray-light
           .row
             .col-sm-4
-              h4= @teacher.status
+              h4 = @teacher.status
               p.text-gray-alt
                 | Status
               hr
-                h4= @teacher.phone
+                h4 = @teacher.phone
                 p.text-gray-alt
                   | Phone
             .col-sm-4
@@ -33,15 +33,15 @@ body.bg-gray-light
                 h4 15 years old
                 p.text-gray-alt
                   | Born on 
-                  = @teacher.birthday.strftime("%d %m %Y")
+                  = @teacher.try(:birthday)
             .col-sm-4
-              h4= @teacher.url
+              h4 = @teacher.url
               p.text-gray-alt
                 | Website
               hr
-                h4 Registed as dapcarvalho
+                h4 Registed
                 p.text-gray-alt
-                  | Since 22.03.2013
+                  | Since
     ul.nav.nav-tabs.nav-profile
       li.active
         a data-toggle="tab" href="#personal"

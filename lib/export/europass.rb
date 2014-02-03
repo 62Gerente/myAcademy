@@ -51,6 +51,9 @@ module Export
 		def addLearnerInfo(xml)
 			xml.LearnerInfo{
 				addIdentification xml
+				addHeadline xml
+				addWorkExperienceList xml
+				addEducationList xml
 				addSkills xml
 				addAchievementList xml
 			}
@@ -132,15 +135,15 @@ module Export
 		def addPublication(xml,publication)
 			date = I18n.l publication.date , locale: @locale, format: "%b %Y"
 			xml.Achievement{
-				addAchievementTitle xml, "publications"
-				addDescription xml, "'#{publication.title}' #{publication.publisher} (#{date})"
+				addAchievementTitle xml, "publications", date
+				addDescription xml, "'#{publication.title}' #{publication.publisher}"
 			}
 		end
 
-		def addAchievementTitle(xml,type)
+		def addAchievementTitle(xml,type,date)
 			xml.Title{
-				xml.Code type
-				xml.Label type.capitalize
+				xml.Code date
+				xml.Label date
 			}
 		end
 
@@ -160,7 +163,6 @@ module Export
 			}
 		end
 
-
 		def addHobbies
 			hobbies = ""
 			@teacher.hobbies.each do |hobby|
@@ -170,6 +172,73 @@ module Export
 			hobbies
 		end
 
+		def addHeadline(xml)
+			xml.Headline{
+				xml.Type{
+					xml.Code "status"
+					xml.Label "Estado"
+				}
+				xml.Description{
+					xml.Label @teacher.status
+				}
+			}
+		end
+
+		def addWorkExperienceList(xml)
+			xml.WorkExperienceList{
+				@teacher.managements.each do |management|
+					addWorkExperience xml, management
+				end
+			}
+		end
+
+		def addWorkExperience(xml,management)
+			year = management.b_date.year
+			month = management.b_date.strftime("--%m")
+			xml.WorkExperience{
+				xml.Period{
+					xml.From(year: year, month: month)
+					if management.date
+						xml.To(year: management.e_date.year,month: management.e_date.strftime("--%m"))
+					else
+						xml.Current true
+					end
+				}
+				xml.Position{
+					xml.Label management.role.name
+				}
+				xml.Activities management.description
+				xml.Employer{
+					xml.Name management.entity.name
+				}
+			}
+		end
+
+		def addEducationList(xml)
+			xml.EducationList{
+				@teacher.academic_informations.order(e_date: :desc).each do |academic_information|
+					addEducation xml, academic_information
+				end
+			}
+		end
+
+		def addEducation(xml,academic_information)
+			byear = academic_information.b_date.year
+			bmonth = academic_information.b_date.strftime("--%m")
+			eyear = academic_information.e_date.year
+			emonth = academic_information.e_date.strftime("--%m")
+
+			xml.Education{
+				xml.Period{
+					xml.From(year: byear, month: bmonth)
+					xml.To(year: byear, month: bmonth)
+				}
+				xml.Title academic_information.course.name
+				xml.Organisation{
+					xml.Name academic_information.institution.name
+				}
+			}
+		end
 
 	end
 end

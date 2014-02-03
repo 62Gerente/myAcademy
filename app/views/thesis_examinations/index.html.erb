@@ -1,0 +1,33 @@
+<h1>Listing thesis_examinations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Thesis</th>
+      <th>Teacher</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thesis_examinations.each do |thesis_examination| %>
+      <tr>
+        <td><%= thesis_examination.date %></td>
+        <td><%= thesis_examination.description %></td>
+        <td><%= thesis_examination.thesis %></td>
+        <td><%= thesis_examination.teacher %></td>
+        <td><%= link_to 'Show', thesis_examination %></td>
+        <td><%= link_to 'Edit', edit_thesis_examination_path(thesis_examination) %></td>
+        <td><%= link_to 'Destroy', thesis_examination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thesis examination', new_thesis_examination_path %>
