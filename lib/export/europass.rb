@@ -51,6 +51,7 @@ module Export
 		def addLearnerInfo(xml)
 			xml.LearnerInfo{
 				addIdentification xml
+				addSkills xml
 				addAchievementList xml
 			}
 		end
@@ -122,16 +123,17 @@ module Export
 
 		def addAchievementList(xml)
 			xml.AchievementList{
-				@teacher.publications.each do |publication|
+				@teacher.publications.order(date: :desc).each do |publication|
 					addPublication xml, publication
 				end
 			}
 		end
 
 		def addPublication(xml,publication)
+			date = I18n.l publication.date , locale: @locale, format: "%b %Y"
 			xml.Achievement{
 				addAchievementTitle xml, "publications"
-				addDescription xml, "'#{publication.title}' #{publication.publisher}"
+				addDescription xml, "'#{publication.title}' #{publication.publisher} (#{date})"
 			}
 		end
 
@@ -141,8 +143,31 @@ module Export
 				xml.Label type.capitalize
 			}
 		end
+
 		def addDescription(xml, description)
 			xml.Description description
+		end
+
+		def addSkills(xml)
+			xml.Skills{
+				addOther xml
+			}
+		end
+
+		def addOther(xml)
+			xml.Other{
+				xml.Description addHobbies
+			}
+		end
+
+
+		def addHobbies
+			hobbies = ""
+			@teacher.hobbies.each do |hobby|
+				hobbies+=", " unless hobbies == ""
+				hobbies+=hobby.activity
+			end
+			hobbies
 		end
 
 
