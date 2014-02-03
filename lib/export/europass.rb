@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'rest_client'
+require 'base64'
 
 module Export
 	class Europass
@@ -25,11 +26,14 @@ module Export
 			rest = RestClient.post @url, xml , :content_type => 'application/xml'
 		end
 
+		def save
+			File.open(Rails.root.join('public','teste.pdf'), 'wb') { |file| file.write(pdf) }
+		end
+
 		private
 		def addSkillsPassport(xml)
-			xml.SkillsPassport('xmlns'=> @xmlns,'xmlns:xsi'=>@xmlns_xsi,'xsi:schemaLocation'=>@xsi_schemaLocation ){
+			xml.SkillsPassport('xmlns'=> @xmlns,'xmlns:xsi'=>@xmlns_xsi,'xsi:schemaLocation'=>@xsi_schemaLocation, 'locale' => @locale ){
 				addDocumentInfo(xml)
-				#addPrintingPreferences(xml)
 				addLearnerInfo(xml)
 			}
 		end
@@ -50,20 +54,21 @@ module Export
 		def addLearnerInfo(xml)
 			xml.LearnerInfo{
 				addIdentification(xml)
+				addWorkExperienceList(xml)
 			}
 		end
 
 		def addIdentification(xml)
-			xml.Indentification{
+			xml.Identification{
 				addPersonName(xml)
 				addContactInfo(xml)
 				addDemographics(xml)
-				addPhoto(xml)
+				addPhoto(xml) if @teacher.photo?
 			}
 		end
 
 		def addPersonName(xml)
-			xml.addPersonName{
+			xml.PersonName{
 				xml.FirstName @teacher.name
 			}
 		end
@@ -72,7 +77,7 @@ module Export
 			xml.ContactInfo{
 				addEmail(xml)
 				addTelephoneList(xml)
-				addWebSiteList(xml)
+				addWebsiteList(xml)
 			}
 		end
 
@@ -83,16 +88,16 @@ module Export
 		end
 
 		def addTelephoneList(xml)
-			xml.Telephonelist{
+			xml.TelephoneList{
 				xml.Telephone{
 					xml.Contact @teacher.phone
 				}
 			}
 		end
 
-		def addWebSiteList(xml)
-			xml.WebSiteList{
-				xml.WebSite{
+		def addWebsiteList(xml)
+			xml.WebsiteList{
+				xml.Website{
 					xml.Contact @teacher.url
 				}
 			}
@@ -100,21 +105,32 @@ module Export
 
 		def addDemographics(xml)
 			xml.Demographics{
-				addBirthDate(xml)
+				addBirthdate(xml)
 			}
 		end
 
-		def addBirthDate(xml)
+		def addBirthdate(xml)
 			year = @teacher.birthday.year
 			month = @teacher.birthday.strftime("--%m")
-			day = @teacher.birthday.strftime("--%d")
-			xml.BirthDate(year: year, month: month, day: day)
+			day = @teacher.birthday.strftime("---%d")
+			xml.Birthdate(year: year, month: month, day: day)
 		end
 
 		def addPhoto(xml)
+			xml.Photo{
+				xml.MimeType @teacher.photo_content_type
+				xml.Data Base64.encode64(File.read(@teacher.photo.path))
+			}
 
 		end
 
+		def addWorkExperienceList(xml)
+			xml.WorlExperienceList{}
+		end
+
+		def addEducationList(xml)
+			xml.addEducationList{}
+		end
 
 
 
