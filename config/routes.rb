@@ -10,6 +10,7 @@ MyAcademy::Application.routes.draw do
 
   get "/" => "teachers#profile", :as => :home
 
+
   resources :theses
   resources :thesis_supervisions
   resources :teachers
@@ -34,4 +35,6 @@ MyAcademy::Application.routes.draw do
   resources :roles
   resources :subjects
   resources :tags
+  resources :thesis_examinations
+  resources :teachers
 end

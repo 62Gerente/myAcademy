@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @thesis_examination.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @thesis_examination.description %>
+</p>
+
+<p>
+  <strong>Thesis:</strong>
+  <%= @thesis_examination.thesis %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @thesis_examination.teacher %>
+</p>
+
+<%= link_to 'Edit', edit_thesis_examination_path(@thesis_examination) %> |
+<%= link_to 'Back', thesis_examinations_path %>
