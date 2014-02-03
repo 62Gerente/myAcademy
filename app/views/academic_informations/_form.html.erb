@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :course %><br>
-    <%= f.text_field :course %>
+    <%= f.collection_select :course_id, Course.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :institution %><br>

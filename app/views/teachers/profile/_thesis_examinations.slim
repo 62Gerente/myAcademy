@@ -1,0 +1,14 @@
+#thexam.tab-pane.fade.p-30
+  h2.font-w-100
+    span.text-blue Thesis Examinations
+  - @teacher.thesis_examinations.each do |thesis|
+    p
+      | [ #{thesis.date.strftime("%Y.%m.%d")} ]  
+      strong #{thesis.thesis.title}    
+      | #{thesis.thesis.student  } 
+      | #{thesis.thesis.academic_degree.name  } 
+      | #{thesis.thesis.institution.name  } 
+      | #{thesis.description  } 
+      a href=(thesis.thesis.url)
+        = thesis.thesis.url
+    hr 

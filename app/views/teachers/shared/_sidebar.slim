@@ -4,15 +4,14 @@
   ul#avatar-toggle.dropdown-sidebar-avatar aria-labelledby="dLabel" role="menu"
 
   hr.no-margin
-    ul.unstyled.nav
-      li 
-        = link_to "Update profile", "teachers/#{@teacher.id}/edit"
-      li 
-        = link_to "Add Thesis", new_thesis_path
-      li 
-        = link_to "Add Thesis Supervision", new_thesis_supervision_path
-      li 
-        = link_to "Add Thesis Examination", new_thesis_examination_path
     .bg-gray-dark-shade.text-left.search
       i.glyphicon.glyphicon-search.text-gray-alt
       input.input-invisible placeholder="Search" type="text"
+    ul.unstyled.nav
+      li = link_to "Update profile", "teachers/#{@teacher.id}/edit"
+      li = link_to "Add Thesis", new_thesis_path
+      li = link_to "Add Thesis Supervision", new_thesis_supervision_path
+      li = link_to "Add Thesis Examination", new_thesis_examination_path
+      li = link_to "Add Publication", new_publication_path
+      li = link_to "Add Research Project", new_research_project_path
+      li = link_to "Add Academic Information", new_academic_information_path

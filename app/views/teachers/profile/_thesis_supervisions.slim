@@ -1,0 +1,13 @@
+#thesup.tab-pane.fade.p-30
+  h2.font-w-100
+    span.text-blue Thesis Supervisions
+  - @teacher.thesis_supervisions.each do |thesis|
+    p
+      strong #{thesis.thesis.title}   
+      | #{thesis.thesis.student }  
+      | #{thesis.thesis.academic_degree.name }  
+      | #{thesis.thesis.institution.name }  
+      | #{thesis.description }  
+      a href=(thesis.thesis.url)
+        = thesis.thesis.url
+    hr 
