@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :academic_degree %><br>
-    <%= f.text_field :academic_degree %>
+    <%= f.collection_select :academic_degree_id, AcademicDegree.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :institution %><br>
-    <%= f.text_field :institution %>
+    <%= f.collection_select :institution_id, Institution.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

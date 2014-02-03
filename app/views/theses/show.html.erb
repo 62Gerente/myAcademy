@@ -17,12 +17,12 @@
 
 <p>
   <strong>Academic degree:</strong>
-  <%= @thesis.academic_degree %>
+  <%= @thesis.academic_degree.name %>
 </p>
 
 <p>
   <strong>Institution:</strong>
-  <%= @thesis.institution %>
+  <%= @thesis.institution.name %>
 </p>
 
 <%= link_to 'Edit', edit_thesis_path(@thesis) %> |

@@ -76,16 +76,18 @@
     <%= f.text_field :school %>
   </div>
   <div class="field">
-    <%= f.label :publication_stype %><br>
-    <%= f.text_field :publication_stype %>
+    <%= f.label :publication_type %><br>
+    <%= f.collection_select :publication_type_id, PublicationType.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :teacher %><br>
-    <%= f.text_field :teacher %>
+        <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
+
   </div>
   <div class="field">
     <%= f.label :research_project %><br>
-    <%= f.text_field :research_project %>
+        <%= f.collection_select :research_project_id, ResearchProject.all, :id, :name %>
+
   </div>
   <div class="actions">
     <%= f.submit %>

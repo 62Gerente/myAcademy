@@ -1,13 +1,10 @@
 <h1>Listing theses</h1>
+<%= link_to 'New Thesis', new_thesis_path %>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Url</th>
-      <th>Student</th>
-      <th>Academic degree</th>
-      <th>Institution</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,10 +15,6 @@
     <% @theses.each do |thesis| %>
       <tr>
         <td><%= thesis.title %></td>
-        <td><%= thesis.url %></td>
-        <td><%= thesis.student %></td>
-        <td><%= thesis.academic_degree %></td>
-        <td><%= thesis.institution %></td>
         <td><%= link_to 'Show', thesis %></td>
         <td><%= link_to 'Edit', edit_thesis_path(thesis) %></td>
         <td><%= link_to 'Destroy', thesis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,6 +23,4 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Thesis', new_thesis_path %>

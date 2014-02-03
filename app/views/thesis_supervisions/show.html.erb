@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>B:</strong>
-  <%= @thesis_supervision.b %>
+  <strong>B_date:</strong>
+  <%= @thesis_supervision.b_date %>
 </p>
 
 <p>
@@ -17,12 +17,12 @@
 
 <p>
   <strong>Teacher:</strong>
-  <%= @thesis_supervision.teacher %>
+  <%= @thesis_supervision.teacher.name %>
 </p>
 
 <p>
   <strong>Thesis:</strong>
-  <%= @thesis_supervision.thesis %>
+  <%= @thesis_supervision.thesis.title %>
 </p>
 
 <%= link_to 'Edit', edit_thesis_supervision_path(@thesis_supervision) %> |
