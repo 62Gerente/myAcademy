@@ -27,17 +27,12 @@
 
 <p>
   <strong>Teacher:</strong>
-  <%= @activity.teacher %>
+  <%= @activity.teacher.name %>
 </p>
 
 <p>
   <strong>Activity type:</strong>
-  <%= @activity.activity_type %>
-</p>
-
-<p>
-  <strong>References:</strong>
-  <%= @activity.references %>
+  <%= @activity.activity_type.name %>
 </p>
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |

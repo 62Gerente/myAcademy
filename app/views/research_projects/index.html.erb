@@ -4,11 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Url</th>
-      <th>B date</th>
-      <th>E date</th>
-      <th>Description</th>
-      <th>Teacher</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,11 +14,6 @@
     <% @research_projects.each do |research_project| %>
       <tr>
         <td><%= research_project.name %></td>
-        <td><%= research_project.url %></td>
-        <td><%= research_project.b_date %></td>
-        <td><%= research_project.e_date %></td>
-        <td><%= research_project.description %></td>
-        <td><%= research_project.teacher %></td>
         <td><%= link_to 'Show', research_project %></td>
         <td><%= link_to 'Edit', edit_research_project_path(research_project) %></td>
         <td><%= link_to 'Destroy', research_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

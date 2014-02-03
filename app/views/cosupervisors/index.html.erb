@@ -1,0 +1,33 @@
+<h1>Listing cosupervisors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Institution</th>
+      <th>Teacher</th>
+      <th>Thesis supervision</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cosupervisors.each do |cosupervisor| %>
+      <tr>
+        <td><%= cosupervisor.name %></td>
+        <td><%= cosupervisor.institution %></td>
+        <td><%= cosupervisor.teacher %></td>
+        <td><%= cosupervisor.thesis_supervision.thesis.title %></td>
+        <td><%= link_to 'Show', cosupervisor %></td>
+        <td><%= link_to 'Edit', edit_cosupervisor_path(cosupervisor) %></td>
+        <td><%= link_to 'Destroy', cosupervisor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Co supervisor', new_cosupervisor_path %>

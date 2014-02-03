@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :b %><br>
-    <%= f.date_select :b %>
+    <%= f.label :b_date %><br>
+    <%= f.date_select :b_date %>
   </div>
   <div class="field">
     <%= f.label :e_date %><br>
@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :teacher %><br>
-    <%= f.text_field :teacher %>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :thesis %><br>
-    <%= f.text_field :thesis %>
+    <%= f.collection_select :thesis_id, Thesis.all, :id, :title %>
   </div>
   <div class="actions">
     <%= f.submit %>

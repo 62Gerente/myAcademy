@@ -1,7 +1,7 @@
-<%= form_for(@co_supervisor) do |f| %>
-  <% if @co_supervisor.errors.any? %>
+<%= form_for(@cosupervisor) do |f| %>
+  <% if @cosupervisor.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@co_supervisor.errors.count, "error") %> prohibited this co_supervisor from being saved:</h2>
+      <h2><%= pluralize(@cosupervisor.errors.count, "error") %> prohibited this cosupervisor from being saved:</h2>
 
       <ul>
       <% @co_supervisor.errors.full_messages.each do |msg| %>
@@ -17,15 +17,18 @@
   </div>
   <div class="field">
     <%= f.label :institution %><br>
-    <%= f.text_field :institution %>
+    <%= f.collection_select :institution_id, Institution.all, :id, :name %>
+  </div>
   </div>
   <div class="field">
     <%= f.label :teacher %><br>
-    <%= f.text_field :teacher %>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
+  </div>
   </div>
   <div class="field">
     <%= f.label :thesis_supervision %><br>
-    <%= f.text_field :thesis_supervision %>
+    <%= f.collection_select :thesis_supervision_id, ThesisSupervision.all, :id, :title %>
+  </div>
   </div>
   <div class="actions">
     <%= f.submit %>

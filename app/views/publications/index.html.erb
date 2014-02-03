@@ -4,24 +4,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Chapter</th>
-      <th>Pages</th>
-      <th>Publisher</th>
-      <th>Doi</th>
-      <th>Volume</th>
-      <th>Isbn</th>
-      <th>Issn</th>
-      <th>Date</th>
-      <th>Booktitle</th>
-      <th>Address</th>
-      <th>Uri</th>
-      <th>Journal</th>
-      <th>Number</th>
-      <th>Howpublished</th>
-      <th>School</th>
-      <th>Publication stype</th>
-      <th>Teacher</th>
-      <th>Research project</th>
       <th></th>
       <th></th>
       <th></th>
@@ -32,25 +14,7 @@
     <% @publications.each do |publication| %>
       <tr>
         <td><%= publication.title %></td>
-        <td><%= publication.chapter %></td>
-        <td><%= publication.pages %></td>
-        <td><%= publication.publisher %></td>
-        <td><%= publication.doi %></td>
-        <td><%= publication.volume %></td>
-        <td><%= publication.isbn %></td>
-        <td><%= publication.issn %></td>
-        <td><%= publication.date %></td>
-        <td><%= publication.booktitle %></td>
-        <td><%= publication.address %></td>
-        <td><%= publication.uri %></td>
-        <td><%= publication.journal %></td>
-        <td><%= publication.number %></td>
-        <td><%= publication.howpublished %></td>
-        <td><%= publication.school %></td>
-        <td><%= publication.publication_stype %></td>
-        <td><%= publication.teacher %></td>
-        <td><%= publication.research_project %></td>
-        <td><%= link_to 'Show', publication %></td>
+         <td><%= link_to 'Show', publication %></td>
         <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
         <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -22,22 +22,22 @@
 
 <p>
   <strong>Academic degree:</strong>
-  <%= @academic_information.academic_degree %>
+  <%= @academic_information.academic_degree.name %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @academic_information.course %>
+  <%= @academic_information.course.name %>
 </p>
 
 <p>
   <strong>Institution:</strong>
-  <%= @academic_information.institution %>
+  <%= @academic_information.institution.name %>
 </p>
 
 <p>
   <strong>Teacher:</strong>
-  <%= @academic_information.teacher %>
+  <%= @academic_information.teacher.name %>
 </p>
 
 <%= link_to 'Edit', edit_academic_information_path(@academic_information) %> |

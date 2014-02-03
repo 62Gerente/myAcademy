@@ -4,13 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Url</th>
-      <th>B date</th>
-      <th>E date</th>
-      <th>Description</th>
-      <th>Teacher</th>
-      <th>Activity type</th>
-      <th>References</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,13 +14,6 @@
     <% @activities.each do |activity| %>
       <tr>
         <td><%= activity.name %></td>
-        <td><%= activity.url %></td>
-        <td><%= activity.b_date %></td>
-        <td><%= activity.e_date %></td>
-        <td><%= activity.description %></td>
-        <td><%= activity.teacher %></td>
-        <td><%= activity.activity_type %></td>
-        <td><%= activity.references %></td>
         <td><%= link_to 'Show', activity %></td>
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
         <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
