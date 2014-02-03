@@ -18,7 +18,7 @@ class EditorsControllerTest < ActionController::TestCase
 
   test "should create editor" do
     assert_difference('Editor.count') do
-      post :create, editor: { name: @editor.name, publication_id: @editor.publication_id, teacher_id: @editor.teacher_id }
+      post :create, editor: { name: @editor.name, publication_id: @editor.publication_id }
     end
 
     assert_redirected_to editor_path(assigns(:editor))
@@ -35,7 +35,7 @@ class EditorsControllerTest < ActionController::TestCase
   end
 
   test "should update editor" do
-    patch :update, id: @editor, editor: { name: @editor.name, publication_id: @editor.publication_id, teacher_id: @editor.teacher_id }
+    patch :update, id: @editor, editor: { name: @editor.name, publication_id: @editor.publication_id }
     assert_redirected_to editor_path(assigns(:editor))
   end
 

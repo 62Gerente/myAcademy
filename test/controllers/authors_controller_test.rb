@@ -18,7 +18,7 @@ class AuthorsControllerTest < ActionController::TestCase
 
   test "should create author" do
     assert_difference('Author.count') do
-      post :create, author: { name: @author.name, publication_id: @author.publication_id, teacher_id: @author.teacher_id }
+      post :create, author: { name: @author.name, publication_id: @author.publication_id }
     end
 
     assert_redirected_to author_path(assigns(:author))
@@ -35,7 +35,7 @@ class AuthorsControllerTest < ActionController::TestCase
   end
 
   test "should update author" do
-    patch :update, id: @author, author: { name: @author.name, publication_id: @author.publication_id, teacher_id: @author.teacher_id }
+    patch :update, id: @author, author: { name: @author.name, publication_id: @author.publication_id }
     assert_redirected_to author_path(assigns(:author))
   end
 
