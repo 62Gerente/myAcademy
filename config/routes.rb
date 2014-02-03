@@ -1,15 +1,15 @@
 MyAcademy::Application.routes.draw do
   devise_for :teachers
 
-
   devise_scope :teacher do
-    get "/login" => "devise/sessions#new"
-    get "/signup" => "devise/registrations#new"
-    get "/logout" => "devise/sessions#destroy", :as => :logout
+    get "/login", to: "devise/sessions#new"
+    get "/signup", to: "devise/registrations#new"
+    get "/logout", to: "devise/sessions#destroy", as: :logout
   end
 
-  get "/" => "teachers#profile", :as => :home
-
+  get "/", to: "teachers#profile", as: :home
+  get "/teachers/export/xml", to: "export#xml", as: :export_xml
+  get "/teachers/export/pdf", to: "export#pdf", as: :export_pdf
 
   resources :theses
   resources :thesis_supervisions
