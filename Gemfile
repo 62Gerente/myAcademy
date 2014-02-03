@@ -7,13 +7,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'devise'
+gem 'devise', '3.0.3'
 gem 'devise-i18n'
 gem 'paperclip'
 gem 'nokogiri'
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'slim'
+gem "rest-client"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
