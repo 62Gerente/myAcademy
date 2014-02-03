@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise', '3.0.3'
 gem 'devise-i18n'
-gem 'paperclip'
+gem 'paperclip', '3.4.2'
 gem 'nokogiri'
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'compass-rails', '~> 2.0.alpha.0'
