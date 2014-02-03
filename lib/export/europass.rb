@@ -122,7 +122,7 @@ module Export
 
 		def addAchievementList(xml)
 			xml.AchievementList{
-				@teacher.publications_authored.each do |publication|
+				@teacher.publications.each do |publication|
 					addPublication xml, publication
 				end
 			}
@@ -131,7 +131,7 @@ module Export
 		def addPublication(xml,publication)
 			xml.Achievement{
 				addAchievementTitle xml, "publications"
-				addDescription xml, "'#{publication.title}'#{publication.publisher}"
+				addDescription xml, "'#{publication.title}' #{publication.publisher}"
 			}
 		end
 
