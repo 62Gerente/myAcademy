@@ -13,35 +13,35 @@ body.bg-gray-light
                 h3.m-b-0= @teacher.name
             div
               .text-gray-alt.i-block
-                span.m-t-10.d-block= @teacher.email
+                span.m-t-10.d-block = @teacher.email
       .col-sm-9
         .bg-white.p-30.brad.b-bot-2px-gray-light.b-right-1px-gray-light
           .row
             .col-sm-4
-              h4= @teacher.status
+              h4 = @teacher.status
               p.text-gray-alt
                 | Status
               hr
-                h4= @teacher.phone
+                h4 = @teacher.phone
                 p.text-gray-alt
                   | Phone
             .col-sm-4
-              h4 University of Minho
+              h4 = @teacher.institution.name
               p.text-gray-alt
                 | Instituition
               hr
                 h4 15 years old
                 p.text-gray-alt
                   | Born on 
-                  = @teacher.birthday.strftime("%d %m %Y")
+                  = @teacher.try(:birthday)
             .col-sm-4
-              h4= @teacher.url
+              h4 = @teacher.url
               p.text-gray-alt
                 | Website
               hr
-                h4 Registed as dapcarvalho
+                h4 Registed
                 p.text-gray-alt
-                  | Since 22.03.2013
+                  | Since
     ul.nav.nav-tabs.nav-profile
       li.active
         a data-toggle="tab" href="#personal"
@@ -103,25 +103,43 @@ body.bg-gray-light
                 = ai.b_date.year  
                 | -
                 = ai.e_date.year
-              strong = AcademicDegree.find(ai.academic_degree_id).name  
+              strong = ai.academic_degree.name  
               |  in 
-              = Course.find(ai.course_id).name  
+              = ai.course.name  
               |  @ 
-              = Institution.find(Course.find(ai.course_id).institution_id).name
+              = ai.course.institution.name
               br/
               blockquote.text-gray-alt.prof = ai.description 
           hr 
           h2.font-w-100
             span.text-blue Hobbies
-          - Hobby.where(teacher_id: @teacher.id).each do |hobby|
+          - @hobbies.each do |hobby|
             span.label.label-success.m-10
               = hobby.activity
         #research.tab-pane.fade.p-30
+          h2.font-w-100
+            span.text-blue Research Projects
+          - @research.each do |r|
+            p
+              strong = r.name
+              | ; 
+              = r.b_date
+              |  to 
+              = r.e_date
+              | ; 
+              = r.description
+              | ; 
+              a href=(r.url)
+                = r.url
+            hr 
         #publications.tab-pane.fade.p-30
           h2.font-w-100
             span.text-blue Publications
           - @pub.each do |pub|
             p.text-gray-alt
+              |  [  
+              = pub.publication_type.name
+              |  ] 
               strong =pub.title
               |  ;  
               - Author.where(publication_id: pub.id).each do |author|

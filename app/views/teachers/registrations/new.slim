@@ -4,7 +4,7 @@ body.backstretch._signup
       .row
         .visible-xs.text-center
           h1.text-white.p-b-0 Sugoi admin
-        .col-sm-8.text-white.hidden-xs
+        .col-sm-8.text-white.hidden-xs.signup-align
           .p-30
             h1 myAcademy
             p myAcademy is the perfect platform to keep your academic profile organized and available for everybody. Share your personal and academic life through an elegant and beautiful profile.
@@ -28,6 +28,16 @@ body.backstretch._signup
                   = f.email_field :email, :class => "form-control input-glass", :placeholder => "Email"
                 .form-group
                   = f.text_field :phone, :class => "form-control input-glass", :placeholder => "Phone"
+                .form-group
+                  = f.text_field :status, :class => "form-control input-glass", :placeholder => "Status"
+                .form-group
+                  = f.text_field :url, :class => "form-control input-glass", :placeholder => "URL"
+                .form-group
+                  = f.text_area :bio, :class => "form-control input-glass", :placeholder => "Bio"
+                .form-group
+                  = f.date_select :birthday , :class => "form-control input-glass"
+                .form-group
+                  = f.collection_select :institution_id, Institution.all, :id, :name, :style => "width:100%"
                 .form-group
                   = f.password_field :password, :class => "form-control input-glass", :placeholder => "Password"
                 .form-group

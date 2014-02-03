@@ -14,6 +14,11 @@
     <% @thesis_supervisions.each do |thesis_supervision| %>
       <tr>
         <td><%= thesis_supervision.thesis.title %></td>
+        <td><%= thesis_supervision.b_date %></td>
+        <td><%= thesis_supervision.e_date %></td>
+        <td><%= thesis_supervision.description %></td>
+        <td><%= thesis_supervision.teacher %></td>
+        <td><%= thesis_supervision.thesis %></td>
         <td><%= link_to 'Show', thesis_supervision %></td>
         <td><%= link_to 'Edit', edit_thesis_supervision_path(thesis_supervision) %></td>
         <td><%= link_to 'Destroy', thesis_supervision, method: :delete, data: { confirm: 'Are you sure?' } %></td>

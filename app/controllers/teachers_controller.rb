@@ -2,6 +2,7 @@ class TeachersController < ApplicationController
   before_filter :authenticate_teacher!
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
+
   # GET /teachers
   # GET /teachers.json
   def index
@@ -62,6 +63,16 @@ class TeachersController < ApplicationController
     end
   end
 
+  def profile
+    @teacher = Teacher.find(current_teacher.id)
+    @academicinfo = AcademicInformation.where(teacher_id: current_teacher.id)
+    @pub = Publication.where(teacher_id: current_teacher.id)
+    @thexam = ThesisExamination.where(teacher_id: current_teacher.id)
+    @thesup = ThesisSupervision.where(teacher_id: current_teacher.id)
+    @research = ResearchProject.where(teacher_id: current_teacher.id)
+    @hobbies = Hobby.where(teacher_id: current_teacher.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher
@@ -72,12 +83,4 @@ class TeachersController < ApplicationController
     def teacher_params
       params.require(:teacher).permit(:name, :status, :phone, :birthday, :url, :bio, :registed, :institution_id, :email, :encrypted_password)
     end
-
-  def profile
-    @teacher = Teacher.find(current_teacher.id)
-    @academicinfo = AcademicInformation.where(teacher_id: current_teacher.id)
-    @pub = Publication.where(teacher_id: current_teacher.id)
-    @thexam = ThesisExamination.where(teacher_id: current_teacher.id)
-    @thesup = ThesisSupervision.where(teacher_id: current_teacher.id)
-  end
 end
