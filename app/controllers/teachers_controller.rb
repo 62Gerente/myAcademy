@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_filter :authenticate_teacher!
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   # GET /teachers
@@ -71,4 +72,12 @@ class TeachersController < ApplicationController
     def teacher_params
       params.require(:teacher).permit(:name, :status, :phone, :birthday, :url, :bio, :registed, :institution_id, :email, :encrypted_password)
     end
+
+  def profile
+    @teacher = Teacher.find(current_teacher.id)
+    @academicinfo = AcademicInformation.where(teacher_id: current_teacher.id)
+    @pub = Publication.where(teacher_id: current_teacher.id)
+    @thexam = ThesisExamination.where(teacher_id: current_teacher.id)
+    @thesup = ThesisSupervision.where(teacher_id: current_teacher.id)
+  end
 end

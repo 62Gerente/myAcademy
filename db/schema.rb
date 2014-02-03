@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140119114119) do
   create_table "academic_informations", force: true do |t|
     t.datetime "b_date"
     t.datetime "e_date"
-    t.text     "escription"
+    t.text     "description"
     t.float    "grade"
     t.integer  "academic_degree_id"
     t.integer  "course_id"

@@ -1,0 +1,35 @@
+body.backstretch._signup
+  .container
+    .signup
+      .row
+        .visible-xs.text-center
+          h1.text-white.p-b-0 Sugoi admin
+        .col-sm-8.text-white.hidden-xs
+          .p-30
+            h1 myAcademy
+            p myAcademy is the perfect platform to keep your academic profile organized and available for everybody. Share your personal and academic life through an elegant and beautiful profile.
+            ul.unstyled.checkmarked
+              li Organize and showcase your publications
+              li Expose your work as a teacher
+              li Show the world your research projects
+              li Sumarize yout thesis supervisions
+              li And much more...
+            = link_to login_path, :class => "btn m-r-10 btn-primary"
+              | Login
+            = link_to login_path, :class => "btn btn-default"
+              | Demo profile
+        .col-sm-4
+          .m-t-30
+            .p-t-30
+              = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :role => "form") do |f|
+                .form-group
+                  = f.text_field :name, :class => "form-control input-glass", :placeholder => "Name"
+                .form-group
+                  = f.email_field :email, :class => "form-control input-glass", :placeholder => "Email"
+                .form-group
+                  = f.text_field :phone, :class => "form-control input-glass", :placeholder => "Phone"
+                .form-group
+                  = f.password_field :password, :class => "form-control input-glass", :placeholder => "Password"
+                .form-group
+                  = f.password_field :password_confirmation, :class => "form-control input-glass", :placeholder => "Confirm Password"
+                button.btn.btn-primary.btn-block.btn-lg type="submit" Sign up
