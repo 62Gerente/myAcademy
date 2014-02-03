@@ -1,0 +1,12 @@
+#research.tab-pane.fade.p-30
+  h2.font-w-100
+    span.text-blue Research Projects
+  - @teacher.research_projects.each do |r|
+    p
+      strong #{r.name}  
+      | #{r.b_date} to #{r.e_date}  
+      | #{r.e_date}  
+      | #{r.description}  
+      a href=(r.url)
+        = r.url
+    hr 

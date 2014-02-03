@@ -19,208 +19,29 @@ body.bg-gray-light
           .row
             .col-sm-4
               h4 = @teacher.status
-              p.text-gray-alt
-                | Status
+              p.text-gray-alt Status
               hr
-                h4 = @teacher.phone
-                p.text-gray-alt
-                  | Phone
+              h4 = @teacher.phone
+              p.text-gray-alt Phone
             .col-sm-4
               h4 = @teacher.institution.name
-              p.text-gray-alt
-                | Instituition
+              p.text-gray-alt Instituition
               hr
-                h4 15 years old
-                p.text-gray-alt
-                  | Born on 
-                  = @teacher.try(:birthday)
+              h4 XX years old
+              p.text-gray-alt 
+                | Born on 
+                = @teacher.try(:birthday).strftime("%Y.%m.%d")
             .col-sm-4
-              h4 = @teacher.url
-              p.text-gray-alt
-                | Website
+              h4 
+                = link_to @teacher.url, @teacher.url
+              p.text-gray-alt Website
               hr
-                h4 Registed
-                p.text-gray-alt
-                  | Since
-    ul.nav.nav-tabs.nav-profile
-      li.active
-        a data-toggle="tab" href="#personal"
-          .text-small
-            | Personal
-          span.text-uppercase information
-          span.text-gray-dark 
-            |  /  
-          span.small.text-gray-dark hobbies
-      li
-        a data-toggle="tab" href="#research"
-          .text-small
-            | Research
-          span.text-uppercase projects
-          span.text-gray-dark 
-            |  /  
-          span.small.text-gray-dark investigation
-      li
-        a data-toggle="tab" href="#publications"
-          .text-small
-            | Documents
-          span.text-uppercase Publications
-      li
-        a data-toggle="tab" href="#thesup"
-          .text-small
-            | Thesis
-          span.text-uppercase Supervisions
-      li
-        a data-toggle="tab" href="#thexam"
-          .text-small
-            | Thesis
-          span.text-uppercase Examinations
-      li
-        a data-toggle="tab" href="#conf"
-          .text-small
-            | Conferences
-          span.text-uppercase Organization
-          span.text-gray-dark
-            |  /  
-          span.small.text-gray-dark Member
-      li
-        a data-toggle="tab" href="#teaching"
-          .text-small
-            | Professor
-          span.text-uppercase Theaching
-    .bg-white.b-1px-gray-light.b-top-none.brad-bottom.brad-tr.b-bot-2px-gray-light
-      .tab-content.profilecontainer
-        #personal.tab-pane.active.fade.in.p-30
-          h2.font-w-100
-            span.text-blue Biography
-          p.text-gray-alt
-            = @teacher.bio
-          hr
-          h2.font-w-100
-            span.text-blue Academic Degrees 
-          - @academicinfo.each do |ai|
-            p.text-gray-alt
-              span.label.label-info 
-                = ai.b_date.year  
-                | -
-                = ai.e_date.year
-              strong = ai.academic_degree.name  
-              |  in 
-              = ai.course.name  
-              |  @ 
-              = ai.course.institution.name
-              br/
-              blockquote.text-gray-alt.prof = ai.description 
-          hr 
-          h2.font-w-100
-            span.text-blue Hobbies
-          - @hobbies.each do |hobby|
-            span.label.label-success.m-10
-              = hobby.activity
-        #research.tab-pane.fade.p-30
-          h2.font-w-100
-            span.text-blue Research Projects
-          - @research.each do |r|
-            p
-              strong = r.name
-              | ; 
-              = r.b_date
-              |  to 
-              = r.e_date
-              | ; 
-              = r.description
-              | ; 
-              a href=(r.url)
-                = r.url
-            hr 
-        #publications.tab-pane.fade.p-30
-          h2.font-w-100
-            span.text-blue Publications
-          - @pub.each do |pub|
-            p.text-gray-alt
-              |  [  
-              = pub.publication_type.name
-              |  ] 
-              strong =pub.title
-              |  ;  
-              - Author.where(publication_id: pub.id).each do |author|
-                = author.name
-                | ,   
-              | ;
-              = pub.publisher
-              | ;
-              = pub.address
-              | ;
-              = pub.chapter
-              | ;
-              = pub.pages
-              | ;
-              = pub.volume
-              | ;
-              = pub.isbn
-              | ;
-              = pub.issn
-              | ;
-              = pub.booktitle
-              | ;
-              = pub.journal
-              | ;
-              = pub.number
-              | ;
-              = pub.howpublished
-              | ;
-              = pub.school 
-              | ;
-              a href="(pub.uri)"
-                = pub.uri
-            hr
-            
-        #thesup.tab-pane.fade.p-30
-          h2.font-w-100
-            span.text-blue Thesis Supervisions
-          - @thesup.each do |thesis|
-            p
-              strong = thesis.thesis.title
-              | ; 
-              = thesis.thesis.student
-              | ; 
-              = thesis.thesis.academic_degree.name
-              | ; 
-              = thesis.thesis.institution.name
-              | ; 
-              = thesis.description
-              | ; 
-              a href=(thesis.thesis.url)
-                = thesis.thesis.url
-            hr 
+              h4 Registed
+              p.text-gray-alt Since 03.02.2014
 
-
-        #thexam.tab-pane.fade.p-30
-          h2.font-w-100
-            span.text-blue Thesis Examinations
-          - @thexam.each do |thesis|
-            p
-              |  [  
-              = thesis.date.strftime("%Y.%m.%d")
-              |  ] 
-              strong = thesis.thesis.title
-              | ; 
-              = thesis.thesis.student
-              | ; 
-              = thesis.thesis.academic_degree.name
-              | ; 
-              = thesis.thesis.institution.name
-              | ; 
-              = thesis.description
-              | ; 
-              a href=(thesis.thesis.url)
-                = thesis.thesis.url
-            hr 
-
-
-        #conf.tab-pane.fade.p-30
-        #teaching.tab-pane.fade.p-30
+    = render "teachers/profile/tabs"
+    
   script src="https://code.jquery.com/jquery.js"
-  /! Include all compiled plugins (below), or include individual files as needed
   script src="assets/lib/bootstrap.js"
   script src="assets/lib/pushy.js"
   script src="assets/lib/icheck.js"

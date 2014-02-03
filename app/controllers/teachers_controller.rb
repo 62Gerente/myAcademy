@@ -65,12 +65,6 @@ class TeachersController < ApplicationController
 
   def profile
     @teacher = Teacher.find(current_teacher.id)
-    @academicinfo = AcademicInformation.where(teacher_id: current_teacher.id)
-    @pub = Publication.where(teacher_id: current_teacher.id)
-    @thexam = ThesisExamination.where(teacher_id: current_teacher.id)
-    @thesup = ThesisSupervision.where(teacher_id: current_teacher.id)
-    @research = ResearchProject.where(teacher_id: current_teacher.id)
-    @hobbies = Hobby.where(teacher_id: current_teacher.id)
   end
 
   private

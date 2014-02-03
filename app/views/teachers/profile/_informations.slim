@@ -1,0 +1,27 @@
+#personal.tab-pane.active.fade.in.p-30
+  h2.font-w-100
+    span.text-blue Biography
+  p.text-gray-alt
+    = @teacher.bio
+  hr
+  h2.font-w-100
+    span.text-blue Academic Degrees 
+  - @teacher.academic_informations.each do |ai|
+    p.text-gray-alt
+      span.label.label-info 
+        = ai.b_date.year  
+        | -
+        = ai.e_date.year
+      strong = ai.academic_degree.name  
+      |  in 
+      = ai.course.name  
+      |  @ 
+      = ai.course.institution.name
+      br/
+      blockquote.text-gray-alt.prof = ai.description 
+  hr 
+  h2.font-w-100
+    span.text-blue Hobbies
+  - @teacher.hobbies.each do |hobby|
+    span.label.label-success.m-10
+      = hobby.activity
