@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>B date:</strong>
+  <%= @academic_information.b_date %>
+</p>
+
+<p>
+  <strong>E date:</strong>
+  <%= @academic_information.e_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @academic_information.description %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @academic_information.grade %>
+</p>
+
+<p>
+  <strong>Academic degree:</strong>
+  <%= @academic_information.academic_degree %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @academic_information.course %>
+</p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @academic_information.institution %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @academic_information.teacher %>
+</p>
+
+<%= link_to 'Edit', edit_academic_information_path(@academic_information) %> |
+<%= link_to 'Back', academic_informations_path %>

@@ -4,7 +4,6 @@ class CreateTeachers < ActiveRecord::Migration
       t.string :name
       t.string :status
       t.string :phone
-      t.string :email
       t.datetime :birthday
       t.string :url
       t.text :bio

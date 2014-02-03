@@ -2,18 +2,21 @@ class CreatePublications < ActiveRecord::Migration
   def change
     create_table :publications do |t|
       t.string :title
-      t.string :url
-      t.datetime :date
-      t.text :description
-      t.text :address
+      t.string :chapter
       t.string :pages
       t.string :publisher
-      t.string :journal
+      t.string :doi
       t.string :volume
-      t.string :book_title
       t.string :isbn
       t.string :issn
-      t.text :how_published
+      t.datetime :date
+      t.string :booktitle
+      t.string :address
+      t.string :uri
+      t.string :journal
+      t.string :number
+      t.string :howpublished
+      t.string :school
       t.references :publication_type, index: true
       t.references :teacher, index: true
       t.references :research_project, index: true

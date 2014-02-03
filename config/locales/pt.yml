@@ -1,0 +1,275 @@
+pt: 
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              blank: "Confirmação da Password em branco."
+            password:
+              confirmation: "Confirmação da Password."
+              blank:  "Password em branco."
+              too_short: "Password demasiado curta (mínimo de 8 caracteres)"
+            current_password: 
+              blank: "Password atual em branco."
+
+  errors:
+    messages:
+      expired: "expirou, por favor solicite um novo"
+      not_found: "não foi encontrado"
+      already_confirmed: "já foi confirmado, por favor tente efectuar a autenticação"
+      not_locked: "não foi bloqueado"
+      not_saved:
+        one: "Foi impossível completar a acção devido ao seguinte facto:"
+        other: "Foi impossível completar a acção devido aos seguintes factos:"
+
+  devise:
+    failure:
+      already_authenticated: 'Já se encontra autenticado.'
+      unauthenticated: 'Antes de continuar tem de se autenticar ou efectuar um registo.'
+      unconfirmed: 'Tem de confirmar a sua conta antes de continuar.'
+      locked: 'A sua conta está bloqueada.'
+      invalid: 'O endereço de correio electrónico ou a palavra-passe são inválidos.'
+      not_found_in_database: "O endereço de correio electrónico ou a palavra-passe são inválidos."
+      invalid_token: 'O "token" de autenticação é inválido.'
+      timeout: 'A sua sessão expirou, por favor autentique-se novamente para continuar.'
+      inactive: 'A sua conta ainda não foi activada.'
+    sessions:
+      signed_in: 'Autenticação efectuada com sucesso.'
+      signed_out: 'Saíu da sessão com sucesso.'
+    passwords:
+      blank: "BLANK"
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: 'Dentro de alguns minutos irá receber um email com instruções de reinicialização da palavra-passe.'
+      updated: 'A sua palavra-passe foi alterada com sucesso. Agora está autenticado.'
+      updated_not_active: "A sua palavra-passe foi alterada com sucesso."      
+      send_paranoid_instructions: 'Se o seu e-mail existir na nossa base de dados, irá receber dentro de alguns minutos um e-mail com instruções para recuperar a sua senha.'
+    confirmations:
+      send_instructions: 'Dentro de alguns minutos irá receber um email com instruções para confirmar  sua conta.'
+      send_paranoid_instructions: 'Se o seu e-mail existir na nossa base de dados, irá receber dentro de alguns minutos um email com instruções para confirmar a sua conta.'
+      confirmed: 'A sua conta foi confirmada com sucesso. Agora está autenticado.'
+    registrations:
+      signed_up: 'Bem-vindo! A autenticação foi efectuada com sucesso.'
+      inactive_signed_up: 'A autenticação foi efectuada com sucesso. No entanto, não foi possível autorizá-lo porque a sua conta está %{reason}.'
+      updated: 'A sua conta foi actualizada com sucesso.'
+      destroyed: 'A sua conta foi cancelada com sucesso.'
+    unlocks:
+      send_instructions: 'Dentro de alguns minutos irá receber um email com as instruções para desbloquear a sua conta.'
+      unlocked: 'A sua conta foi desbloqueada com sucesso. Agora está autenticado.'
+      send_paranoid_instructions: 'Se a sua conta existir, irá receber dentro de alguns minutos um email com instruções para a desbloquear.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instruções de confirmação'
+      reset_password_instructions:
+        subject: 'Instruções de recuperação de palavra-passe'
+      unlock_instructions:
+        subject: 'Instruções de desbloqueio'
+  date:
+    abbr_day_names:
+    - Dom
+    - Seg
+    - Ter
+    - Qua
+    - Qui
+    - Sex
+    - Sáb
+    abbr_month_names:
+    -
+    - Jan
+    - Fev
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Out
+    - Nov
+    - Dez
+    day_names:
+    - Domingo
+    - Segunda
+    - Terça
+    - Quarta
+    - Quinta
+    - Sexta
+    - Sábado
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %B'
+    month_names:
+    -
+    - Janeiro
+    - Fevereiro
+    - Março
+    - Abril
+    - Maio
+    - Junho
+    - Julho
+    - Agosto
+    - Setembro
+    - Outubro
+    - Novembro
+    - Dezembro
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadamente 1 hora
+        other: aproximadamente %{count} horas
+      about_x_months:
+        one: aproximadamente 1 mês
+        other: aproximadamente %{count} meses
+      about_x_years:
+        one: aproximadamente 1 ano
+        other: aproximadamente %{count} anos
+      almost_x_years:
+        one: quase 1 ano
+        other: quase %{count} anos
+      half_a_minute: meio minuto
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: mais de 1 ano
+        other: mais de %{count} anos
+      x_days:
+        one: 1 dia
+        other: ! '%{count} dias'
+      x_minutes:
+        one: 1 minuto
+        other: ! '%{count} minutos'
+      x_months:
+        one: 1 mês
+        other: ! '%{count} meses'
+      x_seconds:
+        one: 1 segundo
+        other: ! '%{count} segundos'
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mês
+      second: Segundo
+      year: Ano
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: tem de ser aceite
+      blank: não pode estar em branco
+      confirmation: não coincide com a confirmação
+      empty: não pode estar vazio
+      equal_to: tem de ser igual a %{count}
+      even: tem de ser par
+      exclusion: é reservado
+      greater_than: tem de ser maior que %{count}
+      greater_than_or_equal_to: tem de ser maior ou igual a %{count}
+      inclusion: não está incluído na lista
+      invalid: é inválido
+      less_than: tem de ser menor que %{count}
+      less_than_or_equal_to: tem de ser menor ou igual a %{count}
+      not_a_number: não é um número
+      not_an_integer: tem de ser um inteiro
+      odd: tem de ser ímpar
+      record_invalid: ! 'A validação falhou: %{errors}'
+      taken: não está disponível
+      too_long: é demasiado grande (o máximo é de %{count} caracteres)
+      too_short: é demasiado pequeno (o mínimo é de %{count} caracteres)
+      wrong_length: comprimento errado (deve ter %{count} caracteres)
+    template:
+      body: ! 'Por favor, verifique os seguintes campos:'
+      header:
+        one: ! 'Não foi possível guardar %{model}: 1 erro'
+        other: ! 'Não foi possível guardar %{model}: %{count} erros'
+  helpers:
+    select:
+      prompt: Por favor seleccione
+    submit:
+      create: Criar %{model}
+      submit: Gravar %{model}
+      update: Actualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%u%n'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: .
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            one: mil milhões
+            other: mil milhões
+          million:
+            one: milhão
+            other: milhões
+          quadrillion:
+            one: mil biliões
+            other: mil biliões
+          thousand: mil
+          trillion:
+            one: bilião
+            other: biliões
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', e'
+      two_words_connector: ! ' e '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%A, %d de %B de %Y, %H:%Mh'
+      long: ! '%A, %d de %B de %Y, %H:%Mh'
+      short: ! '%d/%m, %H:%M hs'
+    pm: pm
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors

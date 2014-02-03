@@ -1,0 +1,33 @@
+<%= form_for(@co_supervisor) do |f| %>
+  <% if @co_supervisor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@co_supervisor.errors.count, "error") %> prohibited this co_supervisor from being saved:</h2>
+
+      <ul>
+      <% @co_supervisor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :institution %><br>
+    <%= f.text_field :institution %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher %><br>
+    <%= f.text_field :teacher %>
+  </div>
+  <div class="field">
+    <%= f.label :thesis_supervision %><br>
+    <%= f.text_field :thesis_supervision %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

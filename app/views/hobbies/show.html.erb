@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @hobby.activity %>
+</p>
+
+<p>
+  <strong>B date:</strong>
+  <%= @hobby.b_date %>
+</p>
+
+<p>
+  <strong>E date:</strong>
+  <%= @hobby.e_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hobby.description %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @hobby.teacher %>
+</p>
+
+<%= link_to 'Edit', edit_hobby_path(@hobby) %> |
+<%= link_to 'Back', hobbies_path %>

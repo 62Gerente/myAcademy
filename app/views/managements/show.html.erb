@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>B date:</strong>
+  <%= @management.b_date %>
+</p>
+
+<p>
+  <strong>E date:</strong>
+  <%= @management.e_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @management.description %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @management.teacher %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @management.role %>
+</p>
+
+<p>
+  <strong>Entity:</strong>
+  <%= @management.entity %>
+</p>
+
+<%= link_to 'Edit', edit_management_path(@management) %> |
+<%= link_to 'Back', managements_path %>

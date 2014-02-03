@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theexams xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/Applications/MAMP/htdocs/myapps/the-exam/the-exams.xsd">
+    <theexam type="phd">
+        <student>
+            <name>Luís Miguel Gomes dos Santos Reis Leitão</name>
+        </student>
+        <document>
+            <title>Duplicate Detection in XML Databases</title>
+        </document>
+        <inst>Instituto Superior Técnico da Universidade Técnica de Lisboa</inst>
+        <date ansi="2013-07-01">Jul. 2013</date>
+    </theexam>
+    
+    <theexam type="phd">
+        <student>
+            <name>Ricardo Alexandre Peixoto de Queirós</name>
+        </student>
+        <document>
+            <title>A framework for practice-based learning applied to computer programmming</title>
+        </document>
+        <inst>Faculdade de Ciências da Universidade do Porto</inst>
+        <date ansi="2012-09-14">Sep. 2012</date>
+    </theexam>
+    
+    <theexam type="phd">
+        <student>
+            <name>Francisco Javier Calzada Prado</name>
+        </student>
+        <document>
+            <title>Los Objetos de Aprendizaje en la Educación Superior: Fundamentos, Tratamiento y Recuperación en Repositorios y Bibliotecas Digitales Educativas</title>
+        </document>
+        <inst>Universidad Carlos III, Madrid, Spain</inst>
+        <date>Jun. 2009</date>
+    </theexam>
+    
+    <theexam type="phd">
+        <student>
+            <name>Jana Jagodic</name>
+        </student>
+        <document>
+            <title>The Role of an ICT Change Agent in ICT Diffusion within Technology Projects in Public and Private Sector Settings</title>
+        </document>
+        <inst>Doctorate of Business Administration (DBA), School of Business, University of Ballarat, Australia</inst>
+        <date>August 2008</date>
+    </theexam>
+    
+    <theexam type="phd">
+        <student>
+            <name>Gustavo Vasconcelos Arnold</name>
+        </student>
+        <document>
+            <title>Automatization of the Code Generation for Different Industrial Robots</title>
+        </document>
+        <inst>Escola de Engenharia da Universidade do Minho</inst>
+        <date>June 2008</date>
+    </theexam>
+    
+    <theexam type="phd">
+        <student>
+            <name>Maria João Tinoco Varanda Pereira</name>
+        </student>
+        <document>
+            <title>Sistematização da Animação de Programas</title>
+        </document>
+        <inst>Escola de Engenharia da Universidade do Minho</inst>
+        <date>Oct. 2003</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Luís Miguel Barbosa Braga</name>
+        </student>
+        <document>
+            <title>Engineering Temporal and Spatial Aspects in OWL using Patterns</title>
+        </document>
+        <inst>Instituto Superior de Engenharia do Porto</inst>
+        <date ansi="2013-11-22">Nov. 2013</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Alda Renata Fangueiro Canito</name>
+        </student>
+        <document>
+            <title>Evaluating the Combination of Relaxation and Argumentation in Ontology Matching Negotiation</title>
+        </document>
+        <inst>Instituto Superior de Engenharia do Porto</inst>
+        <date ansi="2013-11-15">Nov. 2013</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Vitor Manuel Braga da Silva</name>
+        </student>
+        <document>
+            <title>Soluções Open-source para os Serviços de Fax e VPN numa Rede Empresarial</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>Feb. 2012</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Marcelo Sousa Almeida</name>
+        </student>
+        <document>
+            <title>Integração do OpenERP (Enterprise Resource Planning) no Sistema de Gestão Documental e Workflow</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>Feb. 2012</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Joana Raquel Ferreira da Silva Pereira</name>
+        </student>
+        <document>
+            <title>Interface Avançado de Utilizador para Análise de Formatos Multimédia</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>Feb. 2012</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Ricardo André de Sousa Jafe</name>
+        </student>
+        <document>
+            <title>Indexação e Pesquisa de Informação com Base em Ontologias Interligadas</title>
+        </document>
+        <inst>Instituto Superior de Engenharia do Porto</inst>
+        <date ansi="2011-11-16">Nov. 2011</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>João Miguel Silva</name>
+        </student>
+        <document>
+            <title>Sharing Botanical Information using Geospatial Databases</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>July 2009</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Pedro Miguel Silva</name>
+        </student>
+        <document>
+            <title>Computação Ubíqua no Ensino Básico: Plataforma orientada à informação multissensorial georreferenciada</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>July 2009</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Marília Natália Gonçalves</name>
+        </student>
+        <document>
+            <title>Earthquake Record Selection for Dynamic Structural Analysis: an Application with a Web Interface</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>July 2009</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Luis Matias</name>
+        </student>
+        <document>
+            <title>Sistema de Gestão Financeira para um Parque Tecnológico utilizando um Sistema de Geração Automática de Código</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>March 2009</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Miguel Rodrigues</name>
+        </student>
+        <document>
+            <title>Arquitecturas de Integração de Mediadores com Companhias de Seguros</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>March 2009</date>
+    </theexam>
+  
+    <theexam type="msc">
+        <student>
+            <name>Ricardo Leandro</name>
+        </student>
+        <document>
+            <title>Improving Database Reporting Processes with XML Technologies</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>March 2009</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Rui Pedro Guerra</name>
+        </student>
+        <document>
+            <title>Integration using Oracle SOA Suite</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>March 2009</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Tiago Franco</name>
+        </student>
+        <document>
+            <title>Reactivity in the Semantic Web applied to Bio-informatics</title>
+        </document>
+        <inst>Faculdade de Ciência e Tecnologia da Universidade Nova de Lisboa</inst>
+        <date>February 2009</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Tiago Rema e Cunha</name>
+        </student>
+        <document>
+            <title>A Control for Graph Representation and Interaction</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>July 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Filipe Daniel Figueiredo de Lemos</name>
+        </student>
+        <document>
+            <title>Digital Archives: Comparative Study and Interoperability</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>July 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Ivo André da Rocha Marinho</name>
+        </student>
+        <document>
+            <title>Utilização do Oracle BPEL Process Manager</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>July 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Filipe João Pereira Montenegro</name>
+        </student>
+        <document>
+            <title>Gestão Integrada de Controlo de Acessos</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>July 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Filipe Emanuel Amaro Coelho</name>
+        </student>
+        <document>
+            <title>Sistema automático de reconhecimento do montante de um cheque</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>May 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Guilherme Artur Conceicão Capela</name>
+        </student>
+        <document>
+            <title>Reconhecimento de símbolos musicais manuscritos na framework Gamera</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>May 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Hugo André Amaral Rodrigues</name>
+        </student>
+        <document>
+            <title>Clinical Protocols Enabling Evidence Based Medicine Practice in Healthcare Software Solutions</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>May 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>José Miguel Ribeiro Paixão</name>
+        </student>
+        <document>
+            <title>Audit Trail CCHIT: Specification and Implementation</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>May 2008</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Pedro da Silveira Vieira da Silva</name>
+        </student>
+        <document>
+            <title>Uma infra-estrutura de suporte à adaptabilidade em sites web</title>
+        </document>
+        <inst>Faculdade de Ciências da Universidade do Porto</inst>
+        <date>Dec. 2006</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Rui Manuel de Jesus Vaz Luís</name>
+        </student>
+        <document>
+            <title>Sistemas Remotos para Monitorização e Análise de Dados em Plataformas de E-Learning</title>
+        </document>
+        <inst>Instituto Superior Técnico da Universidade Técnica de Lisboa</inst>
+        <date>Jan. 2006</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>David Simões</name>
+        </student>
+        <document>
+            <title>Evolving E-Learning Standards: Vianet, a case study</title>
+        </document>
+        <inst>Instituto Superior Técnico da Universidade Técnica de Lisboa</inst>
+        <date>Jul. 2005</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Luis Ferreira</name>
+        </student>
+        <document>
+            <title>Formalizing Interface Markup Languages</title>
+        </document>
+        <inst>Escola de Engenharia da Universidade do Minho</inst>
+        <date>Apr. 2005</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Ricardo Alexandre Peixoto de Queirós</name>
+        </student>
+        <document>
+            <title>Edição estrutural de documentos XML sobre a Web</title>
+        </document>
+        <inst>Faculdade de Ciências da Universidade do Porto</inst>
+        <date>Dec. 2004</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Ricardo Alexandre G. C. Martins</name>
+        </student>
+        <document>
+            <title>Exploração do GML e Web Services para uso de SIG's em PDA's</title>
+        </document>
+        <inst>Escola de Engenharia da Universidade do Minho</inst>
+        <date>Dec. 2004</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Mário Ricardo de Novais Henriques</name>
+        </student>
+        <document>
+            <title>pGML - Estudo de um Subconjunto 'Preciso' do GML 2.12</title>
+        </document>
+        <inst>Escola de Engenharia da Universidade do Minho</inst>
+        <date>Nov. 2004</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Hugo Manuel Lima de Sousa</name>
+        </student>
+        <document>
+            <title>Normalização de Meta-Informação para Arquivos Multimédia</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>Nov. 2004</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Giovana Mendes</name>
+        </student>
+        <document>
+            <title>Exploração de Soluções de Arquivo para Documentos anotados na linguagem XML e o seu processamento</title>
+        </document>
+        <inst>Escola de Engenharia da Universidade do Minho</inst>
+        <date>Nov. 2004</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Rui Alexandre Alperiz Cerveira Nunes</name>
+        </student>
+        <document>
+            <title>Armazenamento de Dados Complexos Utilizando XML</title>
+        </document>
+        <inst>Instituto Superior Técnico da Universidade Técnica de Lisboa</inst>
+        <date>Jun. 2003</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Carlos Ângelo de Paiva Pereira</name>
+        </student>
+        <document>
+            <title>Interacção com uma Arquitectura de Componentes com Independência de Dispositivo e Localização</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>Apr. 2003</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Alexandre Manuel Pinto Martins</name>
+        </student>
+        <document>
+            <title>Especificação XML de Aplicaçõees para WWW</title>
+        </document>
+        <inst>Faculdade de Engenharia da Universidade do Porto</inst>
+        <date>Dec. 2002</date>
+    </theexam>
+    
+    <theexam type="msc">
+        <student>
+            <name>Marta Henriques Jacinto</name>
+        </student>
+        <document>
+            <title>Validação Semântica em Documentos XML</title>
+        </document>
+        <inst>Escola de Engenharia da Universidade do Minho</inst>
+        <date>Oct. 2002</date>
+    </theexam>
+</theexams>
