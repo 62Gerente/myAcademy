@@ -26,7 +26,7 @@ body.bg-gray-light
                 p.text-gray-alt
                   | Phone
             .col-sm-4
-              h4 University of Minho
+              h4 = @teacher.institution.name
               p.text-gray-alt
                 | Instituition
               hr
@@ -103,25 +103,43 @@ body.bg-gray-light
                 = ai.b_date.year  
                 | -
                 = ai.e_date.year
-              strong = AcademicDegree.find(ai.academic_degree_id).name  
+              strong = ai.academic_degree.name  
               |  in 
-              = Course.find(ai.course_id).name  
+              = ai.course.name  
               |  @ 
-              = Institution.find(Course.find(ai.course_id).institution_id).name
+              = ai.course.institution.name
               br/
               blockquote.text-gray-alt.prof = ai.description 
           hr 
           h2.font-w-100
             span.text-blue Hobbies
-          - Hobby.where(teacher_id: @teacher.id).each do |hobby|
+          - @hobbies.each do |hobby|
             span.label.label-success.m-10
               = hobby.activity
         #research.tab-pane.fade.p-30
+          h2.font-w-100
+            span.text-blue Research Projects
+          - @research.each do |r|
+            p
+              strong = r.name
+              | ; 
+              = r.b_date
+              |  to 
+              = r.e_date
+              | ; 
+              = r.description
+              | ; 
+              a href=(r.url)
+                = r.url
+            hr 
         #publications.tab-pane.fade.p-30
           h2.font-w-100
             span.text-blue Publications
           - @pub.each do |pub|
             p.text-gray-alt
+              |  [  
+              = pub.publication_type.name
+              |  ] 
               strong =pub.title
               |  ;  
               - Author.where(publication_id: pub.id).each do |author|

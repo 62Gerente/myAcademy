@@ -12,7 +12,6 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
-    format.xml { render xml: @teacher.to_xml }
   end
 
   # GET /teachers/new
@@ -70,6 +69,8 @@ class TeachersController < ApplicationController
     @pub = Publication.where(teacher_id: current_teacher.id)
     @thexam = ThesisExamination.where(teacher_id: current_teacher.id)
     @thesup = ThesisSupervision.where(teacher_id: current_teacher.id)
+    @research = ResearchProject.where(teacher_id: current_teacher.id)
+    @hobbies = Hobby.where(teacher_id: current_teacher.id)
   end
 
   private

@@ -29,7 +29,19 @@ body.backstretch._signup
                 .form-group
                   = f.text_field :phone, :class => "form-control input-glass", :placeholder => "Phone"
                 .form-group
+                  = f.text_field :status, :class => "form-control input-glass", :placeholder => "Status"
+                .form-group
+                  = f.text_field :url, :class => "form-control input-glass", :placeholder => "URL"
+                .form-group
+                  = f.text_area :bio, :class => "form-control input-glass", :placeholder => "Bio"
+                .form-group
+                  = f.datetime_select :birthday, :class => "form-control input-glass"
+                .form-group
+                  = f.collection_select :institution_id, Institution.all, :id, :name, :class => "form-control input-glass"
+                .form-group
                   = f.password_field :password, :class => "form-control input-glass", :placeholder => "Password"
                 .form-group
                   = f.password_field :password_confirmation, :class => "form-control input-glass", :placeholder => "Confirm Password"
                 button.btn.btn-primary.btn-block.btn-lg type="submit" Sign up
+
+
