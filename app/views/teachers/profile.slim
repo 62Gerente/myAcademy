@@ -10,10 +10,12 @@ body.bg-gray-light
           div
             div
               .i-block
-                h3.m-b-0= @teacher.name
+                h3.m-b-0
+                  = link_to @teacher.name, @teacher.url
+
             div
               .text-gray-alt.i-block
-                span.m-t-10.d-block 
+                span.m-t-10.d-block
                   = link_to @teacher.email, "mailto:#{@teacher.email}"
       .col-sm-9
         .bg-white.p-30.brad.b-bot-2px-gray-light.b-right-1px-gray-light
@@ -29,19 +31,15 @@ body.bg-gray-light
               p.text-gray-alt Instituition
               hr
               h4 XX years old
-              p.text-gray-alt 
-                | Born on 
+              p.text-gray-alt
+                | Born on
                 = @teacher.try(:birthday).strftime("%Y.%m.%d")
             .col-sm-4
-              h4 
-                = link_to @teacher.url, @teacher.url
-              p.text-gray-alt Website
-              hr
               h4 Registed
               p.text-gray-alt Since 03.02.2014
 
     = render "teachers/profile/tabs"
-    
+
   script src="https://code.jquery.com/jquery.js"
   script src="assets/lib/bootstrap.js"
   script src="assets/lib/pushy.js"

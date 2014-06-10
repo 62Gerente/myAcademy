@@ -3,7 +3,7 @@
     .bg-gray-dark-shade.text-left.search
       i.glyphicon.glyphicon-search.text-gray-alt
       input.input-invisible placeholder="Search" type="text"
-    ul.unstyled.nav
+    ul.unstyled.nav.sidebar-menu
       li = link_to "Update profile", "teachers/#{@teacher.id}/edit"
       li = link_to "Add Thesis", new_thesis_path
       li = link_to "Add Thesis Supervision", new_thesis_supervision_path
