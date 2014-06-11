@@ -15,7 +15,7 @@ gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'compass-rails'
 gem 'slim'
 gem "rest-client"
-
+gem "better_errors"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

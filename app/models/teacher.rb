@@ -17,4 +17,8 @@ class Teacher < ActiveRecord::Base
   has_many :publications
 
   has_attached_file :photo
+
+  def sort_academic_informations
+    self.academic_informations.sort_by{|ai| ai.b_date}
+  end
 end

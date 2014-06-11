@@ -1,0 +1,35 @@
+.row
+  .col-sm-3.text-center
+    .p-10.brad
+      .img-circle.profile-pic style="margin:auto;background-image:url('#{@teacher.photo.url}')"
+      div
+        div
+          .i-block
+            h3.m-b-0
+              = link_to @teacher.name, @teacher.url
+
+        div
+          .text-gray-alt.i-block
+            span.m-t-10.d-block
+              = link_to @teacher.email, "mailto:#{@teacher.email}"
+  .col-sm-9
+    .bg-white.p-30.brad.b-bot-2px-gray-light.b-right-1px-gray-light
+      .row
+        .col-sm-4
+          h4 = @teacher.status
+          p.text-gray-alt Status
+          hr
+          h4 = @teacher.phone
+          p.text-gray-alt Phone
+        .col-sm-4
+          h4 = @teacher.institution.name
+          p.text-gray-alt Instituition
+          hr
+          h4 XX years old
+          p.text-gray-alt
+            | Born on
+            = @teacher.try(:birthday).strftime("%Y.%m.%d")
+        .col-sm-4
+          h4 Registed
+          p.text-gray-alt Since 03.02.2014
+          hr

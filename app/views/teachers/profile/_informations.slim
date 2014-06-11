@@ -5,21 +5,30 @@
     = @teacher.bio
   hr
   h2.font-w-100
-    span.text-blue Academic Degrees 
-  - @teacher.academic_informations.each do |ai|
-    p.text-gray-alt
-      span.label.label-info 
-        = ai.b_date.year  
-        | -
-        = ai.e_date.year
-      strong = ai.academic_degree.name  
-      |  in 
-      = ai.course.name  
-      |  @ 
-      = ai.course.institution.name
-      br/
-      blockquote.text-gray-alt.prof = ai.description 
-  hr 
+    span.text-blue Academic Degrees
+  - @teacher.sort_academic_informations.each do |ai|
+    .row
+      .col-sm-2
+        p.text-gray-alt
+          span.label.label-info
+            = ai.b_date.year
+            | -
+            - if ai.e_date
+              = ai.e_date.year
+            - else
+              | current
+      .col-sm-10
+        p.text-gray-alt
+          strong = ai.academic_degree.name
+          |  in
+          = " #{ai.course.name}"
+          |  @
+          = ai.course.institution.name
+          br/
+          - if !ai.description.blank?
+            blockquote.text-gray-alt.prof
+              = ai.description
+  hr
   h2.font-w-100
     span.text-blue Hobbies
   - @teacher.hobbies.each do |hobby|

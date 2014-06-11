@@ -1,6 +1,6 @@
 (function () {
     $(document).ready(function () {
-        var addMessage, animateSidebarChart, data, events, inboxMessages, listItem, listSortable, makeMessageString, makeReplyString, sidebarChart, someday, stats_shown, taskInput, today, tomorrow, uiChart1, uiChart2, uiChart3, uiPieChart, uiPieChart2;
+        var addMessage, animateSidebarChart, data, events, inboxMessages, listItem, listSortable, makeMessageString, makeReplyString, someday, stats_shown, taskInput, today, tomorrow, uiChart1, uiChart2, uiChart3, uiPieChart, uiPieChart2;
         return makeMessageString = function (content) {
             return "<li class='right'><img src='placeholders/avatars/9.jpg' class='img-circle'><div class='message'>" + content + "</div></li>"
         }, makeReplyString = function (content) {
@@ -42,34 +42,6 @@
             paramName: "file",
             maxFilesize: 2,
             addRemoveLinks: !0
-        }), sidebarChart = $(".sidebar-chart"), sidebarChart.easyPieChart({
-            barColor: "#2CC0D5",
-            trackColor: "rgba(255,255,255,.06)",
-            lineWidth: 10,
-            animate: 600,
-            lineCap: "square",
-            size: 140,
-            onStart: function (from, to) {
-                var percentage;
-                return percentage = $(this.el).find(".percentage"), $({
-                    val: from
-                }).animate({
-                    val: to
-                }, {
-                    duration: 600,
-                    easing: "swing",
-                    step: function () {
-                        return percentage.text(Math.round(this.val) + "%")
-                    }
-                })
-            }
-        }), animateSidebarChart = function () {
-            var random;
-            return random = Math.round(99 * Math.random() + 1), setTimeout(function () {
-                return $(".sidebar-chart").data("easyPieChart").update(random), animateSidebarChart()
-            }, 5e3)
-        }, animateSidebarChart(), inboxMessages = $(".messages-selectable"), inboxMessages.length > 0 && inboxMessages.on("click", "a", function (e) {
-            return e.preventDefault(), $(this).toggleClass("active")
         }), listSortable = $(".list-editable"), listSortable.length > 0 && (listItem = $("#item-template").clone(), taskInput = $("#task-content"), $("#task-toggle").on("click", function (e) {
             return e.preventDefault(), taskInput.toggleClass("opacity-1"), taskInput.hasClass("opacity-1") ? taskInput.focus() : void 0
         }), taskInput.on("keyup", function (e) {
