@@ -15,6 +15,7 @@ class ThesisExaminationsController < ApplicationController
   # GET /thesis_examinations/new
   def new
     @thesis_examination = ThesisExamination.new
+    @thesis_examination.thesis =  Thesis.new
     @teacher = Teacher.find(current_teacher.id)
   end
 
@@ -25,11 +26,28 @@ class ThesisExaminationsController < ApplicationController
   # POST /thesis_examinations
   # POST /thesis_examinations.json
   def create
-    @thesis_examination = ThesisExamination.new(thesis_examination_params)
+    @thesis_examination = ThesisExamination.new(
+                                                description: thesis_examination_params[:description]
+                                               )
+    @thesis_examination.thesis = Thesis.new(
+                                            title: thesis_examination_params[:title],
+                                            student: thesis_examination_params[:student],
+                                            url: thesis_examination_params[:url],
+                                            academic_degree_id: thesis_params[:academic_degree_id],
+                                            institution_id: thesis_params[:institution_id]
+                                           )
+
+    begin
+      @thesis_examination.date = Date.parse(thesis_examination_params[:date])
+    rescue ArgumentError
+      return redirect_to new_thesis_examination_path(@thesis_examination)
+    end
+
+    @thesis_examination.teacher = Teacher.find(current_teacher.id)
 
     respond_to do |format|
       if @thesis_examination.save
-        format.html { redirect_to @thesis_examination, notice: 'Thesis examination was successfully created.' }
+        format.html { redirect_to :home, notice: 'Thesis examination was successfully created.' }
         format.json { render action: 'show', status: :created, location: @thesis_examination }
       else
         format.html { render action: 'new' }
@@ -70,6 +88,10 @@ class ThesisExaminationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thesis_examination_params
-      params.require(:thesis_examination).permit(:date, :description, :thesis_id, :teacher_id)
+      params.require(:thesis_examination).permit(:date, :description,:title, :url, :student)
+    end
+
+    def thesis_params
+      params.require(:thesis).permit(:academic_degree_id, :institution_id)
     end
 end

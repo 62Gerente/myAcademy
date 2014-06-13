@@ -53,7 +53,7 @@ class ThesisSupervisionsController < ApplicationController
 
     @thesis_supervision.teacher = Teacher.find(current_teacher.id)
     respond_to do |format|
-      if @thesis_supervision.thesis.save && @thesis_supervision.save
+      if @thesis_supervision.save
         format.html { redirect_to :home, notice: 'Thesis supervision was successfully created.' }
         format.json { render action: 'show', status: :created, location: @thesis_supervision }
       else
@@ -97,6 +97,7 @@ class ThesisSupervisionsController < ApplicationController
     def thesis_supervision_params
       params.require(:thesis_supervision).permit(:b_date, :e_date, :description,:title, :url, :student)
     end
+
     def thesis_params
       params.require(:thesis).permit(:academic_degree_id, :institution_id)
     end
