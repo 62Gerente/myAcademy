@@ -15,6 +15,7 @@ class ThesisExaminationsController < ApplicationController
   # GET /thesis_examinations/new
   def new
     @thesis_examination = ThesisExamination.new
+    @teacher = Teacher.find(current_teacher.id)
   end
 
   # GET /thesis_examinations/1/edit

@@ -15,6 +15,8 @@ class ThesisSupervisionsController < ApplicationController
   # GET /thesis_supervisions/new
   def new
     @thesis_supervision = ThesisSupervision.new
+    @thesis_supervision.thesis =  Thesis.new
+    @teacher = Teacher.find(current_teacher.id)
   end
 
   # GET /thesis_supervisions/1/edit
@@ -24,11 +26,35 @@ class ThesisSupervisionsController < ApplicationController
   # POST /thesis_supervisions
   # POST /thesis_supervisions.json
   def create
-    @thesis_supervision = ThesisSupervision.new(thesis_supervision_params)
+    @thesis_supervision = ThesisSupervision.new(
+                                                description: thesis_supervision_params[:description]
+                                               )
+    @thesis_supervision.thesis = Thesis.new(
+                                            title: thesis_supervision_params[:title],
+                                            student: thesis_supervision_params[:student],
+                                            url: thesis_supervision_params[:url],
+                                            academic_degree_id: thesis_params[:academic_degree_id],
+                                            institution_id: thesis_params[:institution_id]
+                                           )
 
+    begin
+      @thesis_supervision.b_date = Date.parse(thesis_supervision_params[:b_date])
+    rescue ArgumentError
+      return redirect_to new_thesis_supervision_path(@thesis_supervision)
+    end
+
+    if !thesis_supervision_params[:e_date].blank?
+      begin
+        @thesis_supervision.e_date = Date.parse(thesis_supervision_params[:e_date])
+      rescue ArgumentError
+        return redirect_to new_thesis_supervision_path(@thesis_supervision)
+      end
+    end
+
+    @thesis_supervision.teacher = Teacher.find(current_teacher.id)
     respond_to do |format|
-      if @thesis_supervision.save
-        format.html { redirect_to @thesis_supervision, notice: 'Thesis supervision was successfully created.' }
+      if @thesis_supervision.thesis.save && @thesis_supervision.save
+        format.html { redirect_to :home, notice: 'Thesis supervision was successfully created.' }
         format.json { render action: 'show', status: :created, location: @thesis_supervision }
       else
         format.html { render action: 'new' }
@@ -69,6 +95,9 @@ class ThesisSupervisionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thesis_supervision_params
-      params.require(:thesis_supervision).permit(:b_date, :e_date, :description, :teacher_id, :thesis_id)
+      params.require(:thesis_supervision).permit(:b_date, :e_date, :description,:title, :url, :student)
+    end
+    def thesis_params
+      params.require(:thesis).permit(:academic_degree_id, :institution_id)
     end
 end

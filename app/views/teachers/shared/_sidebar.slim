@@ -5,7 +5,6 @@
       input.input-invisible placeholder="Search" type="text"
     ul.unstyled.nav.sidebar-menu
       li = link_to "Update profile", "teachers/#{@teacher.id}/edit"
-      li = link_to "Add Thesis", new_thesis_path
       li = link_to "Add Thesis Supervision", new_thesis_supervision_path
       li = link_to "Add Thesis Examination", new_thesis_examination_path
       li = link_to "Add Publication", new_publication_path
