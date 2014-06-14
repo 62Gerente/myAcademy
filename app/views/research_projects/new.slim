@@ -1,0 +1,21 @@
+body.bg-gray-light
+  = render "teachers/shared/navbar"
+  = render "teachers/shared/sidebar"
+  #container.main-content.p-30.tp-t-60.tp-lr-10.active
+    button.menu-btn.btn.btn-bordered.text-gray-alt.text-bold.top-left-corner ☰ MENU
+    = render "teachers/profile/header"
+    .bg-white.p-30.m-t-10.brad.b-bot-2px-gray-light.b-right-1px-gray-light
+      h2.text-center.p-b-30-m-t-0.page-header Add Research Project
+      = render "research_projects/form"
+
+  script src="https://code.jquery.com/jquery.js"
+  script src="/assets/lib/bootstrap.js"
+  script src="/assets/lib/pushy.js"
+  script src="/assets/lib/icheck.js"
+  script src="/assets/lib/bootstrap-select.js"
+  script src="/assets/lib/bootstrap-datepicker.js"
+  script src="/assets/lib/jquery.eComboBox.js"
+  script src="/assets/admin.js"
+
+  javascript:
+    $('.datepicker').datepicker()

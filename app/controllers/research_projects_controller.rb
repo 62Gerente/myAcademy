@@ -15,6 +15,7 @@ class ResearchProjectsController < ApplicationController
   # GET /research_projects/new
   def new
     @research_project = ResearchProject.new
+    @teacher = Teacher.find(current_teacher.id)
   end
 
   # GET /research_projects/1/edit
@@ -25,10 +26,18 @@ class ResearchProjectsController < ApplicationController
   # POST /research_projects.json
   def create
     @research_project = ResearchProject.new(research_project_params)
+    @research_project.teacher = Teacher.find(current_teacher.id)
+
+    begin
+      @research_project.b_date = Date.parse(research_project_params[:b_date])
+      @research_project.e_date = Date.parse(research_project_params[:e_date])
+    rescue ArgumentError
+      return redirect_to new_research_project_path(@research_project)
+    end
 
     respond_to do |format|
       if @research_project.save
-        format.html { redirect_to @research_project, notice: 'Research project was successfully created.' }
+        format.html { redirect_to :home, notice: 'Research project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @research_project }
       else
         format.html { render action: 'new' }
@@ -69,6 +78,6 @@ class ResearchProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def research_project_params
-      params.require(:research_project).permit(:name, :url, :b_date, :e_date, :description, :teacher_id)
+      params.require(:research_project).permit(:name, :url, :b_date, :e_date, :description)
     end
 end

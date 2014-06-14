@@ -15,6 +15,7 @@ class PublicationsController < ApplicationController
   # GET /publications/new
   def new
     @publication = Publication.new
+    @teacher = Teacher.find(current_teacher.id)
   end
 
   # GET /publications/1/edit
