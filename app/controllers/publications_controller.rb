@@ -27,9 +27,17 @@ class PublicationsController < ApplicationController
   def create
     @publication = Publication.new(publication_params)
 
+    begin
+      @publication.date = Date.parse(publication_params[:date])
+    rescue ArgumentError
+      return redirect_to new_publication_path(@academic_information)
+    end
+
+    @publication.teacher = Teacher.find(current_teacher.id)
+
     respond_to do |format|
       if @publication.save
-        format.html { redirect_to @publication, notice: 'Publication was successfully created.' }
+        format.html { redirect_to :home, notice: 'Publication was successfully created.' }
         format.json { render action: 'show', status: :created, location: @publication }
       else
         format.html { render action: 'new' }
