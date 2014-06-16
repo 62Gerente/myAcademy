@@ -13,6 +13,8 @@ MyAcademy::Application.routes.draw do
   get "/teachers/export/pdf", to: "export#latex_pdf", as: :export_resume_pdf
   get "/teachers/export/md", to: "export#md", as: :export_resume_md
 
+  get "/oai" , to: "oai#index", as: :oai
+
   resources :theses
   resources :thesis_supervisions
   resources :teachers
