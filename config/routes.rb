@@ -11,6 +11,8 @@ MyAcademy::Application.routes.draw do
   get "/teachers/export/xml", to: "export#xml", as: :export_xml
   get "/teachers/export/pdf", to: "export#pdf", as: :export_pdf
 
+  get "/oai" , to: "oai#index", as: :oai
+
   resources :theses
   resources :thesis_supervisions
   resources :teachers
