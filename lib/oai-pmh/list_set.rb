@@ -7,7 +7,7 @@ module OaiPmh
       @xmlns_xsi="http://www.w3.org/2001/XMLSchema-instance"
       @xsi_schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"
       @request=request
-      @response=Time.now.iso8601
+      @response=Time.now.utc.iso8601
     end
 
     def xml
@@ -31,6 +31,7 @@ module OaiPmh
 
 
     def addListSets(xml)
+
       xml.ListSets{
         addPublicationSet(xml)
         PublicationType.all.each do |pt|
