@@ -21,22 +21,38 @@ body.bg-gray-light
         .bg-white.p-30.brad.b-bot-2px-gray-light.b-right-1px-gray-light
           .row
             .col-sm-4
-              h4 = @teacher.status
+              h4 
+                - if @teacher.status
+                  = @teacher.status
+                - else
+                  | N/D
               p.text-gray-alt Status
               hr
-              h4 = @teacher.phone
+              h4
+                - if @teacher.phone
+                  = @teacher.phone
+                - else
+                  | N/D
               p.text-gray-alt Phone
             .col-sm-4
               h4 = @teacher.institution.name
               p.text-gray-alt Instituition
               hr
-              h4 XX years old
+              h4 
+                - if @teacher.birthday
+                  = Time.now.utc.to_date.year - @teacher.birthday.year - (@teacher.birthday.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0)
+                  |  years old
+                - else 
+                  |  Age N/D
               p.text-gray-alt
-                | Born on
-                = @teacher.try(:birthday).strftime("%Y.%m.%d")
+                | Born on 
+                - if @teacher.birthday
+                  = @teacher.try(:birthday).strftime("%d.%m.%Y")
+                - else
+                  |  N/D
             .col-sm-4
               h4 Registed
-              p.text-gray-alt Since 03.02.2014
+              p.text-gray-alt Last active at #{@teacher.try(:last_sign_in_at).strftime('%d.%m.%Y')}
 
     = render "teachers/profile/tabs"
 

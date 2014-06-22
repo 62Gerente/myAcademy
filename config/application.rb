@@ -19,6 +19,7 @@ module MyAcademy
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.autoload_paths += %W(#{config.root}/lib)
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+    config.paths['app/views'] << "app/views/teachers"
     config.i18n.default_locale = :en
     config.i18n.locale = :en
     I18n.enforce_available_locales = false

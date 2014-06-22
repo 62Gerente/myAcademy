@@ -18,28 +18,21 @@ body.backstretch._signup
               | Login
             = link_to login_path, :class => "btn btn-default"
               | Demo profile
-        .col-sm-4
+        .col-sm-4.signup-align
           .m-t-30
             .p-t-30
               = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :role => "form") do |f|
                 .form-group
-                  = f.text_field :name, :class => "form-control input-glass", :placeholder => "Name"
+                  = f.text_field :name, :class => "form-control input-glass", :placeholder => "Name", required: "true"
                 .form-group
                   = f.email_field :email, :class => "form-control input-glass", :placeholder => "Email"
                 .form-group
-                  = f.text_field :phone, :class => "form-control input-glass", :placeholder => "Phone"
-                .form-group
-                  = f.text_field :status, :class => "form-control input-glass", :placeholder => "Status"
-                .form-group
-                  = f.text_field :url, :class => "form-control input-glass", :placeholder => "URL"
-                .form-group
-                  = f.text_area :bio, :class => "form-control input-glass", :placeholder => "Bio"
-                .form-group
-                  = f.date_select :birthday , :class => "form-control input-glass"
-                .form-group
-                  = f.collection_select :institution_id, Institution.all, :id, :name, :style => "width:100%"
+                  select.form-control.selectpicker name="teacher[institution_id]" data-live-search="true" 
+                    = Institution.all.each do |i|
+                      option value="#{i.id}" #{i.name}
                 .form-group
                   = f.password_field :password, :class => "form-control input-glass", :placeholder => "Password"
                 .form-group
                   = f.password_field :password_confirmation, :class => "form-control input-glass", :placeholder => "Confirm Password"
                 button.btn.btn-primary.btn-block.btn-lg type="submit" Sign up
+script src="assets/lib/bootstrap-select.js"
