@@ -10,6 +10,8 @@ module OaiPmh
       @response=Time.now.utc.iso8601
       @code= options[:code]
       @verb = options[:verb]
+      @metadataPrefix = options[:metadataPrefix]
+      @identifier = options[:identifier]
       @message = options[:message]
     end
 
@@ -33,6 +35,9 @@ module OaiPmh
       args = {}
       args["verb"] = @verb if @verb
       args["resumptionToken"] = @resumptionToken if @resumptionToken
+      args["identifier"] = @identifier if @identifier
+      args["metadataPrefix"] = @metadataPrefix if @metadataPrefix
+
       xml.request(args){xml.text "#{@request}/oai"}
     end
 

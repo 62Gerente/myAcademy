@@ -14,6 +14,39 @@ module OaiPmh
     end
 
     def xml
+      unless @valid
+        exception = OaiPmh::Exception.new(identifier: @identifier,
+                                          request: @request,
+                                          verb: "GetRecord",
+                                          metadataPrefix: @metadataPrefix,
+                                          code: "idDoesNotExist",
+                                          message: "The value of identifier (#{@identifier}) is unknown or illegal in this repository"
+                                          )
+        return exception.xml
+      end
+
+      unless @metadataPrefix
+        exception = OaiPmh::Exception.new(identifier: @identifier,
+                                          request: @request,
+                                          verb: "GetRecord",
+                                          metadataPrefix: @metadataPrefix,
+                                          code: "badArgument",
+                                          message: "Missing required argument - metadataPrefix"
+                                          )
+       return exception.xml
+      end
+
+      if @metadataPrefix != "oai_dc"
+        exception = OaiPmh::Exception.new(identifier: @identifier,
+                                          request: @request,
+                                          verb: "GetRecord",
+                                          metadataPrefix: @metadataPrefix,
+                                          code: "cannotDisseminateFormat",
+                                          message: "The value of metadataPrefix (#{@metadataPrefix}) is not supported by this item"
+                                          )
+        return exception.xml
+      end
+
       build = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
         xml.send(:"OAI-PMH",'xmlns'=> @xmlns,'xmlns:xsi'=>@xmlns_xsi,'xsi:schemaLocation'=>@xsi_schemaLocation){
           addResponseDate(xml)
@@ -26,8 +59,16 @@ module OaiPmh
 
     private
     def validaIdentifier
+
       regex = /\A(oai):(?<REQUEST>#{URI.regexp}):(?<ID>\d+)\z/
-      if(regex.match(@identifier))
+      return false unless regex.match(@identifier) || @identifier
+
+      url_default = URI.split(@request)[2]
+      url_default+=":"+ URI.split(@request)[3] if URI.split(@request)[3]
+
+      request_url = regex.match(@identifier)["REQUEST"]
+
+      if(request_url == url_default)
         @publication = Publication.where(id: regex.match(@identifier)["ID"]).first
         return true if @publication
       end
