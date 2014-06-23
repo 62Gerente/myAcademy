@@ -19,6 +19,7 @@ gem "better_errors"
 gem 'json_resume'
 gem 'redcarpet'
 gem 'will_paginate', '~> 3.0'
+gem "binding_of_caller"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
