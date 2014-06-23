@@ -32,7 +32,8 @@ module OaiPmh
     def addRequest(xml)
       args = {}
       args["verb"] = @verb if @verb
-      xml.request(){xml.text "#{@request}/oai"}
+      args["resumptionToken"] = @resumptionToken if @resumptionToken
+      xml.request(args){xml.text "#{@request}/oai"}
     end
 
     def addError(xml)
