@@ -18,7 +18,12 @@ module OaiPmh
     def xml
       @oai_request = OaiPmhRequest.where(resumption_code: @resumptionToken).first if @resumptionToken
       @cursor = @oai_request.cursor+@pageSize if @oai_request
+
       if(@oai_request || !@resumptionToken)
+        if(@oai_request && @oai_request.verb != "ListSets")
+          exception = OaiPmh::Exception.new(request: @request, resumptionToken: @resumptionToken, verb: "ListSets", code: "badResumptionToken", message: "This resumptionToken (#{@resumptionToken}) is not valid. Resumption tokens are not issued for ListIdentifiers from this repository." )
+          return exception.xml
+        end
         build = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
           xml.send(:"OAI-PMH",'xmlns'=> @xmlns,'xmlns:xsi'=>@xmlns_xsi,'xsi:schemaLocation'=>@xsi_schemaLocation){
             addResponseDate(xml)

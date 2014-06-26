@@ -21,7 +21,7 @@ class OaiController < ApplicationController
 		when "GetRecord"
 			response = OaiPmh::GetRecord.new(request: request.base_url, identifier: options["identifier"], metadataPrefix: options["metadataPrefix"])
 		when "ListIdentifiers"
-			response = OaiPmh::ListIdentifiers.new(request: request.base_url)
+			response = OaiPmh::ListIdentifiers.new(request: request.base_url, resumptionToken: options["resumptionToken"], metadataPrefix: options["metadataPrefix"])
 		when "ListRecords"
 			response = OaiPmh::ListRecords.new(request: request.base_url)
 		else

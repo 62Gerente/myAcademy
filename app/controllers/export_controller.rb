@@ -6,7 +6,7 @@ class ExportController < ApplicationController
   before_action :init_report, only: [:latex_pdf, :md]
 
   def europass_xml
-    send_data @xml.xml, filename: "europass.xml", type: "application/xml"
+    render :text => @xml.xml, :content_type => 'text/xml'
   end
 
   def europass_pdf
