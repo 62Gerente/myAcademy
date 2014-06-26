@@ -3,7 +3,8 @@ class ExportController < ApplicationController
 	before_action :init, only: [:xml, :pdf]
 
 	def xml
-		send_data @xml.xml, filename: "europass.xml", type: "application/xml"
+		render :text => @xml.xml, :content_type => 'text/xml'
+		# send_data @xml.xml, filename: "europass.xml", type: "application/xml"
 	end
 
 	def pdf
