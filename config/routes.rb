@@ -8,8 +8,10 @@ MyAcademy::Application.routes.draw do
   end
 
   get "/", to: "teachers#profile", as: :home
-  get "/teachers/export/xml", to: "export#xml", as: :export_xml
-  get "/teachers/export/pdf", to: "export#pdf", as: :export_pdf
+  get "/teachers/export/europass/xml", to: "export#europass_xml", as: :export_europass_xml
+  get "/teachers/export/europass/pdf", to: "export#europass_pdf", as: :export_europass_pdf
+  get "/teachers/export/pdf", to: "export#latex_pdf", as: :export_resume_pdf
+  get "/teachers/export/md", to: "export#md", as: :export_resume_md
 
   resources :theses
   resources :thesis_supervisions
