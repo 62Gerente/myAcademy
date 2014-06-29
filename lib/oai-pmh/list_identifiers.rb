@@ -27,6 +27,10 @@ module OaiPmh
           return exception.xml
         end
         oai_request = OaiPmhRequest.where(resumption_code: @resumptionToken).first
+        if(!oai_request)
+          exception = OaiPmh::Exception.new(request: @request, verb: "ListIdentifiers", code: "badResumptionToken", message: "This resumptionToken (#{@resumptionToken}) is invalid or expired")
+          return exception.xml
+        end
         if(oai_request.verb != "ListIdentifiers")
           exception = OaiPmh::Exception.new(request: @request, resumptionToken: @resumptionToken, verb: "ListIdentifiers", code: "badResumptionToken", message: "This resumptionToken (#{@resumptionToken}) is not valid. Resumption tokens are not issued for ListIdentifiers from this repository." )
           return exception.xml
