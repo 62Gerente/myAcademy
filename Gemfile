@@ -16,6 +16,8 @@ gem 'compass-rails'
 gem 'slim'
 gem "rest-client"
 gem "better_errors"
+gem 'json_resume'
+gem 'redcarpet'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
