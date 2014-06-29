@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203095153) do
+ActiveRecord::Schema.define(version: 20140616230134) do
 
   create_table "academic_degrees", force: true do |t|
     t.string "name"
@@ -144,6 +144,14 @@ ActiveRecord::Schema.define(version: 20140203095153) do
   add_index "managements", ["entity_id"], name: "index_managements_on_entity_id"
   add_index "managements", ["role_id"], name: "index_managements_on_role_id"
   add_index "managements", ["teacher_id"], name: "index_managements_on_teacher_id"
+
+  create_table "oai_pmh_requests", force: true do |t|
+    t.string   "verb"
+    t.string   "resumption_code"
+    t.integer  "cursor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "publication_types", force: true do |t|
     t.string "name"
