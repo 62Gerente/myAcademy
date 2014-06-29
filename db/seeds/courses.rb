@@ -8,6 +8,14 @@ courses = [
     {
       name: "Formal Language Engineering",
       institution_id: 5
+    },
+    {
+      name: "Licenciatura em Engenharia Informática",
+      institution_id: 5
+    },
+    {
+      name: "Mestrado em Engenharia Informática",
+      institution_id: 5
     }
 ]
 

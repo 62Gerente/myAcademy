@@ -83,6 +83,7 @@ module Export
       @json[:experience] = {items: []}
       @teacher.subjects.each do |s|
         item = {}
+        item[:title] = s.name
         date_pattern = /\A(?<BEGIN>\d+)\/(?<END>\d+)\z/
         item[:from] = date_pattern.match(s.academic_year)["BEGIN"]
         item[:to] = date_pattern.match(s.academic_year)["END"]
@@ -96,7 +97,7 @@ module Export
       @json[:research_experience] = {items: []}
       @teacher.research_projects.each do |rp|
         item = {}
-        item[:item] = rp.name
+        item[:title] = rp.name
         item[:from] = rp.b_date.year
         if rp.e_date
           item[:to] = rp.e_date.strftime "%b %Y"
@@ -105,7 +106,7 @@ module Export
         end
         item[:points] = []
         item[:points] << rp.description if rp.description
-        @json[:research_projects][:items] << item
+        @json[:research_experience][:items] << item
       end
     end
 
@@ -113,8 +114,9 @@ module Export
       @json[:papers] = {items: []}
       @teacher.publications.sort_by{|p|p.date}.each do |p|
         item = {}
+        item[:authors] = p.publication_type.name
         item[:title] = p.title
-        item[:misc] = "#{p.publication_type.name} | #{p.date.strftime "%b %Y"}"
+        item[:misc] = p.date.strftime "%b %Y"
       @json[:papers][:items] << item
       end
     end
