@@ -1,9 +1,11 @@
 require 'export/europass.rb'
 require 'export/json_report.rb'
+require 'export/xslfo.rb'
 
 class ExportController < ApplicationController
   before_action :init_europass, only: [:europass_xml, :europass_pdf]
   before_action :init_report, only: [:latex_pdf, :md]
+  before_action :init, only: [ :xslfo]
 
   def europass_xml
     render :text => @xml.xml, :content_type => 'text/xml'
@@ -25,6 +27,7 @@ class ExportController < ApplicationController
     @md = File.read loc
   end
 
+
   private
   def init_europass
     @xml = Export::Europass.new current_teacher.id
@@ -32,4 +35,14 @@ class ExportController < ApplicationController
   def init_report
     @resume = Export::JsonReport.new current_teacher.id
   end
+
+	def xslfo
+		send_data @xmlfo.xml, filename: "xslfo.xml", type: "application/xml"
+	end
+
+	private
+	def init
+		@xml = Export::Europass.new current_teacher.id
+		@xmlfo = Export::XSLFO.new current_teacher.id
+	end
 end

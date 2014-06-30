@@ -25,14 +25,14 @@ body.backstretch._signup
                 .form-group
                   = f.text_field :name, :class => "form-control input-glass", :placeholder => "Name", required: "true"
                 .form-group
-                  = f.email_field :email, :class => "form-control input-glass", :placeholder => "Email"
+                  = f.email_field :email, :class => "form-control input-glass", :placeholder => "Email", required: "true"
                 .form-group
                   select.form-control.selectpicker name="teacher[institution_id]" data-live-search="true" 
                     = Institution.all.each do |i|
                       option value="#{i.id}" #{i.name}
                 .form-group
-                  = f.password_field :password, :class => "form-control input-glass", :placeholder => "Password"
+                  = f.password_field :password, :class => "form-control input-glass", :placeholder => "Password", required: "true"
                 .form-group
-                  = f.password_field :password_confirmation, :class => "form-control input-glass", :placeholder => "Confirm Password"
+                  = f.password_field :password_confirmation, :class => "form-control input-glass", :placeholder => "Confirm Password", required: "true"
                 button.btn.btn-primary.btn-block.btn-lg type="submit" Sign up
 script src="assets/lib/bootstrap-select.js"

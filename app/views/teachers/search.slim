@@ -1,13 +1,21 @@
 body.bg-gray-light
   = render "teachers/shared/navbar"
-  = render "teachers/shared/sidebar", active: "add_sup"
+  = render "teachers/shared/sidebar", active: "search"
   #container.main-content.p-30.tp-t-60.tp-lr-10.active
     =render "shared/errors"
     button.menu-btn.btn.btn-bordered.text-gray-alt.text-bold.top-left-corner ☰ MENU
-    = render "teachers/profile/header"
-    .bg-white.p-30.m-t-10.brad.b-bot-2px-gray-light.b-right-1px-gray-light
-      h2.text-center.p-b-30-m-t-0.page-header Add Thesis Supervision
-      = render "theses/form", mode: "thesis_supervisions", thesis: @thesis_supervision
+    .p-30
+      h1.text-center.font-w-100
+       | Search related users
+      hr
+      .text-center
+        input.input-light.input-large.brad.valign-top.m-r-10.m-l-10.search-box placeholder="Search..." type="text" style="width: 50%"  /
+        .btn.btn-primary
+          | Search
+
+      hr 
+
+      = render "teachers/search/search_results"
 
   script src="https://code.jquery.com/jquery.js"
   script src="/assets/lib/bootstrap.js"
@@ -16,6 +24,3 @@ body.bg-gray-light
   script src="/assets/lib/bootstrap-select.js"
   script src="/assets/lib/bootstrap-datepicker.js"
   script src="/assets/admin.js"
-
-  javascript:
-    $('.datepicker').datepicker()

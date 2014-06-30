@@ -1,58 +1,10 @@
 body.bg-gray-light
   = render "teachers/shared/navbar"
-  = render "teachers/shared/sidebar"
+  = render "teachers/shared/sidebar", active: "profile"
   #container.main-content.p-30.tp-t-60.tp-lr-10.active
+    =render "shared/errors"
     button.menu-btn.btn.btn-bordered.text-gray-alt.text-bold.top-left-corner ☰ MENU
-    .row
-      .col-sm-3.text-center
-        .p-10.brad
-          .img-circle.profile-pic style="margin:auto;background-image:url('#{@teacher.photo.url}')"
-          div
-            div
-              .i-block
-                h3.m-b-0
-                  = link_to @teacher.name, @teacher.url
-
-            div
-              .text-gray-alt.i-block
-                span.m-t-10.d-block
-                  = link_to @teacher.email, "mailto:#{@teacher.email}"
-      .col-sm-9
-        .bg-white.p-30.brad.b-bot-2px-gray-light.b-right-1px-gray-light
-          .row
-            .col-sm-4
-              h4 
-                - if @teacher.status
-                  = @teacher.status
-                - else
-                  | N/D
-              p.text-gray-alt Status
-              hr
-              h4
-                - if @teacher.phone
-                  = @teacher.phone
-                - else
-                  | N/D
-              p.text-gray-alt Phone
-            .col-sm-4
-              h4 = @teacher.institution.name
-              p.text-gray-alt Instituition
-              hr
-              h4 
-                - if @teacher.birthday
-                  = Time.now.utc.to_date.year - @teacher.birthday.year - (@teacher.birthday.to_date.change(:year => Time.now.utc.to_date.year) > Time.now.utc.to_date ? 1 : 0)
-                  |  years old
-                - else 
-                  |  Age N/D
-              p.text-gray-alt
-                | Born on 
-                - if @teacher.birthday
-                  = @teacher.try(:birthday).strftime("%d.%m.%Y")
-                - else
-                  |  N/D
-            .col-sm-4
-              h4 Registed
-              p.text-gray-alt Last active at #{@teacher.try(:last_sign_in_at).strftime('%d.%m.%Y')}
+    = render "teachers/profile/header"
 
     = render "teachers/profile/tabs"
 

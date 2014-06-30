@@ -4,9 +4,12 @@ body.backstretch._login
       h2.text-white.font-w-100 myAcademy
     = form_for(resource, :role => "form", :as => resource_name, :url => session_path(resource_name)) do |f|
       .form-group
-        = f.email_field :email, id: "email", class: "form-control input-glass", placeholder: "Email"
+        = f.email_field :email, id: "email", class: "form-control input-glass", placeholder: "Email",required: "true"
       .form-group
-        = f.password_field :password, id: "password", class: "form-control input-glass", placeholder: "Password"
+        = f.password_field :password, id: "password", class: "form-control input-glass", placeholder: "Password", required: "true"
+      =render "shared/errors"
       button.btn.btn-primary.btn-block.btn-lg type="submit" Sign in
     - if devise_mapping.recoverable? && controller_name != 'passwords'
-      = link_to "Lembrar palavra-passe?", new_password_path(resource_name), :class => "text-white hover-opacity-change hover-white-opacity-text m-t-10 d-block text-center"
+      = link_to "Remember password?", new_password_path(resource_name), :class => "text-white hover-opacity-change hover-white-opacity-text m-t-10 d-block text-center"
+      = link_to "Create new user account", signup_path, :class => "text-white hover-opacity-change hover-white-opacity-text m-t-10 d-block text-center"
+

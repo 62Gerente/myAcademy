@@ -1,0 +1,24 @@
+.row
+  - @teachers_filtered.each do |t|
+    .col-sm-3
+      .pricing-table
+        .bg-gray-dark.table-top-wrapper
+          = link_to(t)
+            img.img-circle.search-pic style="background-image: url(#{t.photo.url})"
+
+        .bg-white.p-30
+          h5.text-center #{t.name}
+          .table-body style="min-height: 0px;"
+            ul.m-t-10
+            hr
+              li 
+                -if t.status 
+                  #{t.status}
+                -else
+                  | N/D
+              li 
+                -if t.status 
+                  #{t.institution.name}
+                -else
+                  | N/D
+

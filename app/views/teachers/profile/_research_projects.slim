@@ -2,11 +2,20 @@
   h2.font-w-100
     span.text-blue Research Projects
   - @teacher.research_projects.each do |r|
-    p
-      strong #{r.name}  
-      | #{r.b_date} to #{r.e_date}  
-      | #{r.e_date}  
-      | #{r.description}  
+    p class="text-gray-alt"
+      strong   #{r.name}  | 
+      - if r.b_date
+        = r.try(:b_date).strftime("%d.%m.%Y")
+      - else
+        |  N/D
+      |  - 
+      - if r.e_date
+        = r.try(:e_date).strftime("%d.%m.%Y")
+      - else
+        |  N/D
+      | |
       a href=(r.url)
         = r.url
+      p class="text-gray-alt" #{r.description}  
+      
     hr 

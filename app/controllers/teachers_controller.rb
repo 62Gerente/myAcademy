@@ -67,6 +67,20 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(current_teacher.id)
   end
 
+  def search
+    @teacher = Teacher.find(current_teacher.id)
+    search = params[:search]
+    @teachers_filtered = Teacher.all.order(name: :asc)
+    if !@teachers_filtered.blank?
+      if !search or search==""
+        @teachers_filtered
+      else
+        @teachers_filtered = @teachers_filtered.find_by_fuzzy_name(search) & @teachers_filtered
+      end
+    end
+    @teachers_filtered
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher

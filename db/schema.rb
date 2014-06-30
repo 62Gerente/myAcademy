@@ -216,13 +216,13 @@ ActiveRecord::Schema.define(version: 20140616230134) do
 
   create_table "teachers", force: true do |t|
     t.string   "name"
+    t.string   "username",                            null: false
     t.string   "status"
     t.string   "phone"
     t.datetime "birthday"
     t.string   "url"
     t.text     "bio"
     t.boolean  "registed"
-    t.string   "linkedin"
     t.integer  "institution_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -275,5 +275,16 @@ ActiveRecord::Schema.define(version: 20140616230134) do
 
   add_index "thesis_supervisions", ["teacher_id"], name: "index_thesis_supervisions_on_teacher_id"
   add_index "thesis_supervisions", ["thesis_id"], name: "index_thesis_supervisions_on_thesis_id"
+
+  create_table "trigrams", force: true do |t|
+    t.string  "trigram",     limit: 3
+    t.integer "score",       limit: 2
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.string  "fuzzy_field"
+  end
+
+  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match"
+  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner"
 
 end

@@ -1,9 +1,13 @@
 .sidebar.bg-gray-dark.text-white.text-center.pushy.pushy-left
   hr.no-margin
-    .bg-gray-dark-shade.text-left.search
-      i.glyphicon.glyphicon-search.text-gray-alt
-      input.input-invisible placeholder="Search" type="text"
+    header.bg-g-ln-gray.p-tb-30.pm-tb-10.p-lr-10.b-bot-2px-gray-dark.hidden-xs
+      a.hover-no-underline href="/" 
+        img.img-circle src="#{@teacher.photo.url}" width="35" 
+          span.text-gray-light #{@teacher.name}
+
+
     ul.unstyled.nav.sidebar-menu
+<<<<<<< HEAD
       li = link_to "Update profile", "teachers/#{@teacher.id}/edit"
       li = link_to "Add Thesis Supervision", new_thesis_supervision_path
       li = link_to "Add Thesis Examination", new_thesis_examination_path
@@ -14,6 +18,7 @@
       li = link_to "Export Europass - PDF" , export_europass_pdf_path
       li = link_to "Export Resume - PDF" , export_resume_pdf_path
       li = link_to "Export Resume - Markdown" , export_resume_md_path
+<<<<<<< HEAD
       li = link_to "Import - LinkedIn", auth_linkedin_path
 
   javascript:
@@ -38,3 +43,25 @@
       Pace.on('hide', function(){
         console.log('done');
       });
+=======
+=======
+      li class="#{'active' if active=='profile'}"
+        = link_to "My profile", home_path
+      li class="#{'active' if active=='my_edit'}" 
+        = link_to "Update profile", "teachers/#{@teacher.id}/edit"
+      li class="#{'active' if active=='add_sup'}" 
+        = link_to "Add Thesis Supervision", new_thesis_supervision_path
+      li class="#{'active' if active=='add_exam'}" 
+        = link_to "Add Thesis Examination", new_thesis_examination_path
+      li class="#{'active' if active=='add_pub'}" 
+        = link_to "Add Publication", new_publication_path
+      li class="#{'active' if active=='add_proj'}" 
+        = link_to "Add Research Project", new_research_project_path
+      li class="#{'active' if active=='add_info'}" 
+        = link_to "Add Academic Information", new_academic_information_path
+      li 
+        = link_to "Export Europass - XML" , export_xml_path
+      li 
+        = link_to "Export Europass - PDF" , export_pdf_path
+>>>>>>> fa29091... changes
+>>>>>>> fb9df34... changes

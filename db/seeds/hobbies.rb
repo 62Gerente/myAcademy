@@ -4,11 +4,14 @@ hobbies = [
     {
     	activity: "Geocaching",
     	description: "http://www.geocaching.com/profile/?guid=544b022f-e962-4d98-a1d0-5aa67eaf23ef",
-     	teacher_id: 1
+     	teacher_id: 1,
+        b_date: Date.today
      	},
     {
     	activity: "Squash",
-     	teacher_id: 1
+     	teacher_id: 1,
+        b_date: Date.today,
+        e_date: Date.today
      	},
  	{
  		activity: "Saxofonista",

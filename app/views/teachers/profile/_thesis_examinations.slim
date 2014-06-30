@@ -2,13 +2,13 @@
   h2.font-w-100
     span.text-blue Thesis Examinations
   - @teacher.thesis_examinations.each do |thesis|
-    p
+    p.text-gray-alt
       | [ #{thesis.date.strftime("%Y.%m.%d")} ]  
-      strong #{thesis.thesis.title}    
-      | #{thesis.thesis.student  } 
-      | #{thesis.thesis.academic_degree.name  } 
-      | #{thesis.thesis.institution.name  } 
-      | #{thesis.description  } 
+      strong 
+        | [ #{thesis.thesis.academic_degree.name } ] #{thesis.thesis.title}    
+      = link_to thesis.thesis.student , search_path(search: thesis.thesis.student)
+      |  @ #{thesis.thesis.institution.name  } 
       a href=(thesis.thesis.url)
         = thesis.thesis.url
+      p #{thesis.description } 
     hr 

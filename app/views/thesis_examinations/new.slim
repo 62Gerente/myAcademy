@@ -1,7 +1,8 @@
 body.bg-gray-light
   = render "teachers/shared/navbar"
-  = render "teachers/shared/sidebar"
+  = render "teachers/shared/sidebar", active: "add_exam"
   #container.main-content.p-30.tp-t-60.tp-lr-10.active
+    =render "shared/errors"
     button.menu-btn.btn.btn-bordered.text-gray-alt.text-bold.top-left-corner ☰ MENU
     = render "teachers/profile/header"
     .bg-white.p-30.m-t-10.brad.b-bot-2px-gray-light.b-right-1px-gray-light

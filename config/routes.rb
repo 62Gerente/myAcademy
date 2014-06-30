@@ -2,8 +2,8 @@ MyAcademy::Application.routes.draw do
   devise_for :teachers
 
   devise_scope :teacher do
-    get "/login", to: "devise/sessions#new"
-    get "/signup", to: "devise/registrations#new"
+    get "/login", to: "devise/sessions#new", as: :login
+    get "/signup", to: "devise/registrations#new", as: :signup
     get "/logout", to: "devise/sessions#destroy", as: :logout
   end
 
@@ -12,6 +12,8 @@ MyAcademy::Application.routes.draw do
   get "/teachers/export/europass/pdf", to: "export#europass_pdf", as: :export_europass_pdf
   get "/teachers/export/pdf", to: "export#latex_pdf", as: :export_resume_pdf
   get "/teachers/export/md", to: "export#md", as: :export_resume_md
+  get "/xml", to: "export#xslfo", as: :export_xslfo
+  get "/search", to: "teachers#search", as: :search
 
   get "/oai" , to: "oai#index", as: :oai
 

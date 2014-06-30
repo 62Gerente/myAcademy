@@ -16,7 +16,10 @@ class Teacher < ActiveRecord::Base
   has_many :cosupervisors
   has_many :publications
 
-  has_attached_file :photo
+  has_attached_file :photo, :default_url => "assets/avatar.png"
+  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+  fuzzily_searchable :name, :email
 
   def sort_academic_informations
     self.academic_informations.sort_by{|ai| ai.b_date}
