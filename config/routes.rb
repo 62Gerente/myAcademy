@@ -15,6 +15,9 @@ MyAcademy::Application.routes.draw do
 
   get "/oai" , to: "oai#index", as: :oai
 
+  get "/linkedin/auth", to: "auth#auth", as: :auth_linkedin
+  get "/linkedin/callback", to: "auth#callback", as: :linkedin_callback
+
   resources :theses
   resources :thesis_supervisions
   resources :teachers

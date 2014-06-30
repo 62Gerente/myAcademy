@@ -1,24 +1,25 @@
 #publications.tab-pane.fade.p-30
   h2.font-w-100
     span.text-blue Publications
-  - @teacher.publications.each do |pub|
+  -publications = @teacher.publications.sort_by &:date
+  - publications.each do |pub|
     p.text-gray-alt
-      | [ #{pub.publication_type.name} ]  
-      strong #{pub.title}  
+      | [ #{pub.publication_type.name} ]
+      strong #{pub.title}
       - Author.where(publication_id: pub.id).each do |author|
-        | #{author.name} , 
-      | #{pub.publisher}  
-      | #{pub.address}  
-      | #{pub.chapter}  
-      | #{pub.pages}  
-      | #{pub.volume}  
-      | #{pub.isbn}  
-      | #{pub.issn}  
-      | #{pub.booktitle}  
-      | #{pub.journal}  
-      | #{pub.number}  
-      | #{pub.howpublished}  
-      | #{pub.school}   
+        | #{author.name} ,
+      | #{pub.publisher}
+      | #{pub.address}
+      | #{pub.chapter}
+      | #{pub.pages}
+      | #{pub.volume}
+      | #{pub.isbn}
+      | #{pub.issn}
+      | #{pub.booktitle}
+      | #{pub.journal}
+      | #{pub.number}
+      | #{pub.howpublished}
+      | #{pub.school}
       a href="(pub.uri)"
         = pub.uri
     hr

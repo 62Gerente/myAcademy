@@ -20,7 +20,7 @@ gem 'json_resume'
 gem 'redcarpet'
 gem 'will_paginate', '~> 3.0'
 gem "binding_of_caller"
-
+gem 'linkedin', '0.4.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

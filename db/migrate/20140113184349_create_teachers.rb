@@ -8,6 +8,7 @@ class CreateTeachers < ActiveRecord::Migration
       t.string :url
       t.text :bio
       t.boolean :registed
+      t.string :linkedin
       t.references :institution, index: true
     end
   end

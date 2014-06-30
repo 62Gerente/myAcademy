@@ -222,6 +222,7 @@ ActiveRecord::Schema.define(version: 20140616230134) do
     t.string   "url"
     t.text     "bio"
     t.boolean  "registed"
+    t.string   "linkedin"
     t.integer  "institution_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
