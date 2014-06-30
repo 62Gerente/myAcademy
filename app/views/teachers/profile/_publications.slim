@@ -3,23 +3,28 @@
     span.text-blue Publications
   -publications = @teacher.publications.sort_by &:date
   - publications.each do |pub|
-    p.text-gray-alt
-      | [ #{pub.publication_type.name} ]
-      strong #{pub.title}
-      - Author.where(publication_id: pub.id).each do |author|
-        | #{author.name} ,
-      | #{pub.publisher}
-      | #{pub.address}
-      | #{pub.chapter}
-      | #{pub.pages}
-      | #{pub.volume}
-      | #{pub.isbn}
-      | #{pub.issn}
-      | #{pub.booktitle}
-      | #{pub.journal}
-      | #{pub.number}
-      | #{pub.howpublished}
-      | #{pub.school}
-      a href="(pub.uri)"
-        = pub.uri
-    hr
+    div vocab="http://schema.org/" typeof="CreativeWork"
+      p.text-gray-alt
+        span property="name"
+          | [ #{pub.publication_type.name} ]
+        strong #{pub.title}
+        - Author.where(publication_id: pub.id).each do |author|
+          span property="author" typeof="Person"
+            | #{author.name} ,
+        span property="publisher"  typeof="Organization"
+          | #{pub.publisher}
+        | #{pub.address}
+        | #{pub.chapter}
+        | #{pub.pages}
+        | #{pub.volume}
+        | #{pub.isbn}
+        | #{pub.issn}
+        | #{pub.booktitle}
+        | #{pub.journal}
+        | #{pub.number}
+        | #{pub.howpublished}
+        | #{pub.school}
+        - if pub.uri
+          a href="(pub.uri)" property="url"
+            = pub.uri
+      hr
