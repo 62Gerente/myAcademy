@@ -22,6 +22,11 @@
             .col-sm-8
               = f.text_field :email, class: "input input-large input-light brad", style: "width: 100%", required:"true"
         .m-b-10
+          div Birthday
+          .row
+            .col-sm-8
+              = f.text_field :birthday, "data-behaviour" => 'datepicker', "data-date-format"=> "dd-mm-yyyy", class: "input form-control datepicker", style: "width: 100%"
+        .m-b-10
           div Status
           .row
             .col-sm-8

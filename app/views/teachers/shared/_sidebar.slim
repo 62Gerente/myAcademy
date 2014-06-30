@@ -26,7 +26,7 @@
         li 
           = link_to "Export Europass - XML" , export_europass_xml_path
         li 
-          = link_to "Export Europass - PDF" , export_europass_xml_path
+          = link_to "Export Europass - PDF" , export_europass_pdf_path
         li 
           = link_to "Export PDF - XSLFO" , export_xslfo_path
     - else
@@ -35,68 +35,6 @@
           img.img-circle src="assets/avatar.png" width="35" 
             span.text-gray-light Guest
 
-<<<<<<< HEAD
-    ul.unstyled.nav.sidebar-menu
-<<<<<<< HEAD
-      li = link_to "Update profile", "teachers/#{@teacher.id}/edit"
-      li = link_to "Add Thesis Supervision", new_thesis_supervision_path
-      li = link_to "Add Thesis Examination", new_thesis_examination_path
-      li = link_to "Add Publication", new_publication_path
-      li = link_to "Add Research Project", new_research_project_path
-      li = link_to "Add Academic Information", new_academic_information_path
-      li = link_to "Export Europass - XML" , export_europass_xml_path
-      li = link_to "Export Europass - PDF" , export_europass_pdf_path
-      li = link_to "Export Resume - PDF" , export_resume_pdf_path
-      li = link_to "Export Resume - Markdown" , export_resume_md_path
-<<<<<<< HEAD
-      li = link_to "Import - LinkedIn", auth_linkedin_path
-
-  javascript:
-    function load(time){
-        var x = new XMLHttpRequest()
-        x.open('GET', "http://localhost:5646/walter/" + time, true);
-        x.send();
-      };
-
-      load(20);
-      load(100);
-      load(500);
-      load(2000);
-      load(3000);
-
-      setTimeout(function(){
-        Pace.ignore(function(){
-          load(3100);
-        });
-      }, 4000);
-
-      Pace.on('hide', function(){
-        console.log('done');
-      });
-=======
-=======
-      li class="#{'active' if active=='profile'}"
-        = link_to "My profile", home_path
-      li class="#{'active' if active=='my_edit'}" 
-        = link_to "Update profile", "teachers/#{@teacher.id}/edit"
-      li class="#{'active' if active=='add_sup'}" 
-        = link_to "Add Thesis Supervision", new_thesis_supervision_path
-      li class="#{'active' if active=='add_exam'}" 
-        = link_to "Add Thesis Examination", new_thesis_examination_path
-      li class="#{'active' if active=='add_pub'}" 
-        = link_to "Add Publication", new_publication_path
-      li class="#{'active' if active=='add_proj'}" 
-        = link_to "Add Research Project", new_research_project_path
-      li class="#{'active' if active=='add_info'}" 
-        = link_to "Add Academic Information", new_academic_information_path
-      li 
-        = link_to "Export Europass - XML" , export_xml_path
-      li 
-        = link_to "Export Europass - PDF" , export_pdf_path
->>>>>>> fa29091... changes
->>>>>>> fb9df34... changes
-=======
       ul.unstyled.nav.sidebar-menu
         li class="#{'active' if active=='search'}"
           = link_to "Search users", search_path
->>>>>>> 93574f7... Major release lulz
