@@ -12,8 +12,10 @@ MyAcademy::Application.routes.draw do
   get "/teachers/export/europass/pdf", to: "export#europass_pdf", as: :export_europass_pdf
   get "/teachers/export/pdf", to: "export#latex_pdf", as: :export_resume_pdf
   get "/teachers/export/md", to: "export#md", as: :export_resume_md
-  get "/xml", to: "export#xslfo", as: :export_xslfo
+  get "/xslfo", to: "export#xslfo", as: :export_xslfo
   get "/search", to: "teachers#search", as: :search
+  get "/:username" => "teachers#show", as: :user_profiles
+  get "/profile" => "teachers#profile", as: :user_profile
 
   get "/oai" , to: "oai#index", as: :oai
 

@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
-  before_filter :authenticate_teacher!
-  before_action :set_teacher, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_teacher!, except: [:show, :search]
+  before_action :set_teacher, only: [ :show, :edit, :update, :destroy]
 
 
   # GET /teachers
@@ -30,7 +30,7 @@ class TeachersController < ApplicationController
 
     respond_to do |format|
       if @teacher.save
-        format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
+        format.html { redirect_to home_path, notice: 'Teacher was successfully created.' }
         format.json { render action: 'show', status: :created, location: @teacher }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class TeachersController < ApplicationController
   def update
     respond_to do |format|
       if @teacher.update(teacher_params)
-        format.html { redirect_to @teacher, notice: 'Teacher was successfully updated.' }
+        format.html { redirect_to home_path, notice: 'Teacher was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -68,7 +68,6 @@ class TeachersController < ApplicationController
   end
 
   def search
-    @teacher = Teacher.find(current_teacher.id)
     search = params[:search]
     @teachers_filtered = Teacher.all.order(name: :asc)
     if !@teachers_filtered.blank?
@@ -84,11 +83,15 @@ class TeachersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher
-      @teacher = Teacher.find(params[:id])
+      if params[:id]
+        @teacher = Teacher.find(params[:id])
+      else
+        @teacher = Teacher.find_by(username: params[:username])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :status, :phone, :birthday, :url, :bio, :registed, :institution_id, :email, :encrypted_password)
+      params.require(:teacher).permit(:name, :username,:status, :phone, :birthday, :url, :bio, :registed, :institution_id, :email, :encrypted_password)
     end
 end

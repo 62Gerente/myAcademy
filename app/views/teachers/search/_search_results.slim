@@ -3,7 +3,7 @@
     .col-sm-3
       .pricing-table
         .bg-gray-dark.table-top-wrapper
-          = link_to(t)
+          = link_to user_profiles_path(t.username)
             img.img-circle.search-pic style="background-image: url(#{t.photo.url})"
 
         .bg-white.p-30

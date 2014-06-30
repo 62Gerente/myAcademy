@@ -4,13 +4,12 @@ nav.navbar.navbar-fixed-top.not-collapse.bg-g-ln-gray role="navigation"
       | myAcademy 
       small.font-w-100.text-gray-alt.hidden-xs.hidden-sm Teach about yourself
   #top-nav
-    = link_to logout_path, class: "btn btn-default navbar-btn navbar-right btn-danger m-r-30 mm-r-10"
-      | Logout
-    .navbar-dropdown.navbar-right.navbar-avatar
-      a.hover-no-underline.dropdown-toggle.m-lr-30.mm-lr-10 data-target="#topavatar-toggle" data-toggle="dropdown" href="#"
-        i.fi-torso.m-10
-        span.text-gray-light.hidden-sm.hidden-xs = @teacher.name
-        span.caret.text-white.hidden-sm.hidden-xs
-      ul#topavatar-toggle.dropdown-menu.avatar-dropdown
-        li = link_to "My profile", home_url
-        li = link_to "Settings", "#"
+    - if current_teacher
+      = link_to logout_path, class: "btn btn-default navbar-btn navbar-right btn-danger m-r-30 mm-r-10"
+        | Logout
+    -else
+      = link_to login_path, class: "btn btn-default navbar-btn navbar-right btn-success m-r-30 mm-r-10"
+        | Login
+      = link_to signup_path, class: "btn btn-default navbar-btn navbar-right btn-info m-r-30 mm-r-10"
+        | Signup
+   

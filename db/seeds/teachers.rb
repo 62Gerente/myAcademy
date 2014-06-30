@@ -4,6 +4,7 @@ puts "seeding teachers..."
 teachers = [
   {
     name: "José Carlos Ramalho",
+    username: "jcr",
     status: "Prof. Auxiliar",
     phone: "999999999",
     email: "jcr@di.uminho.pt",
@@ -21,6 +22,7 @@ teachers = [
 teachers.each do |teacher|
   Teacher.where(email: teacher[:email]).first_or_initialize.tap do |t|
     t.name = teacher[:name]
+    t.username = teacher[:username]
     t.status = teacher[:status]
     t.phone = teacher[:phone]
     t.birthday = teacher[:birthday]

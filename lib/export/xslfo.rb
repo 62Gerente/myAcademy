@@ -13,6 +13,7 @@ module Export
           add_academic_info xml
           add_hobbies xml
           add_research_projects xml
+          add_teaching xml
           add_publications xml
           add_supervisions xml
           add_examinations xml
@@ -22,7 +23,8 @@ module Export
     end
 
     def save
-      File.open(Rails.root.join('public','teste.pdf'), 'wb') { |file| file.write(pdf) }
+      File.open(Rails.root.join('public/system/export','teacher.xml'), 'wb') { |file| file.write(xml) }
+      system("fop -xml public/system/export/teacher.xml -xsl public/system/export/template/teacher.xsl -pdf public/system/export/#{@teacher.id}.pdf")
     end
 
     private
@@ -33,28 +35,32 @@ module Export
         xml.bio @teacher.bio
         xml.status @teacher.status
         xml.email @teacher.email
-        xml.username @teacher.name
+        xml.username @teacher.username
         xml.phone @teacher.phone
         l = nil
         xml.birthday @teacher.birthday.strftime("%B %d, %Y") if @teacher.birthday
         xml.institution @teacher.institution.name
         xml.url @teacher.url
-        xml.photo "http://0.0.0.0:3000"+@teacher.photo.url
+        if @teacher.photo_file_name
+          xml.photo "public/system/teachers/photos/000/000/001/original/"+@teacher.photo_file_name 
+        else
+          xml.photo "app/assets/images/avatar.png"
+        end
       }
     end
 
     def add_academic_info xml
-      xml.academic_info{
-        @teacher.academic_informations.each do |c|
-          xml.course{
-            xml.course_name c.course.name
-            xml.academic_degree c.academic_degree.name
-            xml.institution c.institution.name
-            xml.b_date try_date_format_year(c.b_date)
-            xml.e_date try_date_format_year(c.b_date)
-          }
-        end
-      }
+        xml.academic_info{
+          @teacher.academic_informations.each do |c|
+            xml.course{
+              xml.course_name c.course.name
+              xml.academic_degree c.academic_degree.name
+              xml.institution c.institution.name
+              xml.b_date try_date_format_year(c.b_date)
+              xml.e_date try_date_format_year(c.b_date)
+            }
+          end
+        } 
     end
 
     def add_hobbies xml
@@ -65,7 +71,7 @@ module Export
             xml.description h.description
           }
         end
-      }
+      } if @teacher.hobbies
     end
 
     def add_research_projects xml
@@ -79,7 +85,7 @@ module Export
             xml.url p.url
           }
         end
-      }
+      } if @teacher.research_projects
     end
 
     def add_publications xml
@@ -105,15 +111,15 @@ module Export
               p.authors.each do |a|
                 xml.author a.name
               end
-            }
+            } if p.authors
           }
         end
-      }
+      } if @teacher.publications
     end
 
     def add_supervisions xml
       xml.thesis_supervisions{
-        @teacher.thesis_supervisions.each do |s|
+        ThesisSupervision.where(teacher_id: @teacher.id).each do |s|
           xml.supervision{
             xml.b_date try_date_format_year s.b_date
             xml.e_date try_date_format_year s.e_date
@@ -123,7 +129,7 @@ module Export
             xml.institution s.institution.name
           }
         end
-      }
+      } if @teacher.thesis_supervisions
     end
 
     def add_examinations xml
@@ -137,7 +143,7 @@ module Export
             xml.institution e.institution.name
           }
         end
-      }
+      } if @teacher.thesis_examinations
     end
 
     def add_teaching xml
@@ -150,7 +156,7 @@ module Export
             xml.institution s.course.institution.name
           }
         end
-      }
+      } if @teacher.subjects
     end
 
     def try_date_format_year date
