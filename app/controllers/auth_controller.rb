@@ -4,9 +4,9 @@ class AuthController < ApplicationController
     key = "77lzzopzu8r8jm"
     secret = "FLzlwwEL5VeN86UP"
     linkedin_configuration = { :site => 'https://api.linkedin.com',
-        :authorize_path => '/uas/oauth/authenticate',
-        :request_token_path =>'/uas/oauth/requestToken?scope=r_basicprofile+r_fullprofile+r_emailaddress+r_network+r_contactinfo',
-        :access_token_path => '/uas/oauth/accessToken' }
+                               :authorize_path => '/uas/oauth/authenticate',
+                               :request_token_path =>'/uas/oauth/requestToken?scope=r_basicprofile+r_fullprofile+r_emailaddress+r_network+r_contactinfo',
+                               :access_token_path => '/uas/oauth/accessToken' }
     @linkedin_client = LinkedIn::Client.new(key, secret,linkedin_configuration )
   end
 
@@ -32,15 +32,17 @@ class AuthController < ApplicationController
     c = @linkedin_client
 
     publications = c.profile(:fields=>["publications"]).to_hash
-    publications["publications"]["all"].each do |p|
-      publication = {}
-      publication["title"] = p["title"]
-      publication["date"] = Time.parse("#{p["date"]["day"]}-#{p["date"]["month"]}-#{p["date"]["year"]}")
-      #publication[:url] = p["url"] if p["url"]
-      #publication[:publisher] = p["publisher"] if p["publisher"]
-      publication[:publication_type_id] = PublicationType.where(name: "article").first.id
-      publication[:teacher_id] = current_teacher.id
-      Publication.where(publication).first_or_create!
+    if(publications["publications"])
+      publications["publications"]["all"].each do |p|
+        publication = {}
+        publication["title"] = p["title"]
+        publication["date"] = Time.parse("#{p["date"]["day"]}-#{p["date"]["month"]}-#{p["date"]["year"]}")
+        #publication[:url] = p["url"] if p["url"]
+        #publication[:publisher] = p["publisher"] if p["publisher"]
+        publication[:publication_type_id] = PublicationType.where(name: "article").first.id
+        publication[:teacher_id] = current_teacher.id
+        Publication.where(publication).first_or_create!
+      end
     end
 
     session[:atoken] = nil
