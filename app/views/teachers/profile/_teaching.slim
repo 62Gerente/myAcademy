@@ -1,20 +1,23 @@
 #teaching.tab-pane.fade.in.p-30
   h2.font-w-100
     span.text-blue Teaching
+
   - @teacher.subjects.each do |s|
-    .row
-      .col-sm-2
-        p.text-gray-alt
-          span.label.label-info
-            = s.academic_year
-      .col-sm-10
-        p.text-gray-alt
-          strong = " #{s.name}"
-          | :  
-          = s.course.name
-          br
-          = s.course.institution.name
-          br/
-          - if !s.description.blank?
-            blockquote.text-gray-alt.prof
-              = s.description
+    - @folder = s.folders.where(folder_id: 0).first
+    = link_to @folder
+      .row 
+        .col-sm-2
+          p.text-gray-alt
+            span.label.label-info
+              = s.academic_year
+        .col-sm-10
+          p.text-gray-alt
+            strong = " #{s.name}"
+            | :  
+            = s.course.name
+            br
+            = s.course.institution.name
+            br/
+            - if !s.description.blank?
+              blockquote.text-gray-alt.prof
+                = s.description

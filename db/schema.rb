@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616230134) do
+ActiveRecord::Schema.define(version: 20140616230135) do
 
   create_table "academic_degrees", force: true do |t|
     t.string "name"
@@ -92,6 +92,19 @@ ActiveRecord::Schema.define(version: 20140616230134) do
     t.string "name"
   end
 
+  create_table "ficheiros", force: true do |t|
+    t.string   "name"
+    t.integer  "folder_id"
+    t.integer  "subject_id"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
+  add_index "ficheiros", ["folder_id"], name: "index_ficheiros_on_folder_id"
+  add_index "ficheiros", ["subject_id"], name: "index_ficheiros_on_subject_id"
+
   create_table "file_tags", force: true do |t|
     t.integer "file_id"
     t.integer "tag_id"
@@ -99,15 +112,6 @@ ActiveRecord::Schema.define(version: 20140616230134) do
 
   add_index "file_tags", ["file_id"], name: "index_file_tags_on_file_id"
   add_index "file_tags", ["tag_id"], name: "index_file_tags_on_tag_id"
-
-  create_table "files", force: true do |t|
-    t.string  "name"
-    t.integer "folder_id"
-    t.integer "subject_id"
-  end
-
-  add_index "files", ["folder_id"], name: "index_files_on_folder_id"
-  add_index "files", ["subject_id"], name: "index_files_on_subject_id"
 
   create_table "folders", force: true do |t|
     t.string  "name"

@@ -1,6 +1,6 @@
-class CreateFiles < ActiveRecord::Migration
+class CreateFicheiros < ActiveRecord::Migration
   def change
-    create_table :files do |t|
+    create_table :ficheiros do |t|
       t.string :name
       t.references :folder, index: true
       t.references :subject, index: true

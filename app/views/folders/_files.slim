@@ -1,0 +1,32 @@
+ul.nav.nav-tabs.nav-profile.tab-size
+  li.active
+    a data-toggle="tab" href="#files"
+      .text-small Folders
+      span.text-gray-dark
+        |  /
+      span.small.text-gray-dark #{@folder.subject.name}
+
+.bg-white.b-1px-gray-light.b-top-none.brad-bottom.brad-tr.b-bot-2px-gray-light
+  .tab-content.profilecontainer
+    #files.active.tab-pane.fade.in.p-30
+      h2.font-w-100
+        span.text-blue 
+        | Files
+      .row 
+        .col-sm-12
+          - if @folder.folder_id != 0
+            p.text-gray-alt
+              span.label.label-danger
+                = link_to "../", @folder.folder
+          - @folder.folders.each do |f|
+            p.text-gray-alt
+              i.fi-folder.m-10.text-large
+              span.label.label-info
+                = link_to f.name, f
+          - @folder.ficheiros.each do |f|
+            p.text-gray-alt
+              i.fi-page-copy.m-10.text-large
+              span.label
+                = link_to f.name, f.file.url
+          
+             

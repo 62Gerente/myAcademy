@@ -35,7 +35,7 @@ MyAcademy::Application.routes.draw do
   resources :deliverables
   resources :editors
   resources :entities
-  resources :files
+  resources :ficheiros
   resources :folders
   resources :hobbies
   resources :institutions
