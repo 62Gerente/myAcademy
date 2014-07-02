@@ -14,6 +14,7 @@ teachers = [
     registed: true,
     password: "jcrjcrjcr",
     institution_id: 5,
+    last_sign_in_at: DateTime.now,
     photo: "http://www3.di.uminho.pt/~jcr/jcr@keep.jpg"
   }
 ]

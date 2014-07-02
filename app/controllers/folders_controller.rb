@@ -10,7 +10,7 @@ class FoldersController < ApplicationController
   # GET /folders/1
   # GET /folders/1.json
   def show
-    @teacher = Teacher.find(current_teacher.id)
+    @teacher = Teacher.find(@folder.subject.teacher.id)
   end
 
   # GET /folders/new
@@ -55,9 +55,10 @@ class FoldersController < ApplicationController
   # DELETE /folders/1
   # DELETE /folders/1.json
   def destroy
+    back_url = @folder.folder.id
     @folder.destroy
     respond_to do |format|
-      format.html { redirect_to folders_url }
+      format.html { redirect_to Folder.find(back_url) }
       format.json { head :no_content }
     end
   end

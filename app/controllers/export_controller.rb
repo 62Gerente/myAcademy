@@ -29,8 +29,8 @@ class ExportController < ApplicationController
 
 	def xslfo
 		@xslfo.save
-		loc = Rails.root.join('public/system/export',"#{current_teacher.id}.pdf")
-    send_file(loc, :filename => "#{current_teacher.id}", :disposition => 'inline', :type => "application/pdf")
+		loc = Rails.root.join('public/system/export',"#{current_teacher.username}#{current_teacher.id}.pdf")
+    send_file(loc, :filename => "#{current_teacher.username}#{current_teacher.id}", :disposition => 'inline', :type => "application/pdf")
 	end
 
   private

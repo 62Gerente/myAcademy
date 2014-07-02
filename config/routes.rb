@@ -21,6 +21,8 @@ MyAcademy::Application.routes.draw do
   get "/linkedin/callback", to: "auth#callback", as: :linkedin_callback
 
   get "/:username" => "teachers#show", as: :user_profiles
+  get "/ficheiros/:id/delete", to: "ficheiros#destroy", as: :ficheiro_delete
+  get "/folders/:id/delete", to: "folders#destroy", as: :folder_delete
 
   resources :theses
   resources :thesis_supervisions

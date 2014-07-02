@@ -28,7 +28,7 @@ class FicheirosController < ApplicationController
 
     respond_to do |format|
       if @ficheiro.save
-        format.html { redirect_to @ficheiro, notice: 'File was successfully created.' }
+        format.html { redirect_to Folder.find(@ficheiro.folder_id), notice: 'File was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ficheiro }
       else
         format.html { render action: 'new' }
@@ -54,9 +54,10 @@ class FicheirosController < ApplicationController
   # DELETE /files/1
   # DELETE /files/1.json
   def destroy
+    back_url = @ficheiro.folder_id
     @ficheiro.destroy
     respond_to do |format|
-      format.html { redirect_to ficheiros_url }
+      format.html { redirect_to Folder.find(back_url) }
       format.json { head :no_content }
     end
   end

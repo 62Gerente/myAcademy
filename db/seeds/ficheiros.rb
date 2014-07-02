@@ -5,13 +5,13 @@ files = [    {
       name: "ficheiro1",
       subject_id: 1,
       folder_id: 1,
-      file:"https://www.dropbox.com/s/pxc9ix6i1gplmo8/caosguerrila2_3.jpg"
+      file:"http://www3.di.uminho.pt/~jcr/foto-jcr-xata2006.jpg"
     },
     {
       name: "ficheiro2",
       subject_id: 1,
-      folder_id: 1,
-      file:"https://www.dropbox.com/s/pxc9ix6i1gplmo8/caosguerrila2_3.jpg"
+      folder_id: 4,
+      file:"http://www3.di.uminho.pt/~jcr/AULAS/engweb2011/fichas2011/ficha1/Local.rdf"
     }
 ]
 

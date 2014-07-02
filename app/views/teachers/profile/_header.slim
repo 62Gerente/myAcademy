@@ -1,7 +1,8 @@
 .row
   .col-sm-3.text-center
     .p-10.brad
-      .img-circle.profile-pic style="margin:auto;background-image:url('#{@teacher.photo.url}')"
+      = link_to "/#{@teacher.username}"
+        .img-circle.profile-pic style="margin:auto;background-image:url('#{@teacher.photo.url}')"
       div
         div
           .i-block
@@ -47,4 +48,9 @@
               |  N/D
         .col-sm-4
           h4 Registed
-          p.text-gray-alt Last active at #{@teacher.try(:last_sign_in_at).strftime('%d.%m.%Y')}
+          p.text-gray-alt 
+            |Last active at: 
+            - if @teacher.last_sign_in_at
+              = @teacher.try(:last_sign_in_at).strftime('%d.%m.%Y')
+            - else
+              |  Never active

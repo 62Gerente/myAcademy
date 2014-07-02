@@ -14,13 +14,13 @@ folders = [
     {
       name: "PL",
       subject_id: 2,
-      folder_id: 3
+      folder_id: 2
     },
     {
       name: "PED2",
       subject_id: 1,
       folder_id: 1
-    },
+    }
 ]
 
 folders.each do |folder|

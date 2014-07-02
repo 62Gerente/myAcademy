@@ -9,9 +9,9 @@ body.bg-gray-light
        | Search related users
       hr
       .text-center
-        input.input-light.input-large.brad.valign-top.m-r-10.m-l-10.search-box placeholder="Search..." type="text" style="width: 50%"  /
-        .btn.btn-primary
-          | Search
+        = form_tag search_path, method: :get do
+          = text_field_tag 'Search', "" , value: params[:search], class:"input input-light input-large brad valign-top m-r-10 m-l-10 search-box",placeholder:"Search...", type:"text", style:"width: 50%"
+          button.btn.btn-info type="submit" Procurar
 
       hr 
 

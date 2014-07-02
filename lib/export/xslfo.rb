@@ -23,8 +23,8 @@ module Export
     end
 
     def save
-      File.open(Rails.root.join('public/system/export','teacher.xml'), 'wb') { |file| file.write(xml) }
-      system("fop -xml public/system/export/teacher.xml -xsl public/system/export/template/teacher.xsl -pdf public/system/export/#{@teacher.id}.pdf")
+      File.open(Rails.root.join('public/system/export',@teacher.username+@teacher.id.to_s+'.xml'), 'wb') { |file| file.write(xml) }
+      system("fop -xml public/system/export/#{@teacher.username}#{@teacher.id}.xml -xsl public/system/export/template/teacher.xsl -pdf public/system/export/#{@teacher.username}#{@teacher.id}.pdf")
     end
 
     private
