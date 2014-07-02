@@ -216,7 +216,7 @@ ActiveRecord::Schema.define(version: 20140616230134) do
 
   create_table "teachers", force: true do |t|
     t.string   "name"
-    t.string   "username",                            null: false
+    t.string   "username"
     t.string   "status"
     t.string   "phone"
     t.datetime "birthday"
